@@ -1,4 +1,2 @@
 Starting audit...
-[ERROR] /Users/mihai/Desktop/Proiect-Etapa-2-POO/./src/main/java/org/poo/fileio/CommerciantInput.java:6:8: Unused import - java.util.List. [UnusedImports]
 Audit done.
-Checkstyle ends with 1 errors.

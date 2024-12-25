@@ -108,11 +108,12 @@ public final class Main {
 
         // Inițializez serviciile care reprezintă logica de lucru cu utilizatorii,
         // conturi, carduri și tranzacții
-        UserService userService = new UserService();
-        ExchangeService exchangeService = new ExchangeService();
-        AccountService accountService = new AccountService(userService, exchangeService);
-        CardService cardService = new CardService(userService, accountService, exchangeService);
-        TransactionService transactionService = new TransactionService(userService);
+        UserService userService = UserService.getInstance();
+        ExchangeService exchangeService = ExchangeService.getInstance();
+        AccountService accountService = AccountService.getInstance(userService, exchangeService);
+        CardService cardService = CardService.getInstance(userService,
+                accountService, exchangeService);
+        TransactionService transactionService = TransactionService.getInstance(userService);
 
         // Dacă inputData conține informații despre utilizatori, aceștia sunt creați
         // prin intermediul userService
@@ -132,7 +133,7 @@ public final class Main {
         CommandFactory commandFactory = new CommandFactory();
 
         // Se instanțiază un vizitator concret care va executa logica aferentă fiecărei comenzi,
-        // folosind serviciile disponibile.
+        // folosind serviciile disponibile
         ConcreteCommandVisitor visitor = new ConcreteCommandVisitor(
                 userService,
                 accountService,
@@ -145,7 +146,7 @@ public final class Main {
 
         // Dacă există comenzi în inputData, pentru fiecare se creează comanda corespunzătoare,
         // apoi se apelează metoda accept, care permite vizitatorului să proceseze comanda și să
-        // producă rezultatul.
+        // producă rezultatul
         if (inputData.getCommands() != null) {
             for (CommandInput cmdInput : inputData.getCommands()) {
                 Command command = commandFactory.createCommand(cmdInput);
@@ -153,10 +154,12 @@ public final class Main {
             }
         }
 
-        // După ce toate operațiunile au fost efectuate, se curăță datele din servicii.
-        userService.clear();
-        accountService.clear();
-        cardService.clear();
+        // După ce toate operațiunile au fost efectuate, se resetează instanțele serviciilor.
+        UserService.resetInstance();
+        AccountService.resetInstance();
+        ExchangeService.resetInstance();
+        CardService.resetInstance();
+        TransactionService.resetInstance();
 
         ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
         objectWriter.writeValue(new File(filePath2), output);
