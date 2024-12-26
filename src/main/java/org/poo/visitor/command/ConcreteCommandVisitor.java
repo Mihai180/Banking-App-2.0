@@ -3,45 +3,13 @@ package org.poo.visitor.command;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import org.poo.command.ReportCommand;
-import org.poo.command.AddInterestCommand;
-import org.poo.command.SpendingsReportCommand;
-import org.poo.command.SplitPaymentCommand;
-import org.poo.command.SetAliasCommand;
-import org.poo.command.SendMoneyCommand;
-import org.poo.command.PrintTransactionsCommand;
-import org.poo.command.PayOnlineCommand;
-import org.poo.command.DeleteCardCommand;
-import org.poo.command.PrintUsersCommand;
-import org.poo.command.SetMinBalanceCommand;
-import org.poo.command.ChangeInterestRateCommand;
-import org.poo.command.CheckCardStatusCommand;
-import org.poo.command.DeleteAccountCommand;
-import org.poo.command.CreateCardCommand;
-import org.poo.command.AddFundsCommand;
-import org.poo.command.NotImplementedCommand;
-import org.poo.command.AddAccountCommand;
+import org.poo.command.*;
+import org.poo.exception.NotMinimumAgeRequired;
 import org.poo.model.account.Account;
 import org.poo.model.card.Card;
-import org.poo.model.transaction.SplitPaymentTransaction;
-import org.poo.model.transaction.SendMoneyTransaction;
-import org.poo.model.transaction.MinimumAmountOfFundsTransaction;
-import org.poo.model.transaction.InsufficientFundsTransaction;
-import org.poo.model.transaction.InssuficientFundsForSplitTransaction;
-import org.poo.model.transaction.CardPaymentTransaction;
-import org.poo.model.transaction.CardDeletionTransaction;
-import org.poo.model.transaction.CardCreationTransaction;
-import org.poo.model.transaction.AccountDeletionErrorTransaction;
-import org.poo.model.transaction.AccountCreationTransaction;
-import org.poo.model.transaction.FrozenCardTransaction;
-import org.poo.model.transaction.InterestRateChangeTransaction;
-import org.poo.model.transaction.Transaction;
+import org.poo.model.transaction.*;
 import org.poo.model.user.User;
-import org.poo.service.CardService;
-import org.poo.service.AccountService;
-import org.poo.service.ExchangeService;
-import org.poo.service.UserService;
-import org.poo.service.TransactionService;
+import org.poo.service.*;
 import org.poo.visitor.transaction.ConcreteTransactionVisitor;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -64,6 +32,7 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
     private final CardService cardService;
     private final TransactionService transactionService;
     private final ExchangeService exchangeService;
+    private final CommerciantService commerciantService;
     // Nodurile JSON pentru a stoca rezultatele comenzilor
     private final ArrayNode output;
     private final ObjectMapper mapper;
@@ -75,6 +44,7 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                                   final CardService cardService,
                                   final TransactionService transactionService,
                                   final ExchangeService exchangeService,
+                                  final CommerciantService commerciantService,
                                   final ArrayNode output,
                                   final ObjectMapper mapper) {
         this.userService = userService;
@@ -82,6 +52,7 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
         this.cardService = cardService;
         this.transactionService = transactionService;
         this.exchangeService = exchangeService;
+        this.commerciantService = commerciantService;
         this.output = output;
         this.mapper = mapper;
     }
@@ -739,6 +710,38 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
             // Dacă contul nu este de economii, creează un rezultat de tip
             // "not savings account" în JSON
             notSavingsAccountResult(command.getCommand(), result, command.getTimestamp());
+        }
+    }
+
+    @Override
+    public void visit(final WithdrawSavingsCommand command) {
+        try {
+            String result = accountService.withdrawSavings(command.getAccount(),
+                    command.getAmount(), command.getCurrency());
+            if (result.startsWith("Savings withdrawal to")) {
+                String prefix = "Savings withdrawal to ";
+                if (result.length() > prefix.length()) {
+                    String classicAccount = result.substring(prefix.length()).trim();
+                    Transaction transaction = new SavingsWithdrawlTransaction(command.getTimestamp(),
+                            command.getAccount(), classicAccount, command.getAmount());
+                    accountService.getAccountByIBAN(command.getAccount()).addTransaction(transaction);
+                    accountService.getAccountByIBAN(classicAccount).addTransaction(transaction);
+                }
+            }
+        } catch (NotMinimumAgeRequired exception) {
+            String exceptionMessage = exception.getMessage();
+            if (exceptionMessage.startsWith("You don't have the minimum age required.")) {
+                String prefix = "You don't have the minimum age required. ";
+                if (exceptionMessage.length() > prefix.length()) {
+                    String classicAccount = exceptionMessage.substring(prefix.length()).trim();
+                    Transaction transaction = new SavingsWithdrawlTransaction(command.getTimestamp(),
+                            command.getAccount(), classicAccount, command.getAmount());
+                    Transaction errorTransaction = new NotMinimumAgeRequiredTransaction(command.getTimestamp());
+                    accountService.getAccountByIBAN(command.getAccount()).addTransaction(transaction);
+                    accountService.getAccountByIBAN(classicAccount).addTransaction(transaction);
+                    accountService.getAccountByIBAN(classicAccount).addTransaction(errorTransaction);
+                }
+            }
         }
     }
 }

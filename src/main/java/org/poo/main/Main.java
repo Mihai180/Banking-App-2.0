@@ -10,11 +10,7 @@ import org.poo.command.CommandFactory;
 import org.poo.fileio.CommandInput;
 import org.poo.fileio.ObjectInput;
 import org.poo.fileio.UserInput;
-import org.poo.service.AccountService;
-import org.poo.service.TransactionService;
-import org.poo.service.UserService;
-import org.poo.service.CardService;
-import org.poo.service.ExchangeService;
+import org.poo.service.*;
 import org.poo.utils.Utils;
 import org.poo.visitor.command.ConcreteCommandVisitor;
 import java.io.File;
@@ -109,6 +105,7 @@ public final class Main {
         // Inițializez serviciile care reprezintă logica de lucru cu utilizatorii,
         // conturi, carduri și tranzacții
         UserService userService = UserService.getInstance();
+        CommerciantService commerciantService = new CommerciantService();
         ExchangeService exchangeService = ExchangeService.getInstance();
         AccountService accountService = AccountService.getInstance(userService, exchangeService);
         CardService cardService = CardService.getInstance(userService,
@@ -121,6 +118,10 @@ public final class Main {
             for (UserInput userInput : inputData.getUsers()) {
                 userService.createUser(userInput);
             }
+        }
+
+        if (inputData.getCommerciants() != null) {
+            commerciantService.loadCommerciants(Arrays.asList(inputData.getCommerciants()));
         }
 
         // Dacă inputData conține rate de schimb valutar, acestea sunt încărcate
@@ -140,6 +141,7 @@ public final class Main {
                 cardService,
                 transactionService,
                 exchangeService,
+                commerciantService,
                 output,
                 objectMapper
         );

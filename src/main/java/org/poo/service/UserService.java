@@ -55,7 +55,8 @@ public final class UserService {
             throw new UserAlreadyExistsException("User already exists: " + email);
         }
 
-        User user = new User(userInput.getFirstName(), userInput.getLastName(), email);
+        User user = new User(userInput.getFirstName(), userInput.getLastName(), email,
+                userInput.getBirthDate(), userInput.getOccupation());
         usersByEmail.put(email, user);
     }
 

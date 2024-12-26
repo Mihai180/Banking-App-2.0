@@ -1,17 +1,6 @@
 package org.poo.visitor.transaction;
 
-import org.poo.model.transaction.AccountCreationTransaction;
-import org.poo.model.transaction.AccountDeletionErrorTransaction;
-import org.poo.model.transaction.CardCreationTransaction;
-import org.poo.model.transaction.CardDeletionTransaction;
-import org.poo.model.transaction.CardPaymentTransaction;
-import org.poo.model.transaction.FrozenCardTransaction;
-import org.poo.model.transaction.InssuficientFundsForSplitTransaction;
-import org.poo.model.transaction.InsufficientFundsTransaction;
-import org.poo.model.transaction.InterestRateChangeTransaction;
-import org.poo.model.transaction.MinimumAmountOfFundsTransaction;
-import org.poo.model.transaction.SendMoneyTransaction;
-import org.poo.model.transaction.SplitPaymentTransaction;
+import org.poo.model.transaction.*;
 
 /**
  * Interfața TransactionVisitor definește metodele de vizitare pentru diferite tipuri de tranzacții.
@@ -102,4 +91,8 @@ public interface TransactionVisitor {
      * @param transaction este tranzacția de schimbare a ratei dobânzii.
      */
     void visit(InterestRateChangeTransaction transaction);
+
+    void visit(SavingsWithdrawlTransaction transaction);
+
+    void visit(NotMinimumAgeRequiredTransaction transaction);
 }

@@ -68,6 +68,9 @@ public final class CommandFactory {
             case "addInterest":
                 return new AddInterestCommand(input.getCommand(), input.getAccount(),
                         input.getTimestamp());
+            case "withdrawSavings":
+                return new WithdrawSavingsCommand(input.getCommand(), input.getAccount(),
+                        input.getAmount(), input.getCurrency(), input.getTimestamp());
             default:
                 return new NotImplementedCommand(commandName, input.getTimestamp());
         }

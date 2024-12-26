@@ -3,18 +3,7 @@ package org.poo.visitor.transaction;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import org.poo.model.transaction.AccountCreationTransaction;
-import org.poo.model.transaction.AccountDeletionErrorTransaction;
-import org.poo.model.transaction.CardCreationTransaction;
-import org.poo.model.transaction.CardDeletionTransaction;
-import org.poo.model.transaction.CardPaymentTransaction;
-import org.poo.model.transaction.FrozenCardTransaction;
-import org.poo.model.transaction.InssuficientFundsForSplitTransaction;
-import org.poo.model.transaction.InsufficientFundsTransaction;
-import org.poo.model.transaction.InterestRateChangeTransaction;
-import org.poo.model.transaction.MinimumAmountOfFundsTransaction;
-import org.poo.model.transaction.SendMoneyTransaction;
-import org.poo.model.transaction.SplitPaymentTransaction;
+import org.poo.model.transaction.*;
 
 /**
  * Clasa ConcreteTransactionVisitor implementează interfața TransactionVisitor
@@ -131,6 +120,21 @@ public final class ConcreteTransactionVisitor implements TransactionVisitor {
 
     @Override
     public void visit(final InterestRateChangeTransaction transaction) {
+        transactionNode.put("timestamp", transaction.getTimestamp());
+        transactionNode.put("description", transaction.getDescription());
+    }
+
+    @Override
+    public void visit(final SavingsWithdrawlTransaction transaction) {
+        transactionNode.put("timestamp", transaction.getTimestamp());
+        transactionNode.put("description", transaction.getDescription());
+        transactionNode.put("savingsAccountIBAN", transaction.getSavingsAccountIBAN());
+        transactionNode.put("classicAccountIBAN", transaction.getClassicAccountIBAN());
+        transactionNode.put("amount", transaction.getAmount());
+    }
+
+    @Override
+    public void visit(final NotMinimumAgeRequiredTransaction transaction) {
         transactionNode.put("timestamp", transaction.getTimestamp());
         transactionNode.put("description", transaction.getDescription());
     }

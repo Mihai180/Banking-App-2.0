@@ -1,23 +1,6 @@
 package org.poo.visitor.command;
 
-import org.poo.command.ReportCommand;
-import org.poo.command.AddInterestCommand;
-import org.poo.command.SpendingsReportCommand;
-import org.poo.command.SplitPaymentCommand;
-import org.poo.command.SetAliasCommand;
-import org.poo.command.SendMoneyCommand;
-import org.poo.command.PrintTransactionsCommand;
-import org.poo.command.PayOnlineCommand;
-import org.poo.command.DeleteCardCommand;
-import org.poo.command.PrintUsersCommand;
-import org.poo.command.SetMinBalanceCommand;
-import org.poo.command.ChangeInterestRateCommand;
-import org.poo.command.CheckCardStatusCommand;
-import org.poo.command.DeleteAccountCommand;
-import org.poo.command.CreateCardCommand;
-import org.poo.command.AddFundsCommand;
-import org.poo.command.NotImplementedCommand;
-import org.poo.command.AddAccountCommand;
+import org.poo.command.*;
 
 /**
  * Interfața CommandVisitor face parte din implementarea modelului de design Visitor
@@ -133,4 +116,6 @@ public interface CommandVisitor {
      * @param command este instanța AddInterestCommand care trebuie procesată
      */
     void visit(AddInterestCommand command);
+
+    void visit(WithdrawSavingsCommand command);
 }

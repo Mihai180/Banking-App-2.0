@@ -1,6 +1,10 @@
 package org.poo.model.user;
 
 import org.poo.model.account.Account;
+
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,13 +17,18 @@ public final class User {
     private final String firstName;
     private final String lastName;
     private final String email;
+    private final String birthDate;
+    private final String occupation;
     private final ArrayList<Account> accounts;
     private final Map<String, String> aliases;
 
-    public User(final String firstName, final String lastName, final String email) {
+    public User(final String firstName, final String lastName, final String email,
+                final String birthDate, final String occupation) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.birthDate = birthDate;
+        this.occupation = occupation;
         this.accounts = new ArrayList<>();
         this.aliases = new HashMap<>();
     }
@@ -44,6 +53,14 @@ public final class User {
         return aliases;
     }
 
+    public String getBirthDate() {
+        return birthDate;
+    }
+
+    public String getOccupation() {
+        return occupation;
+    }
+
     /**
      * Adaugă un cont nou la lista de conturi ale utilizatorului
      * Dacă contul nu este null, acesta este adăugat în listă
@@ -62,5 +79,12 @@ public final class User {
      */
    public void addAlias(final String aliasName, final String accountIban) {
         aliases.put(aliasName, accountIban);
+   }
+
+   public boolean isUserOldEnough() {
+       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+       LocalDate birthDate = LocalDate.parse(this.birthDate, formatter);
+       LocalDate now = LocalDate.now();
+       return Period.between(birthDate, now).getYears() >= 21;
    }
 }

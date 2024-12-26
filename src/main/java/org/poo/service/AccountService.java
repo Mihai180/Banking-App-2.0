@@ -1,9 +1,6 @@
 package org.poo.service;
 
-import org.poo.exception.AccountCanNotBeDeletedException;
-import org.poo.exception.AccountNotFoundException;
-import org.poo.exception.InsufficientFundsException;
-import org.poo.exception.UserNotFoundException;
+import org.poo.exception.*;
 import org.poo.model.account.Account;
 import org.poo.model.account.ClassicAccount;
 import org.poo.model.account.SavingsAccount;
@@ -310,5 +307,47 @@ public final class AccountService {
         }
         account.addInterest();
         return "Success";
+    }
+
+    private Account findClassicAccountByCurrency(User user, String currency) {
+        for (Account account : user.getAccounts()) {
+            if ("classic".equals(account.getAccountType()) && account.getCurrency().equals(currency)) {
+                return account;
+            }
+        }
+        return null;
+    }
+
+    public String withdrawSavings(final String iban, final double amount, final String currency) {
+        Account account = getAccountByIBAN(iban);
+        if (account == null) {
+            throw new AccountNotFoundException("Account not found");
+        }
+
+        if (!account.getAccountType().equals("savings")) {
+            throw new AccountTypeIsNotSavings("Account is not of type savings.");
+        }
+
+        User owner = account.getOwner();
+        Account classicAccount = findClassicAccountByCurrency(owner, currency);
+
+        if (classicAccount == null) {
+            throw new AccountNotFoundException("You do not have a classic account.");
+        }
+
+        double convertedAmount = exchangeService.convertCurrency(account.getCurrency(),
+                classicAccount.getCurrency(), amount);
+
+        if (account.getBalance() < convertedAmount) {
+            throw new InsufficientFundsException("Insufficient funds");
+        }
+        account.withdraw(amount);
+        classicAccount.deposit(convertedAmount);
+
+        if (!owner.isUserOldEnough()) {
+            throw new NotMinimumAgeRequired("You don't have the minimum age required. " + classicAccount.getIban());
+        }
+
+        return "Savings withdrawal to " + classicAccount.getIban();
     }
 }
