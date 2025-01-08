@@ -138,4 +138,10 @@ public final class ConcreteTransactionVisitor implements TransactionVisitor {
         transactionNode.put("timestamp", transaction.getTimestamp());
         transactionNode.put("description", transaction.getDescription());
     }
+
+    @Override
+    public void visit(final NotClassicAccountTransaction transaction) {
+        transactionNode.put("timestamp", transaction.getTimestamp());
+        transactionNode.put("description", transaction.getDescription());
+    }
 }

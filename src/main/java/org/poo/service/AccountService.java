@@ -324,15 +324,19 @@ public final class AccountService {
             throw new AccountNotFoundException("Account not found");
         }
 
+        User owner = account.getOwner();
+        Account classicAccount = findClassicAccountByCurrency(owner, currency);
+
+        if (!owner.isUserOldEnough()) {
+            throw new NotMinimumAgeRequired("You don't have the minimum age required. " + classicAccount.getIban());
+        }
+
         if (!account.getAccountType().equals("savings")) {
             throw new AccountTypeIsNotSavings("Account is not of type savings.");
         }
 
-        User owner = account.getOwner();
-        Account classicAccount = findClassicAccountByCurrency(owner, currency);
-
         if (classicAccount == null) {
-            throw new AccountNotFoundException("You do not have a classic account.");
+            throw new NotClassicAccountException("You do not have a classic account.");
         }
 
         double convertedAmount = exchangeService.convertCurrency(account.getCurrency(),
@@ -343,10 +347,6 @@ public final class AccountService {
         }
         account.withdraw(amount);
         classicAccount.deposit(convertedAmount);
-
-        if (!owner.isUserOldEnough()) {
-            throw new NotMinimumAgeRequired("You don't have the minimum age required. " + classicAccount.getIban());
-        }
 
         return "Savings withdrawal to " + classicAccount.getIban();
     }

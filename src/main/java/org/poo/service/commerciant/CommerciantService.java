@@ -1,4 +1,4 @@
-package org.poo.service;
+package org.poo.service.commerciant;
 
 import org.poo.fileio.CommerciantInput;
 import org.poo.model.commerciant.Commerciant;

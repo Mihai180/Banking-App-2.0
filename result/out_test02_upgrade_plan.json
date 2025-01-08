@@ -130,7 +130,7 @@
     "description" : "Miscellaneous online expenses",
     "senderIBAN" : "RO58POOB7344468893732422",
     "receiverIBAN" : "RO69POOB6209498372540635",
-    "amount" : "31.0 USD",
+    "amount" : "122.0 USD",
     "transferType" : "sent"
   } ],
   "timestamp" : 9
@@ -144,7 +144,7 @@
     "email" : "Chad_Robinson@hotmail.us",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 684.0,
+      "balance" : 593.0,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ ]
@@ -195,7 +195,7 @@
     "email" : "John_Fowler@gmail.us",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 31.0,
+      "balance" : 122.0,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ ]
@@ -212,14 +212,14 @@
     "description" : "Miscellaneous online expenses",
     "senderIBAN" : "RO58POOB7344468893732422",
     "receiverIBAN" : "RO69POOB6209498372540635",
-    "amount" : "31.0 USD",
+    "amount" : "122.0 USD",
     "transferType" : "sent"
   } ],
   "timestamp" : 13
 }, {
   "command" : "deleteAccount",
   "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
+    "success" : "Account deleted",
     "timestamp" : 15
   },
   "timestamp" : 15
@@ -229,13 +229,7 @@
     "firstName" : "Chad",
     "lastName" : "Robinson",
     "email" : "Chad_Robinson@hotmail.us",
-    "accounts" : [ {
-      "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 213.0,
-      "currency" : "USD",
-      "type" : "classic",
-      "cards" : [ ]
-    } ]
+    "accounts" : [ ]
   }, {
     "firstName" : "Madeleine",
     "lastName" : "De Oliveira",
@@ -282,7 +276,7 @@
     "email" : "John_Fowler@gmail.us",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 502.0,
+      "balance" : 715.0,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ ]
@@ -311,13 +305,7 @@
     "firstName" : "Chad",
     "lastName" : "Robinson",
     "email" : "Chad_Robinson@hotmail.us",
-    "accounts" : [ {
-      "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 213.0,
-      "currency" : "USD",
-      "type" : "classic",
-      "cards" : [ ]
-    } ]
+    "accounts" : [ ]
   }, {
     "firstName" : "Madeleine",
     "lastName" : "De Oliveira",
@@ -370,7 +358,7 @@
     "email" : "John_Fowler@gmail.us",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 502.0,
+      "balance" : 715.0,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ ]

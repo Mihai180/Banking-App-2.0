@@ -95,4 +95,6 @@ public interface TransactionVisitor {
     void visit(SavingsWithdrawlTransaction transaction);
 
     void visit(NotMinimumAgeRequiredTransaction transaction);
+
+    void visit(NotClassicAccountTransaction transaction);
 }

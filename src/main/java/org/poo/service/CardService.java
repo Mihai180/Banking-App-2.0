@@ -151,6 +151,7 @@ public final class CardService {
             throw new InsufficientFundsException("Insufficient funds");
         }
 
+        finalAmount = Math.round(finalAmount * 100.0) / 100.0;
         String result = card.makePayment(finalAmount, cardsByNumber);
 
         if (result.equals("You can't pay this amount because is used")) {

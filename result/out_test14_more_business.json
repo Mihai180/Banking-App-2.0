@@ -1,0 +1,43 @@
+[ {
+  "result" : "Command 'addNewBusinessAssociate' at timestamp 3 is not implemented yet."
+}, {
+  "result" : "Command 'addNewBusinessAssociate' at timestamp 15 is not implemented yet."
+}, {
+  "result" : "Command 'addNewBusinessAssociate' at timestamp 24 is not implemented yet."
+}, {
+  "result" : "Command 'addNewBusinessAssociate' at timestamp 30 is not implemented yet."
+}, {
+  "result" : "Command 'changeDepositLimit' at timestamp 34 is not implemented yet."
+}, {
+  "result" : "Command 'businessReport' at timestamp 75 is not implemented yet."
+}, {
+  "result" : "Command 'cashWithdrawal' at timestamp 79 is not implemented yet."
+}, {
+  "result" : "Command 'cashWithdrawal' at timestamp 80 is not implemented yet."
+}, {
+  "result" : "Command 'businessReport' at timestamp 84 is not implemented yet."
+}, {
+  "result" : "Command 'businessReport' at timestamp 161 is not implemented yet."
+}, {
+  "result" : "Command 'businessReport' at timestamp 162 is not implemented yet."
+}, {
+  "result" : "Command 'changeDepositLimit' at timestamp 164 is not implemented yet."
+}, {
+  "result" : "Command 'addNewBusinessAssociate' at timestamp 211 is not implemented yet."
+}, {
+  "result" : "Command 'addNewBusinessAssociate' at timestamp 227 is not implemented yet."
+}, {
+  "result" : "Command 'addNewBusinessAssociate' at timestamp 244 is not implemented yet."
+}, {
+  "result" : "Command 'addNewBusinessAssociate' at timestamp 264 is not implemented yet."
+}, {
+  "result" : "Command 'acceptSplitPayment' at timestamp 402 is not implemented yet."
+}, {
+  "result" : "Command 'acceptSplitPayment' at timestamp 403 is not implemented yet."
+}, {
+  "result" : "Command 'acceptSplitPayment' at timestamp 404 is not implemented yet."
+}, {
+  "result" : "Command 'acceptSplitPayment' at timestamp 405 is not implemented yet."
+}, {
+  "result" : "Command 'acceptSplitPayment' at timestamp 406 is not implemented yet."
+} ]

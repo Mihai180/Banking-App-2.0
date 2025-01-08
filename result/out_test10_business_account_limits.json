@@ -1,0 +1,38 @@
+[ {
+  "result" : "Command 'addNewBusinessAssociate' at timestamp 26 is not implemented yet."
+}, {
+  "result" : "Command 'addNewBusinessAssociate' at timestamp 29 is not implemented yet."
+}, {
+  "result" : "Command 'changeSpendingLimit' at timestamp 30 is not implemented yet."
+}, {
+  "result" : "Command 'businessReport' at timestamp 31 is not implemented yet."
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 33,
+    "description" : "Card not found"
+  },
+  "timestamp" : 33
+}, {
+  "result" : "Command 'changeSpendingLimit' at timestamp 34 is not implemented yet."
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 35,
+    "description" : "Card not found"
+  },
+  "timestamp" : 35
+}, {
+  "result" : "Command 'changeSpendingLimit' at timestamp 37 is not implemented yet."
+}, {
+  "command" : "payOnline",
+  "output" : {
+    "timestamp" : 38,
+    "description" : "Card not found"
+  },
+  "timestamp" : 38
+}, {
+  "result" : "Command 'changeDepositLimit' at timestamp 39 is not implemented yet."
+}, {
+  "result" : "Command 'businessReport' at timestamp 42 is not implemented yet."
+} ]

@@ -11,6 +11,7 @@ import org.poo.fileio.CommandInput;
 import org.poo.fileio.ObjectInput;
 import org.poo.fileio.UserInput;
 import org.poo.service.*;
+import org.poo.service.commerciant.CommerciantService;
 import org.poo.utils.Utils;
 import org.poo.visitor.command.ConcreteCommandVisitor;
 import java.io.File;
@@ -116,7 +117,14 @@ public final class Main {
         // prin intermediul userService
         if (inputData.getUsers() != null) {
             for (UserInput userInput : inputData.getUsers()) {
-                userService.createUser(userInput);
+                try {
+                    userService.createUser(userInput);
+                } catch (Exception exception) {
+                    String exceptionMessage = exception.getMessage();
+                    if (exceptionMessage.startsWith("User already exists:")) {
+                        System.out.println(exceptionMessage);
+                    }
+                }
             }
         }
 

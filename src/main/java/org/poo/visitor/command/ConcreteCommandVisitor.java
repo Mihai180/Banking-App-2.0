@@ -4,13 +4,18 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.poo.command.*;
+import org.poo.exception.InsufficientFundsException;
+import org.poo.exception.NotClassicAccountException;
 import org.poo.exception.NotMinimumAgeRequired;
 import org.poo.model.account.Account;
 import org.poo.model.card.Card;
 import org.poo.model.transaction.*;
 import org.poo.model.user.User;
 import org.poo.service.*;
+import org.poo.service.commerciant.CommerciantService;
 import org.poo.visitor.transaction.ConcreteTransactionVisitor;
+
+import javax.security.auth.login.AccountNotFoundException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
@@ -156,9 +161,10 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
         // Formatarea sumei convertite pentru a evita erorile de precizie
         DecimalFormat df = new DecimalFormat("#.#########");
         double formattedAmount = Double.valueOf(df.format(convertedAmount));
+        convertedAmount = Math.round(convertedAmount * 100.0) / 100.0;
         // Crearea unei tranzacții de tip "CardPayment"
         Transaction transaction = new CardPaymentTransaction(command.getTimestamp(),
-                command.getCommerciant(), formattedAmount);
+                command.getCommerciant(), convertedAmount);
         associatedAccount.addTransaction(transaction);
     }
 
@@ -734,13 +740,25 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                 String prefix = "You don't have the minimum age required. ";
                 if (exceptionMessage.length() > prefix.length()) {
                     String classicAccount = exceptionMessage.substring(prefix.length()).trim();
-                    Transaction transaction = new SavingsWithdrawlTransaction(command.getTimestamp(),
-                            command.getAccount(), classicAccount, command.getAmount());
+                    //Transaction transaction = new SavingsWithdrawlTransaction(command.getTimestamp(),
+                            //command.getAccount(), classicAccount, command.getAmount());
                     Transaction errorTransaction = new NotMinimumAgeRequiredTransaction(command.getTimestamp());
-                    accountService.getAccountByIBAN(command.getAccount()).addTransaction(transaction);
-                    accountService.getAccountByIBAN(classicAccount).addTransaction(transaction);
+                    //accountService.getAccountByIBAN(command.getAccount()).addTransaction(transaction);
+                    //accountService.getAccountByIBAN(classicAccount).addTransaction(transaction);
                     accountService.getAccountByIBAN(classicAccount).addTransaction(errorTransaction);
                 }
+            }
+        } catch (NotClassicAccountException exception) {
+            String exceptionMessage = exception.getMessage();
+            if (exceptionMessage.equals("You do not have a classic account.")) {
+                Transaction transaction = new NotClassicAccountTransaction(command.getTimestamp());
+                accountService.getAccountByIBAN(command.getAccount()).addTransaction(transaction);
+            }
+        } catch (InsufficientFundsException exception) {
+            String exceptionMessage = exception.getMessage();
+            if (exceptionMessage.equals("Insufficient funds")) {
+                Transaction transaction = new InsufficientFundsTransaction(command.getTimestamp());
+                accountService.getAccountByIBAN(command.getAccount()).addTransaction(transaction);
             }
         }
     }
