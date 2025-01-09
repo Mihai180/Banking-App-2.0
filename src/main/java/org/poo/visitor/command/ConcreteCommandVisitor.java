@@ -7,6 +7,10 @@ import org.poo.command.*;
 import org.poo.exception.*;
 import org.poo.model.account.Account;
 import org.poo.model.card.Card;
+import org.poo.model.commerciant.CashbackStrategy;
+import org.poo.model.commerciant.CashbackStrategyFactory;
+import org.poo.model.commerciant.Commerciant;
+import org.poo.model.plan.PlanStrategy;
 import org.poo.model.transaction.*;
 import org.poo.model.user.User;
 import org.poo.service.*;
@@ -161,8 +165,33 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
         //double formattedAmount = Double.valueOf(df.format(convertedAmount));
         //convertedAmount = Math.round(convertedAmount * 100.0) / 100.0;
         // Crearea unei tranzacții de tip "CardPayment"
-        Transaction transaction = new CardPaymentTransaction(command.getTimestamp(),
+        CardPaymentTransaction transaction = new CardPaymentTransaction(command.getTimestamp(),
                 command.getCommerciant(), convertedAmount);
+        Commerciant commerciant = CommerciantService.getCommerciantByName(command.getCommerciant());
+        double spentInRON = exchangeService.convertCurrency(associatedAccount.getCurrency(), "RON", command.getAmount());
+        //associatedAccount.spend(spentInRON);
+        associatedAccount.increaseNumberOfTransactions();
+        switch (commerciant.getType()) {
+            case "Food":
+                associatedAccount.spendOnFood(command.getAmount());
+                break;
+            case "Clothes":
+                associatedAccount.spendOnClothes(command.getAmount());
+                break;
+            case "Tech":
+                associatedAccount.spendOnTech(command.getAmount());
+                break;
+        }
+        CashbackStrategy cashbackStrategy =
+                CashbackStrategyFactory.getStrategy(commerciant.getCommerciant());
+
+        double amount = cashbackStrategy.calculateCashback(associatedAccount, transaction);
+        associatedAccount.deposit(amount);
+
+        User user = associatedAccount.getOwner();
+        PlanStrategy plan = user.getCurrentPlan();
+        double commission = plan.calculateCommission(amount);
+        associatedAccount.withdraw(commission);
         associatedAccount.addTransaction(transaction);
     }
 
@@ -446,6 +475,13 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                         command.getDescription(), command.getAccount(), command.getReciever(),
                         command.getAmount(), currency, "sent");
                 accountService.getAccountByIBAN(command.getAccount()).addTransaction(transaction);
+                Account account = accountService.getAccountByIBAN(command.getAccount());
+                User user = account.getOwner();
+                PlanStrategy plan = user.getCurrentPlan();
+                double convertedAmount = exchangeService.convertCurrency(account.getCurrency(), "RON", command.getAmount());
+                double commission = plan.calculateCommission(convertedAmount);
+                double convertedCommission = exchangeService.convertCurrency("RON", account.getCurrency(), commission);
+                account.withdraw(convertedCommission);
             }
 
             // Dacă transferul este reușit și contul destinatar există, efectuează conversia

@@ -8,7 +8,9 @@ public interface PlanStrategy {
      */
     double calculateCommission(double amount);
 
-    public boolean isDowngrade (String requested);
+    boolean isDowngrade (String requested);
 
-    public double calculateUpgradeFee(String requested);
+    double calculateUpgradeFee(String requested);
+
+    String getPlan();
 }

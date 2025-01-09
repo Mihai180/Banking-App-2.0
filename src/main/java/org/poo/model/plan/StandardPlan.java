@@ -19,4 +19,8 @@ public class StandardPlan implements PlanStrategy {
         }
         return -1;
     }
+
+    public String getPlan() {
+        return "Standard";
+    }
 }

@@ -985,7 +985,7 @@
     "email" : "Angel_Ene@hotmail.ro",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 50.0,
+      "balance" : 48.184,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -1231,7 +1231,7 @@
     "email" : "Anna_Robson@hushmail.nz",
     "accounts" : [ {
       "IBAN" : "RO38POOB0964823730995794",
-      "balance" : 993.5555555555555,
+      "balance" : 992.7355555555556,
       "currency" : "NZD",
       "type" : "classic",
       "cards" : [ {
@@ -1524,7 +1524,7 @@
     "email" : "Angel_Ene@hotmail.ro",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 50.0,
+      "balance" : 48.184,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -1770,7 +1770,7 @@
     "email" : "Anna_Robson@hushmail.nz",
     "accounts" : [ {
       "IBAN" : "RO38POOB0964823730995794",
-      "balance" : 993.5555555555555,
+      "balance" : 992.7355555555556,
       "currency" : "NZD",
       "type" : "classic",
       "cards" : [ {
@@ -2181,7 +2181,7 @@
     "email" : "Angel_Ene@hotmail.ro",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 50.0,
+      "balance" : 48.184,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ ]
@@ -2409,7 +2409,7 @@
     "email" : "Anna_Robson@hushmail.nz",
     "accounts" : [ {
       "IBAN" : "RO38POOB0964823730995794",
-      "balance" : 993.5555555555555,
+      "balance" : 992.7355555555556,
       "currency" : "NZD",
       "type" : "classic",
       "cards" : [ ]
@@ -2953,7 +2953,7 @@
     "email" : "Angel_Ene@hotmail.ro",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 50.0,
+      "balance" : 48.184,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ ]
@@ -3149,7 +3149,7 @@
       } ]
     }, {
       "IBAN" : "RO04POOB3492426980939341",
-      "balance" : 1189.0921714285716,
+      "balance" : 1189.2638885714289,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -3181,7 +3181,7 @@
     "email" : "Anna_Robson@hushmail.nz",
     "accounts" : [ {
       "IBAN" : "RO38POOB0964823730995794",
-      "balance" : 993.5555555555555,
+      "balance" : 992.7355555555556,
       "currency" : "NZD",
       "type" : "classic",
       "cards" : [ ]
@@ -3501,7 +3501,7 @@
     "email" : "Angel_Ene@hotmail.ro",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 50.0,
+      "balance" : 48.184,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ ]
@@ -3697,7 +3697,7 @@
       } ]
     }, {
       "IBAN" : "RO04POOB3492426980939341",
-      "balance" : 1189.0921714285716,
+      "balance" : 1189.2638885714289,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -3729,7 +3729,7 @@
     "email" : "Anna_Robson@hushmail.nz",
     "accounts" : [ {
       "IBAN" : "RO38POOB0964823730995794",
-      "balance" : 993.5555555555555,
+      "balance" : 992.7355555555556,
       "currency" : "NZD",
       "type" : "classic",
       "cards" : [ ]
@@ -4019,7 +4019,7 @@
   "command" : "spendingsReport",
   "output" : {
     "IBAN" : "RO58POOB2721178218599590",
-    "balance" : 50.0,
+    "balance" : 48.184,
     "currency" : "RON",
     "transactions" : [ ],
     "commerciants" : [ ]
@@ -4185,7 +4185,7 @@
   "command" : "spendingsReport",
   "output" : {
     "IBAN" : "RO38POOB0964823730995794",
-    "balance" : 993.5555555555555,
+    "balance" : 992.7355555555556,
     "currency" : "NZD",
     "transactions" : [ ],
     "commerciants" : [ ]

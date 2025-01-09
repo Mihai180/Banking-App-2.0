@@ -466,7 +466,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2237.1666666666665,
+      "balance" : 2237.2611666666667,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -626,7 +626,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1636.995054945055,
+      "balance" : 1637.035054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -696,7 +696,7 @@
     "email" : "Marcus_Reed@hushmail.us",
     "accounts" : [ {
       "IBAN" : "RO33POOB9999273999620457",
-      "balance" : 2700.5,
+      "balance" : 2700.562375,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -795,7 +795,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2237.1666666666665,
+      "balance" : 2237.2611666666667,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -958,7 +958,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1636.995054945055,
+      "balance" : 1637.035054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -1028,7 +1028,7 @@
     "email" : "Marcus_Reed@hushmail.us",
     "accounts" : [ {
       "IBAN" : "RO33POOB9999273999620457",
-      "balance" : 2700.5,
+      "balance" : 2700.562375,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -1102,7 +1102,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2237.1666666666665,
+      "balance" : 2237.2611666666667,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -1265,7 +1265,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1636.995054945055,
+      "balance" : 1637.035054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -1335,7 +1335,7 @@
     "email" : "Marcus_Reed@hushmail.us",
     "accounts" : [ {
       "IBAN" : "RO33POOB9999273999620457",
-      "balance" : 2700.5,
+      "balance" : 2700.562375,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -1418,7 +1418,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2237.1666666666665,
+      "balance" : 2237.2611666666667,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -1581,7 +1581,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1636.995054945055,
+      "balance" : 1637.035054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -1651,7 +1651,7 @@
     "email" : "Marcus_Reed@hushmail.us",
     "accounts" : [ {
       "IBAN" : "RO33POOB9999273999620457",
-      "balance" : 2700.5,
+      "balance" : 2700.562375,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -1743,7 +1743,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2237.1666666666665,
+      "balance" : 2237.2611666666667,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -1906,7 +1906,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1636.995054945055,
+      "balance" : 1637.035054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -1976,7 +1976,7 @@
     "email" : "Marcus_Reed@hushmail.us",
     "accounts" : [ {
       "IBAN" : "RO33POOB9999273999620457",
-      "balance" : 2700.5,
+      "balance" : 2700.562375,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -2077,7 +2077,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2237.1666666666665,
+      "balance" : 2237.2611666666667,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -2240,7 +2240,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1636.995054945055,
+      "balance" : 1637.035054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -2310,7 +2310,7 @@
     "email" : "Marcus_Reed@hushmail.us",
     "accounts" : [ {
       "IBAN" : "RO33POOB9999273999620457",
-      "balance" : 2700.5,
+      "balance" : 2700.562375,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -2420,7 +2420,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2237.1666666666665,
+      "balance" : 2237.2611666666667,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -2583,7 +2583,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1636.995054945055,
+      "balance" : 1637.035054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -2653,7 +2653,7 @@
     "email" : "Marcus_Reed@hushmail.us",
     "accounts" : [ {
       "IBAN" : "RO33POOB9999273999620457",
-      "balance" : 2700.5,
+      "balance" : 2700.562375,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -2787,7 +2787,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2352.5,
+      "balance" : 2352.5945,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -2974,7 +2974,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1636.995054945055,
+      "balance" : 1637.035054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -3050,7 +3050,7 @@
     "email" : "Marcus_Reed@hushmail.us",
     "accounts" : [ {
       "IBAN" : "RO33POOB9999273999620457",
-      "balance" : 2700.5,
+      "balance" : 2700.562375,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -3168,7 +3168,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2352.5,
+      "balance" : 2352.5945,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -3355,7 +3355,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1636.995054945055,
+      "balance" : 1637.035054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -3431,7 +3431,7 @@
     "email" : "Marcus_Reed@hushmail.us",
     "accounts" : [ {
       "IBAN" : "RO33POOB9999273999620457",
-      "balance" : 2700.5,
+      "balance" : 2700.562375,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -3580,7 +3580,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2352.5,
+      "balance" : 2352.5945,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -3609,7 +3609,7 @@
       } ]
     }, {
       "IBAN" : "RO53POOB7122855990652257",
-      "balance" : 290.44539999999995,
+      "balance" : 310.53707199999997,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -3767,7 +3767,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1636.995054945055,
+      "balance" : 1637.035054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -3852,7 +3852,7 @@
     "email" : "Marcus_Reed@hushmail.us",
     "accounts" : [ {
       "IBAN" : "RO33POOB9999273999620457",
-      "balance" : 2700.5,
+      "balance" : 2700.562375,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -3966,7 +3966,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2352.5,
+      "balance" : 2352.5945,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -3995,7 +3995,7 @@
       } ]
     }, {
       "IBAN" : "RO53POOB7122855990652257",
-      "balance" : 290.44539999999995,
+      "balance" : 310.53707199999997,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -4171,7 +4171,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1636.995054945055,
+      "balance" : 1637.035054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -4274,7 +4274,7 @@
     "email" : "Marcus_Reed@hushmail.us",
     "accounts" : [ {
       "IBAN" : "RO33POOB9999273999620457",
-      "balance" : 2700.5,
+      "balance" : 2700.562375,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {

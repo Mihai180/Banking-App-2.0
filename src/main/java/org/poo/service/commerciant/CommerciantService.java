@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public final class CommerciantService {
-    private Map<String, Commerciant> commerciantsByName = new HashMap<>();
+    private static Map<String, Commerciant> commerciantsByName = new HashMap<>();
 
     /**
      *
@@ -28,7 +28,7 @@ public final class CommerciantService {
      * @param name
      * @return
      */
-    public Commerciant getCommerciantByName(final String name) {
+    public static Commerciant getCommerciantByName(final String name) {
         return commerciantsByName.get(name);
     }
 

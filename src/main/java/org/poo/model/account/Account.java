@@ -17,6 +17,11 @@ public abstract class Account {
     protected User owner;
     protected Double minimumBalance;
     protected ArrayList<Card> cards;
+    protected double totalSpent;
+    protected double totalSpentOnFood;
+    protected double totalSpentOnClothes;
+    protected double totalSpentOnTech;
+    protected int numOfTransactions;
 
     /**
      * Constructorul inițializează contul cu IBAN, proprietar și monedă.
@@ -31,6 +36,11 @@ public abstract class Account {
         this.minimumBalance = null;
         this.cards = new ArrayList<>();
         this.balance = 0.0;
+        this.totalSpent = 0.0;
+        this.numOfTransactions = 0;
+        this.totalSpentOnClothes = 0.0;
+        this.totalSpentOnFood = 0.0;
+        this.totalSpentOnTech = 0.0;
     }
 
     /**
@@ -82,6 +92,46 @@ public abstract class Account {
         return cards;
     }
 
+    public double getTotalSpent() {
+        return totalSpent;
+    }
+
+    public int getNumOfTransactions() {
+        return numOfTransactions;
+    }
+
+    public double getTotalSpentOnClothes() {
+        return totalSpentOnClothes;
+    }
+
+    public double getTotalSpentOnFood() {
+        return totalSpentOnFood;
+    }
+
+    public double getTotalSpentOnTech() {
+        return totalSpentOnTech;
+    }
+
+    public void increaseNumberOfTransactions() {
+        this.numOfTransactions++;
+    }
+
+    public void spendOnFood(double amount) {
+        this.totalSpentOnFood += amount;
+    }
+
+    public void spendOnClothes(double amount) {
+        this.totalSpentOnClothes += amount;
+    }
+
+    public void spendOnTech(double amount) {
+        this.totalSpentOnTech += amount;
+    }
+
+    public void spend(double amount) {
+        this.totalSpent += amount;
+    }
+
     /**
      * Setează soldul minim permis al contului
      * @param minimumBalance este noua balanță minimă a contului
@@ -109,6 +159,7 @@ public abstract class Account {
             return "Insufficient funds";
         }
         this.balance -= amount;
+        this.totalSpent += amount;
         //this.balance = Math.round(this.balance * 10.0) / 10.0;
         return "Success";
     }

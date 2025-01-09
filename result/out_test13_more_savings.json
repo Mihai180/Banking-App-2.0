@@ -1481,7 +1481,7 @@
     "email" : "Kevin_Edwards@outlook.us",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 181.0,
+      "balance" : 180.42000000000002,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ ]
@@ -1696,7 +1696,7 @@
     "email" : "Kevin_Edwards@outlook.us",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 7391.0,
+      "balance" : 7390.42,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ ]
@@ -1976,7 +1976,7 @@
     "email" : "Kevin_Edwards@outlook.us",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 7982.0,
+      "balance" : 7981.42,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ ]

@@ -1,5 +1,7 @@
 package org.poo.model.plan;
 
+import org.poo.service.ExchangeService;
+
 public class SilverPlan implements PlanStrategy {
     @Override
     public double calculateCommission(double amount) {
@@ -21,5 +23,9 @@ public class SilverPlan implements PlanStrategy {
             return 250;
         }
         return -1;
+    }
+
+    public String getPlan() {
+        return "Silver";
     }
 }
