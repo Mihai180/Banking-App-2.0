@@ -96,7 +96,7 @@ public abstract class Account {
      */
     public void deposit(final Double amount) {
         this.balance += amount;
-        this.balance = Math.round(this.balance * 100.0) / 100.0;
+        //this.balance = Math.round(this.balance * 100.0) / 100.0;
     }
 
     /**
@@ -109,7 +109,7 @@ public abstract class Account {
             return "Insufficient funds";
         }
         this.balance -= amount;
-        this.balance = Math.round(this.balance * 10.0) / 10.0;
+        //this.balance = Math.round(this.balance * 10.0) / 10.0;
         return "Success";
     }
 

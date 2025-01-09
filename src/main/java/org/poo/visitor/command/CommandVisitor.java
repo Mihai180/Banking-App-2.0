@@ -118,4 +118,6 @@ public interface CommandVisitor {
     void visit(AddInterestCommand command);
 
     void visit(WithdrawSavingsCommand command);
+
+    void visit(UpgradePlanCommand command);
 }

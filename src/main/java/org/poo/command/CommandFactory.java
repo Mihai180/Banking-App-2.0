@@ -71,6 +71,9 @@ public final class CommandFactory {
             case "withdrawSavings":
                 return new WithdrawSavingsCommand(input.getCommand(), input.getAccount(),
                         input.getAmount(), input.getCurrency(), input.getTimestamp());
+            case "upgradePlan":
+                return new UpgradePlanCommand(input.getCommand(), input.getNewPlanType(),
+                        input.getAccount(), input.getTimestamp());
             default:
                 return new NotImplementedCommand(commandName, input.getTimestamp());
         }

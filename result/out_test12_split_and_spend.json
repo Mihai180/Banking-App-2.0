@@ -343,8 +343,6 @@
 }, {
   "result" : "Command 'acceptSplitPayment' at timestamp 160 is not implemented yet."
 }, {
-  "result" : "Command 'upgradePlan' at timestamp 162 is not implemented yet."
-}, {
   "result" : "Command 'acceptSplitPayment' at timestamp 164 is not implemented yet."
 }, {
   "result" : "Command 'cashWithdrawal' at timestamp 165 is not implemented yet."
@@ -352,8 +350,6 @@
   "result" : "Command 'acceptSplitPayment' at timestamp 166 is not implemented yet."
 }, {
   "result" : "Command 'acceptSplitPayment' at timestamp 168 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 169 is not implemented yet."
 }, {
   "result" : "Command 'cashWithdrawal' at timestamp 170 is not implemented yet."
 }, {
@@ -373,17 +369,11 @@
 }, {
   "result" : "Command 'acceptSplitPayment' at timestamp 185 is not implemented yet."
 }, {
-  "result" : "Command 'upgradePlan' at timestamp 186 is not implemented yet."
-}, {
   "result" : "Command 'acceptSplitPayment' at timestamp 187 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 189 is not implemented yet."
 }, {
   "result" : "Command 'acceptSplitPayment' at timestamp 190 is not implemented yet."
 }, {
   "result" : "Command 'acceptSplitPayment' at timestamp 192 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 193 is not implemented yet."
 }, {
   "result" : "Command 'acceptSplitPayment' at timestamp 194 is not implemented yet."
 }, {
@@ -510,9 +500,14 @@
     "involvedAccounts" : [ "RO79POOB3616857825600958", "RO76POOB4035116042454483", "RO58POOB7344468893732422", "RO58POOB2721178218599590", "RO90POOB5450777208072365", "RO37POOB7013767509830666" ],
     "error" : "Account RO58POOB2721178218599590 has insufficient funds for a split payment."
   }, {
+    "timestamp" : 169,
+    "description" : "Upgrade plan",
+    "accountIBAN" : "RO58POOB7344468893732422",
+    "newPlanType" : "silver"
+  }, {
     "timestamp" : 177,
     "description" : "Card payment",
-    "amount" : 132.44,
+    "amount" : 132.44444444444446,
     "commerciant" : "Zara"
   }, {
     "timestamp" : 200,
@@ -524,7 +519,7 @@
   }, {
     "timestamp" : 211,
     "description" : "Card payment",
-    "amount" : 235.56,
+    "amount" : 235.55555555555554,
     "commerciant" : "Apple"
   } ],
   "timestamp" : 212
@@ -575,9 +570,14 @@
     "involvedAccounts" : [ "RO79POOB3616857825600958", "RO76POOB4035116042454483", "RO58POOB7344468893732422", "RO58POOB2721178218599590", "RO90POOB5450777208072365", "RO37POOB7013767509830666" ],
     "error" : "Account RO58POOB2721178218599590 has insufficient funds for a split payment."
   }, {
+    "timestamp" : 162,
+    "description" : "Upgrade plan",
+    "accountIBAN" : "RO37POOB7013767509830666",
+    "newPlanType" : "silver"
+  }, {
     "timestamp" : 163,
     "description" : "Card payment",
-    "amount" : 538.89,
+    "amount" : 538.8888888888889,
     "commerciant" : "Microsoft"
   }, {
     "timestamp" : 200,

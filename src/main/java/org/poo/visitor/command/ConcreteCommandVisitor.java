@@ -4,9 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.poo.command.*;
-import org.poo.exception.InsufficientFundsException;
-import org.poo.exception.NotClassicAccountException;
-import org.poo.exception.NotMinimumAgeRequired;
+import org.poo.exception.*;
 import org.poo.model.account.Account;
 import org.poo.model.card.Card;
 import org.poo.model.transaction.*;
@@ -159,9 +157,9 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
         double convertedAmount = exchangeService.convertCurrency(command.getCurrency(),
                 associatedAccount.getCurrency(), command.getAmount());
         // Formatarea sumei convertite pentru a evita erorile de precizie
-        DecimalFormat df = new DecimalFormat("#.#########");
-        double formattedAmount = Double.valueOf(df.format(convertedAmount));
-        convertedAmount = Math.round(convertedAmount * 100.0) / 100.0;
+        //DecimalFormat df = new DecimalFormat("#.#########");
+        //double formattedAmount = Double.valueOf(df.format(convertedAmount));
+        //convertedAmount = Math.round(convertedAmount * 100.0) / 100.0;
         // Crearea unei tranzacții de tip "CardPayment"
         Transaction transaction = new CardPaymentTransaction(command.getTimestamp(),
                 command.getCommerciant(), convertedAmount);
@@ -760,6 +758,24 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                 Transaction transaction = new InsufficientFundsTransaction(command.getTimestamp());
                 accountService.getAccountByIBAN(command.getAccount()).addTransaction(transaction);
             }
+        }
+    }
+
+    public void visit(final UpgradePlanCommand command) {
+        try {
+            accountService.upgradePlan(command.getAccount(), command.getNewPlanType());
+            Account account = accountService.getAccountByIBAN(command.getAccount());
+            Transaction transaction = new UpgradePlanTransaction(command.getAccount(),
+                    command.getNewPlanType(), command.getTimestamp());
+            account.addTransaction(transaction);
+        } catch (InsufficientFundsException exception) {
+
+        } catch (UnknownPlanException exception) {
+
+        } catch (org.poo.exception.AccountNotFoundException exception) {
+
+        } catch (PlanDowngradeException exception) {
+
         }
     }
 }

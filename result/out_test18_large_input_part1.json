@@ -1,24 +1,4 @@
 [ {
-  "result" : "Command 'upgradePlan' at timestamp 330 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 332 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 334 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 336 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 338 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 340 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 342 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 344 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 346 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 348 is not implemented yet."
-}, {
   "command" : "printUsers",
   "output" : [ {
     "firstName" : "Simion",
@@ -26,7 +6,7 @@
     "email" : "Simion_Mazilescu@icloud.ro",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 825.0,
+      "balance" : 725.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -40,7 +20,7 @@
     "email" : "Michael_Williams@protonmail.ca",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 190.0,
+      "balance" : 161.11111111111111,
       "currency" : "CAD",
       "type" : "classic",
       "cards" : [ {
@@ -54,7 +34,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 715.0,
+      "balance" : 681.6666666666666,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -68,7 +48,7 @@
     "email" : "Bernadette_Boyer@yandex.fr",
     "accounts" : [ {
       "IBAN" : "RO65POOB8944016386845896",
-      "balance" : 63.0,
+      "balance" : 43.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -82,7 +62,7 @@
     "email" : "Brandon_Wells@mail.com.ch",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 905.0,
+      "balance" : 880.5555555555555,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -96,7 +76,7 @@
     "email" : "Eusebiu_Ardelean@hushmail.ro",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 948.0,
+      "balance" : 598.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -110,7 +90,7 @@
     "email" : "Vinicio_Tapia@yandex.es",
     "accounts" : [ {
       "IBAN" : "RO37POOB7013767509830666",
-      "balance" : 952.0,
+      "balance" : 882.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -124,7 +104,7 @@
     "email" : "Alain_Picard@zoho.fr",
     "accounts" : [ {
       "IBAN" : "RO19POOB4981055641668812",
-      "balance" : 1003.0,
+      "balance" : 933.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -138,7 +118,7 @@
     "email" : "Nick_van_de_Veen-Verhoeven@zoho.nl",
     "accounts" : [ {
       "IBAN" : "RO30POOB9523423715747796",
-      "balance" : 195.0,
+      "balance" : 125.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -152,7 +132,7 @@
     "email" : "Konstantin_Birnbaum@aol.de",
     "accounts" : [ {
       "IBAN" : "RO79POOB3616857825600958",
-      "balance" : 288.0,
+      "balance" : 218.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -458,7 +438,7 @@
     "email" : "Simion_Mazilescu@icloud.ro",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 1019.0,
+      "balance" : 919.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -472,7 +452,7 @@
     "email" : "Michael_Williams@protonmail.ca",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 190.0,
+      "balance" : 161.11111111111111,
       "currency" : "CAD",
       "type" : "classic",
       "cards" : [ {
@@ -486,7 +466,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2270.5,
+      "balance" : 2237.1666666666665,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -500,7 +480,7 @@
     "email" : "Bernadette_Boyer@yandex.fr",
     "accounts" : [ {
       "IBAN" : "RO65POOB8944016386845896",
-      "balance" : 63.0,
+      "balance" : 43.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -520,7 +500,7 @@
     "email" : "Brandon_Wells@mail.com.ch",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 905.0,
+      "balance" : 880.5555555555555,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -534,7 +514,7 @@
     "email" : "Eusebiu_Ardelean@hushmail.ro",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 948.0,
+      "balance" : 598.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -548,7 +528,7 @@
     "email" : "Vinicio_Tapia@yandex.es",
     "accounts" : [ {
       "IBAN" : "RO37POOB7013767509830666",
-      "balance" : 952.0,
+      "balance" : 882.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -562,7 +542,7 @@
     "email" : "Alain_Picard@zoho.fr",
     "accounts" : [ {
       "IBAN" : "RO19POOB4981055641668812",
-      "balance" : 1003.0,
+      "balance" : 933.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -576,7 +556,7 @@
     "email" : "Nick_van_de_Veen-Verhoeven@zoho.nl",
     "accounts" : [ {
       "IBAN" : "RO30POOB9523423715747796",
-      "balance" : 2203.0,
+      "balance" : 2133.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -590,7 +570,7 @@
     "email" : "Konstantin_Birnbaum@aol.de",
     "accounts" : [ {
       "IBAN" : "RO79POOB3616857825600958",
-      "balance" : 288.0,
+      "balance" : 218.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -646,7 +626,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1637.0,
+      "balance" : 1636.995054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -688,7 +668,7 @@
     "email" : "Donna_Zavala@hotmail.us",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 3337.0,
+      "balance" : 3336.967142857143,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -730,7 +710,7 @@
     "email" : "Fabrizio_Rubbia@protonmail.it",
     "accounts" : [ {
       "IBAN" : "RO38POOB0964823730995794",
-      "balance" : 1181.0,
+      "balance" : 1180.955,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -787,7 +767,7 @@
     "email" : "Simion_Mazilescu@icloud.ro",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 1019.0,
+      "balance" : 919.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -801,7 +781,7 @@
     "email" : "Michael_Williams@protonmail.ca",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 190.0,
+      "balance" : 161.11111111111111,
       "currency" : "CAD",
       "type" : "classic",
       "cards" : [ {
@@ -815,7 +795,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2270.5,
+      "balance" : 2237.1666666666665,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -829,7 +809,7 @@
     "email" : "Bernadette_Boyer@yandex.fr",
     "accounts" : [ {
       "IBAN" : "RO65POOB8944016386845896",
-      "balance" : 63.0,
+      "balance" : 43.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -852,7 +832,7 @@
     "email" : "Brandon_Wells@mail.com.ch",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 905.0,
+      "balance" : 880.5555555555555,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -866,7 +846,7 @@
     "email" : "Eusebiu_Ardelean@hushmail.ro",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 948.0,
+      "balance" : 598.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -880,7 +860,7 @@
     "email" : "Vinicio_Tapia@yandex.es",
     "accounts" : [ {
       "IBAN" : "RO37POOB7013767509830666",
-      "balance" : 952.0,
+      "balance" : 882.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -894,7 +874,7 @@
     "email" : "Alain_Picard@zoho.fr",
     "accounts" : [ {
       "IBAN" : "RO19POOB4981055641668812",
-      "balance" : 1003.0,
+      "balance" : 933.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -908,7 +888,7 @@
     "email" : "Nick_van_de_Veen-Verhoeven@zoho.nl",
     "accounts" : [ {
       "IBAN" : "RO30POOB9523423715747796",
-      "balance" : 2203.0,
+      "balance" : 2133.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -922,7 +902,7 @@
     "email" : "Konstantin_Birnbaum@aol.de",
     "accounts" : [ {
       "IBAN" : "RO79POOB3616857825600958",
-      "balance" : 288.0,
+      "balance" : 218.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -978,7 +958,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1637.0,
+      "balance" : 1636.995054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -1020,7 +1000,7 @@
     "email" : "Donna_Zavala@hotmail.us",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 3337.0,
+      "balance" : 3336.967142857143,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -1062,7 +1042,7 @@
     "email" : "Fabrizio_Rubbia@protonmail.it",
     "accounts" : [ {
       "IBAN" : "RO38POOB0964823730995794",
-      "balance" : 1181.0,
+      "balance" : 1180.955,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1094,7 +1074,7 @@
     "email" : "Simion_Mazilescu@icloud.ro",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 1019.0,
+      "balance" : 919.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -1108,7 +1088,7 @@
     "email" : "Michael_Williams@protonmail.ca",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 190.0,
+      "balance" : 161.11111111111111,
       "currency" : "CAD",
       "type" : "classic",
       "cards" : [ {
@@ -1122,7 +1102,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2270.5,
+      "balance" : 2237.1666666666665,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -1136,7 +1116,7 @@
     "email" : "Bernadette_Boyer@yandex.fr",
     "accounts" : [ {
       "IBAN" : "RO65POOB8944016386845896",
-      "balance" : 63.0,
+      "balance" : 43.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1159,7 +1139,7 @@
     "email" : "Brandon_Wells@mail.com.ch",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 905.0,
+      "balance" : 880.5555555555555,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -1173,7 +1153,7 @@
     "email" : "Eusebiu_Ardelean@hushmail.ro",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 948.0,
+      "balance" : 598.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -1187,7 +1167,7 @@
     "email" : "Vinicio_Tapia@yandex.es",
     "accounts" : [ {
       "IBAN" : "RO37POOB7013767509830666",
-      "balance" : 952.0,
+      "balance" : 882.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1201,7 +1181,7 @@
     "email" : "Alain_Picard@zoho.fr",
     "accounts" : [ {
       "IBAN" : "RO19POOB4981055641668812",
-      "balance" : 1003.0,
+      "balance" : 933.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1215,7 +1195,7 @@
     "email" : "Nick_van_de_Veen-Verhoeven@zoho.nl",
     "accounts" : [ {
       "IBAN" : "RO30POOB9523423715747796",
-      "balance" : 2203.0,
+      "balance" : 2133.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1229,7 +1209,7 @@
     "email" : "Konstantin_Birnbaum@aol.de",
     "accounts" : [ {
       "IBAN" : "RO79POOB3616857825600958",
-      "balance" : 288.0,
+      "balance" : 218.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1285,7 +1265,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1637.0,
+      "balance" : 1636.995054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -1327,7 +1307,7 @@
     "email" : "Donna_Zavala@hotmail.us",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 3337.0,
+      "balance" : 3336.967142857143,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -1369,7 +1349,7 @@
     "email" : "Fabrizio_Rubbia@protonmail.it",
     "accounts" : [ {
       "IBAN" : "RO38POOB0964823730995794",
-      "balance" : 1181.0,
+      "balance" : 1180.955,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1410,7 +1390,7 @@
     "email" : "Simion_Mazilescu@icloud.ro",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 1019.0,
+      "balance" : 919.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -1424,7 +1404,7 @@
     "email" : "Michael_Williams@protonmail.ca",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 190.0,
+      "balance" : 161.11111111111111,
       "currency" : "CAD",
       "type" : "classic",
       "cards" : [ {
@@ -1438,7 +1418,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2270.5,
+      "balance" : 2237.1666666666665,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -1452,7 +1432,7 @@
     "email" : "Bernadette_Boyer@yandex.fr",
     "accounts" : [ {
       "IBAN" : "RO65POOB8944016386845896",
-      "balance" : 63.0,
+      "balance" : 43.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1475,7 +1455,7 @@
     "email" : "Brandon_Wells@mail.com.ch",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 905.0,
+      "balance" : 880.5555555555555,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -1489,7 +1469,7 @@
     "email" : "Eusebiu_Ardelean@hushmail.ro",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 948.0,
+      "balance" : 598.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -1503,7 +1483,7 @@
     "email" : "Vinicio_Tapia@yandex.es",
     "accounts" : [ {
       "IBAN" : "RO37POOB7013767509830666",
-      "balance" : 952.0,
+      "balance" : 882.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1517,7 +1497,7 @@
     "email" : "Alain_Picard@zoho.fr",
     "accounts" : [ {
       "IBAN" : "RO19POOB4981055641668812",
-      "balance" : 1003.0,
+      "balance" : 933.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1531,7 +1511,7 @@
     "email" : "Nick_van_de_Veen-Verhoeven@zoho.nl",
     "accounts" : [ {
       "IBAN" : "RO30POOB9523423715747796",
-      "balance" : 2203.0,
+      "balance" : 2133.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1545,7 +1525,7 @@
     "email" : "Konstantin_Birnbaum@aol.de",
     "accounts" : [ {
       "IBAN" : "RO79POOB3616857825600958",
-      "balance" : 288.0,
+      "balance" : 218.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1601,7 +1581,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1637.0,
+      "balance" : 1636.995054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -1643,7 +1623,7 @@
     "email" : "Donna_Zavala@hotmail.us",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 3337.0,
+      "balance" : 3336.967142857143,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -1685,7 +1665,7 @@
     "email" : "Fabrizio_Rubbia@protonmail.it",
     "accounts" : [ {
       "IBAN" : "RO38POOB0964823730995794",
-      "balance" : 1181.0,
+      "balance" : 1180.955,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1735,7 +1715,7 @@
     "email" : "Simion_Mazilescu@icloud.ro",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 1019.0,
+      "balance" : 919.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -1749,7 +1729,7 @@
     "email" : "Michael_Williams@protonmail.ca",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 190.0,
+      "balance" : 161.11111111111111,
       "currency" : "CAD",
       "type" : "classic",
       "cards" : [ {
@@ -1763,7 +1743,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2270.5,
+      "balance" : 2237.1666666666665,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -1777,7 +1757,7 @@
     "email" : "Bernadette_Boyer@yandex.fr",
     "accounts" : [ {
       "IBAN" : "RO65POOB8944016386845896",
-      "balance" : 63.0,
+      "balance" : 43.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1800,7 +1780,7 @@
     "email" : "Brandon_Wells@mail.com.ch",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 905.0,
+      "balance" : 880.5555555555555,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -1814,7 +1794,7 @@
     "email" : "Eusebiu_Ardelean@hushmail.ro",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 948.0,
+      "balance" : 598.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -1828,7 +1808,7 @@
     "email" : "Vinicio_Tapia@yandex.es",
     "accounts" : [ {
       "IBAN" : "RO37POOB7013767509830666",
-      "balance" : 952.0,
+      "balance" : 882.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1842,7 +1822,7 @@
     "email" : "Alain_Picard@zoho.fr",
     "accounts" : [ {
       "IBAN" : "RO19POOB4981055641668812",
-      "balance" : 1003.0,
+      "balance" : 933.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1856,7 +1836,7 @@
     "email" : "Nick_van_de_Veen-Verhoeven@zoho.nl",
     "accounts" : [ {
       "IBAN" : "RO30POOB9523423715747796",
-      "balance" : 2203.0,
+      "balance" : 2133.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1870,7 +1850,7 @@
     "email" : "Konstantin_Birnbaum@aol.de",
     "accounts" : [ {
       "IBAN" : "RO79POOB3616857825600958",
-      "balance" : 288.0,
+      "balance" : 218.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1926,7 +1906,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1637.0,
+      "balance" : 1636.995054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -1968,7 +1948,7 @@
     "email" : "Donna_Zavala@hotmail.us",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 3337.0,
+      "balance" : 3336.967142857143,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -2010,7 +1990,7 @@
     "email" : "Fabrizio_Rubbia@protonmail.it",
     "accounts" : [ {
       "IBAN" : "RO38POOB0964823730995794",
-      "balance" : 1181.0,
+      "balance" : 1180.955,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2069,7 +2049,7 @@
     "email" : "Simion_Mazilescu@icloud.ro",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 1019.0,
+      "balance" : 919.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -2083,7 +2063,7 @@
     "email" : "Michael_Williams@protonmail.ca",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 190.0,
+      "balance" : 161.11111111111111,
       "currency" : "CAD",
       "type" : "classic",
       "cards" : [ {
@@ -2097,7 +2077,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2270.5,
+      "balance" : 2237.1666666666665,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -2111,7 +2091,7 @@
     "email" : "Bernadette_Boyer@yandex.fr",
     "accounts" : [ {
       "IBAN" : "RO65POOB8944016386845896",
-      "balance" : 63.0,
+      "balance" : 43.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2134,7 +2114,7 @@
     "email" : "Brandon_Wells@mail.com.ch",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 905.0,
+      "balance" : 880.5555555555555,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -2148,7 +2128,7 @@
     "email" : "Eusebiu_Ardelean@hushmail.ro",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 948.0,
+      "balance" : 598.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -2162,7 +2142,7 @@
     "email" : "Vinicio_Tapia@yandex.es",
     "accounts" : [ {
       "IBAN" : "RO37POOB7013767509830666",
-      "balance" : 952.0,
+      "balance" : 882.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2176,7 +2156,7 @@
     "email" : "Alain_Picard@zoho.fr",
     "accounts" : [ {
       "IBAN" : "RO19POOB4981055641668812",
-      "balance" : 1003.0,
+      "balance" : 933.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2190,7 +2170,7 @@
     "email" : "Nick_van_de_Veen-Verhoeven@zoho.nl",
     "accounts" : [ {
       "IBAN" : "RO30POOB9523423715747796",
-      "balance" : 2203.0,
+      "balance" : 2133.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2204,7 +2184,7 @@
     "email" : "Konstantin_Birnbaum@aol.de",
     "accounts" : [ {
       "IBAN" : "RO79POOB3616857825600958",
-      "balance" : 288.0,
+      "balance" : 218.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2260,7 +2240,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1637.0,
+      "balance" : 1636.995054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -2302,7 +2282,7 @@
     "email" : "Donna_Zavala@hotmail.us",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 3337.0,
+      "balance" : 3336.967142857143,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -2344,7 +2324,7 @@
     "email" : "Fabrizio_Rubbia@protonmail.it",
     "accounts" : [ {
       "IBAN" : "RO38POOB0964823730995794",
-      "balance" : 1181.0,
+      "balance" : 1180.955,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2412,7 +2392,7 @@
     "email" : "Simion_Mazilescu@icloud.ro",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 1019.0,
+      "balance" : 919.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -2426,7 +2406,7 @@
     "email" : "Michael_Williams@protonmail.ca",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 190.0,
+      "balance" : 161.11111111111111,
       "currency" : "CAD",
       "type" : "classic",
       "cards" : [ {
@@ -2440,7 +2420,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2270.5,
+      "balance" : 2237.1666666666665,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -2454,7 +2434,7 @@
     "email" : "Bernadette_Boyer@yandex.fr",
     "accounts" : [ {
       "IBAN" : "RO65POOB8944016386845896",
-      "balance" : 63.0,
+      "balance" : 43.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2477,7 +2457,7 @@
     "email" : "Brandon_Wells@mail.com.ch",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 905.0,
+      "balance" : 880.5555555555555,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -2491,7 +2471,7 @@
     "email" : "Eusebiu_Ardelean@hushmail.ro",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 948.0,
+      "balance" : 598.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -2505,7 +2485,7 @@
     "email" : "Vinicio_Tapia@yandex.es",
     "accounts" : [ {
       "IBAN" : "RO37POOB7013767509830666",
-      "balance" : 952.0,
+      "balance" : 882.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2519,7 +2499,7 @@
     "email" : "Alain_Picard@zoho.fr",
     "accounts" : [ {
       "IBAN" : "RO19POOB4981055641668812",
-      "balance" : 1003.0,
+      "balance" : 933.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2533,7 +2513,7 @@
     "email" : "Nick_van_de_Veen-Verhoeven@zoho.nl",
     "accounts" : [ {
       "IBAN" : "RO30POOB9523423715747796",
-      "balance" : 2203.0,
+      "balance" : 2133.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2547,7 +2527,7 @@
     "email" : "Konstantin_Birnbaum@aol.de",
     "accounts" : [ {
       "IBAN" : "RO79POOB3616857825600958",
-      "balance" : 288.0,
+      "balance" : 218.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2603,7 +2583,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1637.0,
+      "balance" : 1636.995054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -2645,7 +2625,7 @@
     "email" : "Donna_Zavala@hotmail.us",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 3337.0,
+      "balance" : 3336.967142857143,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -2687,7 +2667,7 @@
     "email" : "Fabrizio_Rubbia@protonmail.it",
     "accounts" : [ {
       "IBAN" : "RO38POOB0964823730995794",
-      "balance" : 1181.0,
+      "balance" : 1180.955,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2779,7 +2759,7 @@
     "email" : "Simion_Mazilescu@icloud.ro",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 1122.0,
+      "balance" : 1022.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -2793,7 +2773,7 @@
     "email" : "Michael_Williams@protonmail.ca",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 267.1,
+      "balance" : 254.11111111111111,
       "currency" : "CAD",
       "type" : "classic",
       "cards" : [ {
@@ -2807,7 +2787,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2385.83,
+      "balance" : 2352.5,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -2816,7 +2796,7 @@
       } ]
     }, {
       "IBAN" : "RO45POOB0388148432759748",
-      "balance" : 348.1,
+      "balance" : 348.11,
       "currency" : "AUD",
       "type" : "savings",
       "cards" : [ ]
@@ -2827,7 +2807,7 @@
     "email" : "Bernadette_Boyer@yandex.fr",
     "accounts" : [ {
       "IBAN" : "RO65POOB8944016386845896",
-      "balance" : 109.38,
+      "balance" : 43.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2850,7 +2830,7 @@
     "email" : "Brandon_Wells@mail.com.ch",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 944.36,
+      "balance" : 919.9111111111112,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -2864,7 +2844,7 @@
     "email" : "Eusebiu_Ardelean@hushmail.ro",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 407.0,
+      "balance" : 234.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -2873,7 +2853,7 @@
       } ]
     }, {
       "IBAN" : "RO98POOB7190609943699593",
-      "balance" : 970.9,
+      "balance" : 970.85,
       "currency" : "RON",
       "type" : "savings",
       "cards" : [ ]
@@ -2884,7 +2864,7 @@
     "email" : "Vinicio_Tapia@yandex.es",
     "accounts" : [ {
       "IBAN" : "RO37POOB7013767509830666",
-      "balance" : 1007.6,
+      "balance" : 937.6,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2893,7 +2873,7 @@
       } ]
     }, {
       "IBAN" : "RO52POOB6271107854467609",
-      "balance" : 1042.2,
+      "balance" : 951.2,
       "currency" : "EUR",
       "type" : "savings",
       "cards" : [ ]
@@ -2904,7 +2884,7 @@
     "email" : "Alain_Picard@zoho.fr",
     "accounts" : [ {
       "IBAN" : "RO19POOB4981055641668812",
-      "balance" : 1003.0,
+      "balance" : 933.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2918,7 +2898,7 @@
     "email" : "Nick_van_de_Veen-Verhoeven@zoho.nl",
     "accounts" : [ {
       "IBAN" : "RO30POOB9523423715747796",
-      "balance" : 2203.0,
+      "balance" : 2133.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2938,7 +2918,7 @@
     "email" : "Konstantin_Birnbaum@aol.de",
     "accounts" : [ {
       "IBAN" : "RO79POOB3616857825600958",
-      "balance" : 595.0,
+      "balance" : 616.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2952,7 +2932,7 @@
     "email" : "Anthony_Johnson_MD@mail.com.us",
     "accounts" : [ {
       "IBAN" : "RO00POOB5687892910835215",
-      "balance" : 729.54,
+      "balance" : 729.5384615384615,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -2966,7 +2946,7 @@
     "email" : "Melanie_Bochud@gmx.ch",
     "accounts" : [ {
       "IBAN" : "RO96POOB6738272785416988",
-      "balance" : 1060.46,
+      "balance" : 1060.4615384615386,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -2994,7 +2974,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1637.0,
+      "balance" : 1636.995054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -3022,7 +3002,7 @@
     "email" : "Amanda_Christie@outlook.nz",
     "accounts" : [ {
       "IBAN" : "RO32POOB0130532963818359",
-      "balance" : 920.04,
+      "balance" : 920.0444444444445,
       "currency" : "NZD",
       "type" : "classic",
       "cards" : [ {
@@ -3036,7 +3016,7 @@
     "email" : "Donna_Zavala@hotmail.us",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 3548.11,
+      "balance" : 3548.078253968254,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -3059,7 +3039,7 @@
       } ]
     }, {
       "IBAN" : "RO46POOB9051076190383154",
-      "balance" : 1035.18,
+      "balance" : 1035.1822222222222,
       "currency" : "NZD",
       "type" : "savings",
       "cards" : [ ]
@@ -3084,7 +3064,7 @@
     "email" : "Fabrizio_Rubbia@protonmail.it",
     "accounts" : [ {
       "IBAN" : "RO38POOB0964823730995794",
-      "balance" : 1181.0,
+      "balance" : 1180.955,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -3160,7 +3140,7 @@
     "email" : "Simion_Mazilescu@icloud.ro",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 1122.0,
+      "balance" : 1022.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -3174,7 +3154,7 @@
     "email" : "Michael_Williams@protonmail.ca",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 267.1,
+      "balance" : 254.11111111111111,
       "currency" : "CAD",
       "type" : "classic",
       "cards" : [ {
@@ -3188,7 +3168,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2385.83,
+      "balance" : 2352.5,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -3197,7 +3177,7 @@
       } ]
     }, {
       "IBAN" : "RO45POOB0388148432759748",
-      "balance" : 348.1,
+      "balance" : 348.11,
       "currency" : "AUD",
       "type" : "savings",
       "cards" : [ ]
@@ -3208,7 +3188,7 @@
     "email" : "Bernadette_Boyer@yandex.fr",
     "accounts" : [ {
       "IBAN" : "RO65POOB8944016386845896",
-      "balance" : 109.38,
+      "balance" : 43.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -3231,7 +3211,7 @@
     "email" : "Brandon_Wells@mail.com.ch",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 944.36,
+      "balance" : 919.9111111111112,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -3245,7 +3225,7 @@
     "email" : "Eusebiu_Ardelean@hushmail.ro",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 407.0,
+      "balance" : 234.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -3254,7 +3234,7 @@
       } ]
     }, {
       "IBAN" : "RO98POOB7190609943699593",
-      "balance" : 970.9,
+      "balance" : 970.85,
       "currency" : "RON",
       "type" : "savings",
       "cards" : [ ]
@@ -3265,7 +3245,7 @@
     "email" : "Vinicio_Tapia@yandex.es",
     "accounts" : [ {
       "IBAN" : "RO37POOB7013767509830666",
-      "balance" : 1007.6,
+      "balance" : 937.6,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -3274,7 +3254,7 @@
       } ]
     }, {
       "IBAN" : "RO52POOB6271107854467609",
-      "balance" : 1042.2,
+      "balance" : 951.2,
       "currency" : "EUR",
       "type" : "savings",
       "cards" : [ ]
@@ -3285,7 +3265,7 @@
     "email" : "Alain_Picard@zoho.fr",
     "accounts" : [ {
       "IBAN" : "RO19POOB4981055641668812",
-      "balance" : 1003.0,
+      "balance" : 933.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -3299,7 +3279,7 @@
     "email" : "Nick_van_de_Veen-Verhoeven@zoho.nl",
     "accounts" : [ {
       "IBAN" : "RO30POOB9523423715747796",
-      "balance" : 2203.0,
+      "balance" : 2133.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -3319,7 +3299,7 @@
     "email" : "Konstantin_Birnbaum@aol.de",
     "accounts" : [ {
       "IBAN" : "RO79POOB3616857825600958",
-      "balance" : 595.0,
+      "balance" : 616.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -3333,7 +3313,7 @@
     "email" : "Anthony_Johnson_MD@mail.com.us",
     "accounts" : [ {
       "IBAN" : "RO00POOB5687892910835215",
-      "balance" : 729.54,
+      "balance" : 729.5384615384615,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -3347,7 +3327,7 @@
     "email" : "Melanie_Bochud@gmx.ch",
     "accounts" : [ {
       "IBAN" : "RO96POOB6738272785416988",
-      "balance" : 1060.46,
+      "balance" : 1060.4615384615386,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -3375,7 +3355,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1637.0,
+      "balance" : 1636.995054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -3403,7 +3383,7 @@
     "email" : "Amanda_Christie@outlook.nz",
     "accounts" : [ {
       "IBAN" : "RO32POOB0130532963818359",
-      "balance" : 920.04,
+      "balance" : 920.0444444444445,
       "currency" : "NZD",
       "type" : "classic",
       "cards" : [ {
@@ -3417,7 +3397,7 @@
     "email" : "Donna_Zavala@hotmail.us",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 3548.11,
+      "balance" : 3548.078253968254,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -3440,7 +3420,7 @@
       } ]
     }, {
       "IBAN" : "RO46POOB9051076190383154",
-      "balance" : 1035.18,
+      "balance" : 1035.1822222222222,
       "currency" : "NZD",
       "type" : "savings",
       "cards" : [ ]
@@ -3465,7 +3445,7 @@
     "email" : "Fabrizio_Rubbia@protonmail.it",
     "accounts" : [ {
       "IBAN" : "RO38POOB0964823730995794",
-      "balance" : 1181.0,
+      "balance" : 1180.955,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -3572,7 +3552,7 @@
     "email" : "Simion_Mazilescu@icloud.ro",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 1122.0,
+      "balance" : 1022.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -3586,7 +3566,7 @@
     "email" : "Michael_Williams@protonmail.ca",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 267.1,
+      "balance" : 254.11111111111111,
       "currency" : "CAD",
       "type" : "classic",
       "cards" : [ {
@@ -3600,7 +3580,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2385.83,
+      "balance" : 2352.5,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -3609,7 +3589,7 @@
       } ]
     }, {
       "IBAN" : "RO45POOB0388148432759748",
-      "balance" : 348.1,
+      "balance" : 348.11,
       "currency" : "AUD",
       "type" : "savings",
       "cards" : [ ]
@@ -3620,7 +3600,7 @@
     "email" : "Bernadette_Boyer@yandex.fr",
     "accounts" : [ {
       "IBAN" : "RO65POOB8944016386845896",
-      "balance" : 109.38,
+      "balance" : 43.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -3629,7 +3609,7 @@
       } ]
     }, {
       "IBAN" : "RO53POOB7122855990652257",
-      "balance" : 290.4,
+      "balance" : 290.44539999999995,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -3643,7 +3623,7 @@
     "email" : "Brandon_Wells@mail.com.ch",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 944.36,
+      "balance" : 919.9111111111112,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -3657,7 +3637,7 @@
     "email" : "Eusebiu_Ardelean@hushmail.ro",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 407.0,
+      "balance" : 234.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -3666,7 +3646,7 @@
       } ]
     }, {
       "IBAN" : "RO98POOB7190609943699593",
-      "balance" : 970.9,
+      "balance" : 970.85,
       "currency" : "RON",
       "type" : "savings",
       "cards" : [ ]
@@ -3677,7 +3657,7 @@
     "email" : "Vinicio_Tapia@yandex.es",
     "accounts" : [ {
       "IBAN" : "RO37POOB7013767509830666",
-      "balance" : 1007.6,
+      "balance" : 937.6,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -3686,7 +3666,7 @@
       } ]
     }, {
       "IBAN" : "RO52POOB6271107854467609",
-      "balance" : 1042.2,
+      "balance" : 951.2,
       "currency" : "EUR",
       "type" : "savings",
       "cards" : [ ]
@@ -3697,7 +3677,7 @@
     "email" : "Alain_Picard@zoho.fr",
     "accounts" : [ {
       "IBAN" : "RO19POOB4981055641668812",
-      "balance" : 1003.0,
+      "balance" : 933.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -3711,7 +3691,7 @@
     "email" : "Nick_van_de_Veen-Verhoeven@zoho.nl",
     "accounts" : [ {
       "IBAN" : "RO30POOB9523423715747796",
-      "balance" : 2203.0,
+      "balance" : 2133.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -3731,7 +3711,7 @@
     "email" : "Konstantin_Birnbaum@aol.de",
     "accounts" : [ {
       "IBAN" : "RO79POOB3616857825600958",
-      "balance" : 595.0,
+      "balance" : 616.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -3745,7 +3725,7 @@
     "email" : "Anthony_Johnson_MD@mail.com.us",
     "accounts" : [ {
       "IBAN" : "RO00POOB5687892910835215",
-      "balance" : 729.54,
+      "balance" : 729.5384615384615,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -3759,7 +3739,7 @@
     "email" : "Melanie_Bochud@gmx.ch",
     "accounts" : [ {
       "IBAN" : "RO96POOB6738272785416988",
-      "balance" : 1060.46,
+      "balance" : 1060.4615384615386,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -3787,7 +3767,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1637.0,
+      "balance" : 1636.995054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -3815,7 +3795,7 @@
     "email" : "Amanda_Christie@outlook.nz",
     "accounts" : [ {
       "IBAN" : "RO32POOB0130532963818359",
-      "balance" : 920.04,
+      "balance" : 920.0444444444445,
       "currency" : "NZD",
       "type" : "classic",
       "cards" : [ {
@@ -3829,7 +3809,7 @@
     "email" : "Donna_Zavala@hotmail.us",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 3548.11,
+      "balance" : 3548.078253968254,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -3852,7 +3832,7 @@
       } ]
     }, {
       "IBAN" : "RO46POOB9051076190383154",
-      "balance" : 1035.18,
+      "balance" : 1035.1822222222222,
       "currency" : "NZD",
       "type" : "savings",
       "cards" : [ ]
@@ -3886,7 +3866,7 @@
     "email" : "Fabrizio_Rubbia@protonmail.it",
     "accounts" : [ {
       "IBAN" : "RO38POOB0964823730995794",
-      "balance" : 1181.0,
+      "balance" : 1180.955,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -3958,7 +3938,7 @@
     "email" : "Simion_Mazilescu@icloud.ro",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 1122.0,
+      "balance" : 1022.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -3972,7 +3952,7 @@
     "email" : "Michael_Williams@protonmail.ca",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 267.1,
+      "balance" : 254.11111111111111,
       "currency" : "CAD",
       "type" : "classic",
       "cards" : [ {
@@ -3986,7 +3966,7 @@
     "email" : "April_Johnson@yahoo.au",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2385.83,
+      "balance" : 2352.5,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -3995,7 +3975,7 @@
       } ]
     }, {
       "IBAN" : "RO45POOB0388148432759748",
-      "balance" : 348.1,
+      "balance" : 348.11,
       "currency" : "AUD",
       "type" : "savings",
       "cards" : [ ]
@@ -4006,7 +3986,7 @@
     "email" : "Bernadette_Boyer@yandex.fr",
     "accounts" : [ {
       "IBAN" : "RO65POOB8944016386845896",
-      "balance" : 109.38,
+      "balance" : 43.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -4015,7 +3995,7 @@
       } ]
     }, {
       "IBAN" : "RO53POOB7122855990652257",
-      "balance" : 290.4,
+      "balance" : 290.44539999999995,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -4038,7 +4018,7 @@
     "email" : "Brandon_Wells@mail.com.ch",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 944.36,
+      "balance" : 919.9111111111112,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -4052,7 +4032,7 @@
     "email" : "Eusebiu_Ardelean@hushmail.ro",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 407.0,
+      "balance" : 234.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -4061,7 +4041,7 @@
       } ]
     }, {
       "IBAN" : "RO98POOB7190609943699593",
-      "balance" : 970.9,
+      "balance" : 970.85,
       "currency" : "RON",
       "type" : "savings",
       "cards" : [ ]
@@ -4072,7 +4052,7 @@
     "email" : "Vinicio_Tapia@yandex.es",
     "accounts" : [ {
       "IBAN" : "RO37POOB7013767509830666",
-      "balance" : 1007.6,
+      "balance" : 937.6,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -4081,7 +4061,7 @@
       } ]
     }, {
       "IBAN" : "RO52POOB6271107854467609",
-      "balance" : 1042.2,
+      "balance" : 951.2,
       "currency" : "EUR",
       "type" : "savings",
       "cards" : [ ]
@@ -4092,7 +4072,7 @@
     "email" : "Alain_Picard@zoho.fr",
     "accounts" : [ {
       "IBAN" : "RO19POOB4981055641668812",
-      "balance" : 1003.0,
+      "balance" : 933.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -4106,7 +4086,7 @@
     "email" : "Nick_van_de_Veen-Verhoeven@zoho.nl",
     "accounts" : [ {
       "IBAN" : "RO30POOB9523423715747796",
-      "balance" : 2203.0,
+      "balance" : 2133.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -4126,7 +4106,7 @@
     "email" : "Konstantin_Birnbaum@aol.de",
     "accounts" : [ {
       "IBAN" : "RO79POOB3616857825600958",
-      "balance" : 595.0,
+      "balance" : 616.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -4149,7 +4129,7 @@
     "email" : "Anthony_Johnson_MD@mail.com.us",
     "accounts" : [ {
       "IBAN" : "RO00POOB5687892910835215",
-      "balance" : 729.54,
+      "balance" : 729.5384615384615,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -4163,7 +4143,7 @@
     "email" : "Melanie_Bochud@gmx.ch",
     "accounts" : [ {
       "IBAN" : "RO96POOB6738272785416988",
-      "balance" : 1060.46,
+      "balance" : 1060.4615384615386,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -4191,7 +4171,7 @@
     "email" : "Richard_Kuhn@protonmail.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB9846198978826791",
-      "balance" : 1637.0,
+      "balance" : 1636.995054945055,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -4219,7 +4199,7 @@
     "email" : "Amanda_Christie@outlook.nz",
     "accounts" : [ {
       "IBAN" : "RO32POOB0130532963818359",
-      "balance" : 920.04,
+      "balance" : 920.0444444444445,
       "currency" : "NZD",
       "type" : "classic",
       "cards" : [ {
@@ -4233,7 +4213,7 @@
     "email" : "Donna_Zavala@hotmail.us",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 3548.11,
+      "balance" : 3548.078253968254,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -4274,7 +4254,7 @@
       } ]
     }, {
       "IBAN" : "RO46POOB9051076190383154",
-      "balance" : 1035.18,
+      "balance" : 1035.1822222222222,
       "currency" : "NZD",
       "type" : "savings",
       "cards" : [ ]
@@ -4317,7 +4297,7 @@
     "email" : "Fabrizio_Rubbia@protonmail.it",
     "accounts" : [ {
       "IBAN" : "RO38POOB0964823730995794",
-      "balance" : 1181.0,
+      "balance" : 1180.955,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {

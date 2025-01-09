@@ -1,6 +1,9 @@
 package org.poo.model.user;
 
 import org.poo.model.account.Account;
+import org.poo.model.plan.PlanStrategy;
+import org.poo.model.plan.StandardPlan;
+import org.poo.model.plan.StudentPlan;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -21,6 +24,7 @@ public final class User {
     private final String occupation;
     private final ArrayList<Account> accounts;
     private final Map<String, String> aliases;
+    private PlanStrategy currentPlan;
 
     public User(final String firstName, final String lastName, final String email,
                 final String birthDate, final String occupation) {
@@ -31,6 +35,11 @@ public final class User {
         this.occupation = occupation;
         this.accounts = new ArrayList<>();
         this.aliases = new HashMap<>();
+        if (occupation.equals("student")) {
+            this.currentPlan = new StudentPlan();
+        } else {
+            this.currentPlan = new StandardPlan();
+        }
     }
 
     public String getFirstName() {
@@ -59,6 +68,14 @@ public final class User {
 
     public String getOccupation() {
         return occupation;
+    }
+
+    public PlanStrategy getCurrentPlan() {
+        return currentPlan;
+    }
+
+    public void setCurrentPlan(final PlanStrategy currentPlan) {
+        this.currentPlan = currentPlan;
     }
 
     /**

@@ -4,6 +4,8 @@ import org.poo.exception.*;
 import org.poo.model.account.Account;
 import org.poo.model.account.ClassicAccount;
 import org.poo.model.account.SavingsAccount;
+import org.poo.model.plan.PlanFactory;
+import org.poo.model.plan.PlanStrategy;
 import org.poo.model.transaction.Transaction;
 import org.poo.model.user.User;
 import org.poo.utils.Utils;
@@ -327,16 +329,16 @@ public final class AccountService {
         User owner = account.getOwner();
         Account classicAccount = findClassicAccountByCurrency(owner, currency);
 
+        if (classicAccount == null) {
+            throw new NotClassicAccountException("You do not have a classic account.");
+        }
+
         if (!owner.isUserOldEnough()) {
             throw new NotMinimumAgeRequired("You don't have the minimum age required. " + classicAccount.getIban());
         }
 
         if (!account.getAccountType().equals("savings")) {
             throw new AccountTypeIsNotSavings("Account is not of type savings.");
-        }
-
-        if (classicAccount == null) {
-            throw new NotClassicAccountException("You do not have a classic account.");
         }
 
         double convertedAmount = exchangeService.convertCurrency(account.getCurrency(),
@@ -349,5 +351,44 @@ public final class AccountService {
         classicAccount.deposit(convertedAmount);
 
         return "Savings withdrawal to " + classicAccount.getIban();
+    }
+
+    public void upgradePlan(final String iban, final String NewPlanType) {
+        Account account = getAccountByIBAN(iban);
+        if (account == null) {
+            throw new AccountNotFoundException("Account not found with IBAN: " + iban);
+        }
+
+        User owner = account.getOwner();
+        if (owner == null) {
+            throw new UserNotFoundException("User not found");
+        }
+
+        PlanStrategy currentPlan = owner.getCurrentPlan();
+
+        if (currentPlan.equals(NewPlanType)) {
+            throw new SamePlanException("The user already has the " + NewPlanType + " plan.");
+        }
+        PlanStrategy requestedPlan = PlanFactory.getPlan(NewPlanType);
+
+        if (currentPlan.isDowngrade(NewPlanType)) {
+            throw new PlanDowngradeException("You cannot downgrade your plan.");
+        }
+
+        if (currentPlan.calculateUpgradeFee(NewPlanType) == -1) {
+            throw new UnknownPlanException("Unknown plan.");
+        }
+
+        double fee = currentPlan.calculateUpgradeFee(NewPlanType);
+        if (!account.getCurrency().equals("RON")) {
+            fee = exchangeService.convertCurrency("RON", account.getCurrency(), fee);
+        }
+
+        if (account.getBalance() < fee) {
+            throw new InsufficientFundsException("Insufficient funds");
+        }
+
+        account.withdraw(fee);
+        owner.setCurrentPlan(requestedPlan);
     }
 }

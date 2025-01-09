@@ -1,5 +1,6 @@
 package org.poo.visitor.transaction;
 
+import org.poo.command.UpgradePlanCommand;
 import org.poo.model.transaction.*;
 
 /**
@@ -97,4 +98,6 @@ public interface TransactionVisitor {
     void visit(NotMinimumAgeRequiredTransaction transaction);
 
     void visit(NotClassicAccountTransaction transaction);
+
+    void visit(UpgradePlanTransaction transaction);
 }

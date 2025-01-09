@@ -493,76 +493,6 @@
   } ],
   "timestamp" : 522
 }, {
-  "result" : "Command 'upgradePlan' at timestamp 524 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 526 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 528 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 530 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 532 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 534 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 536 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 538 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 540 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 542 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 544 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 546 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 548 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 550 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 552 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 554 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 556 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 558 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 560 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 562 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 564 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 566 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 568 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 570 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 572 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 574 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 576 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 578 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 580 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 582 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 584 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 586 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 588 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 590 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 592 is not implemented yet."
-}, {
   "command" : "printUsers",
   "output" : [ {
     "firstName" : "Jennifer",
@@ -598,7 +528,7 @@
     "email" : "Margaret_Gibbs@yandex.gb",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 18.0,
+      "balance" : 0.22222222222222143,
       "currency" : "GBP",
       "type" : "classic",
       "cards" : [ {
@@ -626,7 +556,7 @@
     "email" : "Zilmil_Kala@hushmail.in",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 1560.0,
+      "balance" : 4.444444444444571,
       "currency" : "INR",
       "type" : "classic",
       "cards" : [ {
@@ -654,7 +584,7 @@
     "email" : "Alexandra_Williams@gmail.gb",
     "accounts" : [ {
       "IBAN" : "RO37POOB7013767509830666",
-      "balance" : 18.0,
+      "balance" : 0.22222222222222143,
       "currency" : "GBP",
       "type" : "classic",
       "cards" : [ {
@@ -682,7 +612,7 @@
     "email" : "Emilio_Camiscione-Rugger@hushmail.it",
     "accounts" : [ {
       "IBAN" : "RO30POOB9523423715747796",
-      "balance" : 20.0,
+      "balance" : 0.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -696,7 +626,7 @@
     "email" : "Frank_Carey@gmail.gb",
     "accounts" : [ {
       "IBAN" : "RO79POOB3616857825600958",
-      "balance" : 18.0,
+      "balance" : 0.22222222222222143,
       "currency" : "GBP",
       "type" : "classic",
       "cards" : [ {
@@ -766,7 +696,7 @@
     "email" : "Nicodemo_del_Ripoll@gmail.es",
     "accounts" : [ {
       "IBAN" : "RO98POOB8412955460158769",
-      "balance" : 20.0,
+      "balance" : 0.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -808,7 +738,7 @@
     "email" : "Victor_Manuel_Baez_Anaya@gmx.es",
     "accounts" : [ {
       "IBAN" : "RO10POOB4354933866366881",
-      "balance" : 20.0,
+      "balance" : 0.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -836,7 +766,7 @@
     "email" : "Tracey_Kelly@icloud.nz",
     "accounts" : [ {
       "IBAN" : "RO38POOB0964823730995794",
-      "balance" : 36.0,
+      "balance" : 0.44444444444444287,
       "currency" : "NZD",
       "type" : "classic",
       "cards" : [ {
@@ -850,7 +780,7 @@
     "email" : "Octaviana_Popescu@gmail.ro",
     "accounts" : [ {
       "IBAN" : "RO53POOB7122855990652257",
-      "balance" : 100.0,
+      "balance" : 0.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -864,7 +794,7 @@
     "email" : "Loredana_Manole@zoho.ro",
     "accounts" : [ {
       "IBAN" : "RO71POOB1634969878734749",
-      "balance" : 100.0,
+      "balance" : 0.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -906,7 +836,7 @@
     "email" : "Mamen_Arana_Trillo@hushmail.es",
     "accounts" : [ {
       "IBAN" : "RO89POOB4455583483378897",
-      "balance" : 20.0,
+      "balance" : 0.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -920,7 +850,7 @@
     "email" : "Juan_Barer-Gehringer@mail.com.de",
     "accounts" : [ {
       "IBAN" : "RO36POOB6500477412147025",
-      "balance" : 20.0,
+      "balance" : 0.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -948,7 +878,7 @@
     "email" : "Gabino_de_Naranjo@icloud.es",
     "accounts" : [ {
       "IBAN" : "RO45POOB0388148432759748",
-      "balance" : 20.0,
+      "balance" : 0.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -962,7 +892,7 @@
     "email" : "Baljiwan_Pa@icloud.in",
     "accounts" : [ {
       "IBAN" : "RO52POOB6271107854467609",
-      "balance" : 1560.0,
+      "balance" : 4.444444444444571,
       "currency" : "INR",
       "type" : "classic",
       "cards" : [ {
@@ -990,7 +920,7 @@
     "email" : "Alice_Brown@gmail.gb",
     "accounts" : [ {
       "IBAN" : "RO50POOB3359236199018963",
-      "balance" : 18.0,
+      "balance" : 0.22222222222222143,
       "currency" : "GBP",
       "type" : "classic",
       "cards" : [ {
@@ -1004,7 +934,7 @@
     "email" : "Jafet_Mesa_Juarez@mail.com.es",
     "accounts" : [ {
       "IBAN" : "RO75POOB8279679254660818",
-      "balance" : 20.0,
+      "balance" : 0.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1018,7 +948,7 @@
     "email" : "Sylvie_Coste@yahoo.fr",
     "accounts" : [ {
       "IBAN" : "RO37POOB8653914479106806",
-      "balance" : 20.0,
+      "balance" : 0.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1046,7 +976,7 @@
     "email" : "Thibault_du_Mendes@zoho.fr",
     "accounts" : [ {
       "IBAN" : "RO40POOB2135483650246268",
-      "balance" : 20.0,
+      "balance" : 0.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1059,14 +989,14 @@
 }, {
   "command" : "deleteAccount",
   "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
+    "success" : "Account deleted",
     "timestamp" : 594
   },
   "timestamp" : 594
 }, {
   "command" : "deleteAccount",
   "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
+    "success" : "Account deleted",
     "timestamp" : 595
   },
   "timestamp" : 595
@@ -1087,14 +1017,14 @@
 }, {
   "command" : "deleteAccount",
   "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
+    "success" : "Account deleted",
     "timestamp" : 598
   },
   "timestamp" : 598
 }, {
   "command" : "deleteAccount",
   "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
+    "success" : "Account deleted",
     "timestamp" : 599
   },
   "timestamp" : 599
@@ -1108,7 +1038,7 @@
 }, {
   "command" : "deleteAccount",
   "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
+    "success" : "Account deleted",
     "timestamp" : 601
   },
   "timestamp" : 601
@@ -1136,14 +1066,14 @@
 }, {
   "command" : "deleteAccount",
   "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
+    "success" : "Account deleted",
     "timestamp" : 605
   },
   "timestamp" : 605
 }, {
   "command" : "deleteAccount",
   "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
+    "success" : "Account deleted",
     "timestamp" : 606
   },
   "timestamp" : 606
@@ -1157,7 +1087,7 @@
 }, {
   "command" : "deleteAccount",
   "output" : {
-    "error" : "Account couldn't be deleted - see org.poo.transactions for details",
+    "success" : "Account deleted",
     "timestamp" : 608
   },
   "timestamp" : 608
@@ -1197,7 +1127,7 @@
     "email" : "Margaret_Gibbs@yandex.gb",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 18.0,
+      "balance" : 0.22222222222222143,
       "currency" : "GBP",
       "type" : "classic",
       "cards" : [ {
@@ -1225,7 +1155,7 @@
     "email" : "Zilmil_Kala@hushmail.in",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 1560.0,
+      "balance" : 4.444444444444571,
       "currency" : "INR",
       "type" : "classic",
       "cards" : [ {
@@ -1253,7 +1183,7 @@
     "email" : "Alexandra_Williams@gmail.gb",
     "accounts" : [ {
       "IBAN" : "RO37POOB7013767509830666",
-      "balance" : 18.0,
+      "balance" : 0.22222222222222143,
       "currency" : "GBP",
       "type" : "classic",
       "cards" : [ {
@@ -1281,7 +1211,7 @@
     "email" : "Emilio_Camiscione-Rugger@hushmail.it",
     "accounts" : [ {
       "IBAN" : "RO30POOB9523423715747796",
-      "balance" : 20.0,
+      "balance" : 0.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1295,7 +1225,7 @@
     "email" : "Frank_Carey@gmail.gb",
     "accounts" : [ {
       "IBAN" : "RO79POOB3616857825600958",
-      "balance" : 18.0,
+      "balance" : 0.22222222222222143,
       "currency" : "GBP",
       "type" : "classic",
       "cards" : [ {
@@ -1365,7 +1295,7 @@
     "email" : "Nicodemo_del_Ripoll@gmail.es",
     "accounts" : [ {
       "IBAN" : "RO98POOB8412955460158769",
-      "balance" : 20.0,
+      "balance" : 0.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1407,7 +1337,7 @@
     "email" : "Victor_Manuel_Baez_Anaya@gmx.es",
     "accounts" : [ {
       "IBAN" : "RO10POOB4354933866366881",
-      "balance" : 20.0,
+      "balance" : 0.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1435,7 +1365,7 @@
     "email" : "Tracey_Kelly@icloud.nz",
     "accounts" : [ {
       "IBAN" : "RO38POOB0964823730995794",
-      "balance" : 36.0,
+      "balance" : 0.44444444444444287,
       "currency" : "NZD",
       "type" : "classic",
       "cards" : [ {
@@ -1447,30 +1377,12 @@
     "firstName" : "Octaviana",
     "lastName" : "Popescu",
     "email" : "Octaviana_Popescu@gmail.ro",
-    "accounts" : [ {
-      "IBAN" : "RO53POOB7122855990652257",
-      "balance" : 100.0,
-      "currency" : "RON",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "8916302128573242",
-        "status" : "active"
-      } ]
-    } ]
+    "accounts" : [ ]
   }, {
     "firstName" : "Loredana",
     "lastName" : "Manole",
     "email" : "Loredana_Manole@zoho.ro",
-    "accounts" : [ {
-      "IBAN" : "RO71POOB1634969878734749",
-      "balance" : 100.0,
-      "currency" : "RON",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "8696843716078966",
-        "status" : "active"
-      } ]
-    } ]
+    "accounts" : [ ]
   }, {
     "firstName" : "April",
     "lastName" : "Terrell",
@@ -1503,30 +1415,12 @@
     "firstName" : "Mamen",
     "lastName" : "Arana Trillo",
     "email" : "Mamen_Arana_Trillo@hushmail.es",
-    "accounts" : [ {
-      "IBAN" : "RO89POOB4455583483378897",
-      "balance" : 20.0,
-      "currency" : "EUR",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "5069598921863529",
-        "status" : "active"
-      } ]
-    } ]
+    "accounts" : [ ]
   }, {
     "firstName" : "Juan",
     "lastName" : "Barer-Gehringer",
     "email" : "Juan_Barer-Gehringer@mail.com.de",
-    "accounts" : [ {
-      "IBAN" : "RO36POOB6500477412147025",
-      "balance" : 20.0,
-      "currency" : "EUR",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "1851641428290185",
-        "status" : "active"
-      } ]
-    } ]
+    "accounts" : [ ]
   }, {
     "firstName" : "Heather",
     "lastName" : "Farrell",
@@ -1545,23 +1439,14 @@
     "firstName" : "Gabino",
     "lastName" : "de Naranjo",
     "email" : "Gabino_de_Naranjo@icloud.es",
-    "accounts" : [ {
-      "IBAN" : "RO45POOB0388148432759748",
-      "balance" : 20.0,
-      "currency" : "EUR",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "8221841196640096",
-        "status" : "active"
-      } ]
-    } ]
+    "accounts" : [ ]
   }, {
     "firstName" : "Baljiwan",
     "lastName" : "Pa",
     "email" : "Baljiwan_Pa@icloud.in",
     "accounts" : [ {
       "IBAN" : "RO52POOB6271107854467609",
-      "balance" : 1560.0,
+      "balance" : 4.444444444444571,
       "currency" : "INR",
       "type" : "classic",
       "cards" : [ {
@@ -1589,7 +1474,7 @@
     "email" : "Alice_Brown@gmail.gb",
     "accounts" : [ {
       "IBAN" : "RO50POOB3359236199018963",
-      "balance" : 18.0,
+      "balance" : 0.22222222222222143,
       "currency" : "GBP",
       "type" : "classic",
       "cards" : [ {
@@ -1601,30 +1486,12 @@
     "firstName" : "Jafet",
     "lastName" : "Mesa Juarez",
     "email" : "Jafet_Mesa_Juarez@mail.com.es",
-    "accounts" : [ {
-      "IBAN" : "RO75POOB8279679254660818",
-      "balance" : 20.0,
-      "currency" : "EUR",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "6825942525318055",
-        "status" : "active"
-      } ]
-    } ]
+    "accounts" : [ ]
   }, {
     "firstName" : "Sylvie",
     "lastName" : "Coste",
     "email" : "Sylvie_Coste@yahoo.fr",
-    "accounts" : [ {
-      "IBAN" : "RO37POOB8653914479106806",
-      "balance" : 20.0,
-      "currency" : "EUR",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "1388131156990910",
-        "status" : "active"
-      } ]
-    } ]
+    "accounts" : [ ]
   }, {
     "firstName" : "Oliver",
     "lastName" : "Mayer",
@@ -1643,16 +1510,7 @@
     "firstName" : "Thibault",
     "lastName" : "du Mendes",
     "email" : "Thibault_du_Mendes@zoho.fr",
-    "accounts" : [ {
-      "IBAN" : "RO40POOB2135483650246268",
-      "balance" : 20.0,
-      "currency" : "EUR",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "2394479558596255",
-        "status" : "active"
-      } ]
-    } ]
+    "accounts" : [ ]
   } ],
   "timestamp" : 609
 }, {
@@ -1668,14 +1526,6 @@
     "account" : "RO32POOB0130532963818359"
   } ],
   "timestamp" : 610
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 612 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 614 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 616 is not implemented yet."
-}, {
-  "result" : "Command 'upgradePlan' at timestamp 618 is not implemented yet."
 }, {
   "result" : "Command 'acceptSplitPayment' at timestamp 660 is not implemented yet."
 }, {
@@ -1735,7 +1585,7 @@
     "email" : "Jennifer_Gould@mail.com.ca",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 1323.0,
+      "balance" : 1322.9814285714285,
       "currency" : "CAD",
       "type" : "classic",
       "cards" : [ {
@@ -1749,7 +1599,7 @@
     "email" : "Marie_Musy@yandex.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 650.83,
+      "balance" : 650.8299999999999,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -1763,11 +1613,11 @@
     "email" : "Margaret_Gibbs@yandex.gb",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 873.5,
+      "balance" : 813.7777777777778,
       "currency" : "GBP",
       "type" : "classic",
       "cards" : [ {
-        "cardNumber" : "1733018068262537",
+        "cardNumber" : "7004757825892043",
         "status" : "active"
       } ]
     } ]
@@ -1791,7 +1641,7 @@
     "email" : "Zilmil_Kala@hushmail.in",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 22268.0,
+      "balance" : 16823.555555555555,
       "currency" : "INR",
       "type" : "classic",
       "cards" : [ {
@@ -1809,7 +1659,7 @@
       "currency" : "MXN",
       "type" : "classic",
       "cards" : [ {
-        "cardNumber" : "6988686155235949",
+        "cardNumber" : "1733018068262537",
         "status" : "active"
       } ]
     } ]
@@ -1819,11 +1669,11 @@
     "email" : "Alexandra_Williams@gmail.gb",
     "accounts" : [ {
       "IBAN" : "RO37POOB7013767509830666",
-      "balance" : 783.0,
+      "balance" : 765.2613431013431,
       "currency" : "GBP",
       "type" : "classic",
       "cards" : [ {
-        "cardNumber" : "5254952026068544",
+        "cardNumber" : "6988686155235949",
         "status" : "active"
       } ]
     } ]
@@ -1837,7 +1687,7 @@
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
-        "cardNumber" : "2912280039644439",
+        "cardNumber" : "5254952026068544",
         "status" : "active"
       } ]
     } ]
@@ -1847,7 +1697,7 @@
     "email" : "Emilio_Camiscione-Rugger@hushmail.it",
     "accounts" : [ {
       "IBAN" : "RO30POOB9523423715747796",
-      "balance" : 1784.5,
+      "balance" : 1770.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1861,11 +1711,11 @@
     "email" : "Frank_Carey@gmail.gb",
     "accounts" : [ {
       "IBAN" : "RO79POOB3616857825600958",
-      "balance" : 1607.7,
+      "balance" : 1589.909090909091,
       "currency" : "GBP",
       "type" : "classic",
       "cards" : [ {
-        "cardNumber" : "4729060187716142",
+        "cardNumber" : "2912280039644439",
         "status" : "active"
       } ]
     } ]
@@ -1889,7 +1739,7 @@
     "email" : "Dorothy_Villa@zoho.au",
     "accounts" : [ {
       "IBAN" : "RO96POOB6738272785416988",
-      "balance" : 1600.18,
+      "balance" : 1600.181818181818,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -1931,7 +1781,7 @@
     "email" : "Nicodemo_del_Ripoll@gmail.es",
     "accounts" : [ {
       "IBAN" : "RO98POOB8412955460158769",
-      "balance" : 535.0,
+      "balance" : 515.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1959,7 +1809,7 @@
     "email" : "Pauline_Savard-Mathieu@outlook.ca",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 298.73,
+      "balance" : 298.73333333333335,
       "currency" : "CAD",
       "type" : "classic",
       "cards" : [ {
@@ -1973,7 +1823,7 @@
     "email" : "Victor_Manuel_Baez_Anaya@gmx.es",
     "accounts" : [ {
       "IBAN" : "RO10POOB4354933866366881",
-      "balance" : 974.0,
+      "balance" : 954.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2001,7 +1851,7 @@
     "email" : "Tracey_Kelly@icloud.nz",
     "accounts" : [ {
       "IBAN" : "RO38POOB0964823730995794",
-      "balance" : 791.0,
+      "balance" : 755.4444444444445,
       "currency" : "NZD",
       "type" : "classic",
       "cards" : [ {
@@ -2014,21 +1864,12 @@
     "lastName" : "Popescu",
     "email" : "Octaviana_Popescu@gmail.ro",
     "accounts" : [ {
-      "IBAN" : "RO53POOB7122855990652257",
-      "balance" : 100.0,
-      "currency" : "RON",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "8916302128573242",
-        "status" : "active"
-      } ]
-    }, {
       "IBAN" : "RO75POOB1098983729823992",
       "balance" : 626.0,
       "currency" : "RON",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "2803408755782048",
+        "cardNumber" : "4729060187716142",
         "status" : "active"
       } ]
     } ]
@@ -2037,21 +1878,12 @@
     "lastName" : "Manole",
     "email" : "Loredana_Manole@zoho.ro",
     "accounts" : [ {
-      "IBAN" : "RO71POOB1634969878734749",
-      "balance" : 100.0,
-      "currency" : "RON",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "8696843716078966",
-        "status" : "active"
-      } ]
-    }, {
       "IBAN" : "RO15POOB0048706387164463",
       "balance" : 546.0,
       "currency" : "RON",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "0692077318511511",
+        "cardNumber" : "2803408755782048",
         "status" : "active"
       } ]
     } ]
@@ -2074,7 +1906,7 @@
       "currency" : "CHF",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "4435533800578624",
+        "cardNumber" : "0692077318511511",
         "status" : "active"
       } ]
     } ]
@@ -2097,7 +1929,7 @@
       "currency" : "CAD",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "9295697829422937",
+        "cardNumber" : "4435533800578624",
         "status" : "active"
       } ]
     } ]
@@ -2106,21 +1938,12 @@
     "lastName" : "Arana Trillo",
     "email" : "Mamen_Arana_Trillo@hushmail.es",
     "accounts" : [ {
-      "IBAN" : "RO89POOB4455583483378897",
-      "balance" : 20.0,
-      "currency" : "EUR",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "5069598921863529",
-        "status" : "active"
-      } ]
-    }, {
       "IBAN" : "RO47POOB5866490978033060",
       "balance" : 943.0,
       "currency" : "EUR",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "8145060794847555",
+        "cardNumber" : "9295697829422937",
         "status" : "active"
       } ]
     } ]
@@ -2129,21 +1952,12 @@
     "lastName" : "Barer-Gehringer",
     "email" : "Juan_Barer-Gehringer@mail.com.de",
     "accounts" : [ {
-      "IBAN" : "RO36POOB6500477412147025",
-      "balance" : 20.0,
-      "currency" : "EUR",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "1851641428290185",
-        "status" : "active"
-      } ]
-    }, {
       "IBAN" : "RO45POOB6505529013808948",
       "balance" : 1177.0,
       "currency" : "EUR",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "2107645074675430",
+        "cardNumber" : "8145060794847555",
         "status" : "active"
       } ]
     } ]
@@ -2166,7 +1980,7 @@
       "currency" : "USD",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "2578053935040541",
+        "cardNumber" : "2107645074675430",
         "status" : "active"
       } ]
     } ]
@@ -2175,21 +1989,12 @@
     "lastName" : "de Naranjo",
     "email" : "Gabino_de_Naranjo@icloud.es",
     "accounts" : [ {
-      "IBAN" : "RO45POOB0388148432759748",
-      "balance" : 20.0,
-      "currency" : "EUR",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "8221841196640096",
-        "status" : "active"
-      } ]
-    }, {
       "IBAN" : "RO04POOB3492426980939341",
       "balance" : 1068.0,
       "currency" : "EUR",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "7678041819946354",
+        "cardNumber" : "2578053935040541",
         "status" : "active"
       } ]
     } ]
@@ -2199,7 +2004,7 @@
     "email" : "Baljiwan_Pa@icloud.in",
     "accounts" : [ {
       "IBAN" : "RO52POOB6271107854467609",
-      "balance" : 1581.0,
+      "balance" : 25.44444444444457,
       "currency" : "INR",
       "type" : "classic",
       "cards" : [ {
@@ -2212,7 +2017,7 @@
       "currency" : "INR",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "4090756032993928",
+        "cardNumber" : "7678041819946354",
         "status" : "active"
       } ]
     } ]
@@ -2235,7 +2040,7 @@
       "currency" : "MXN",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "2995112048162719",
+        "cardNumber" : "4090756032993928",
         "status" : "active"
       } ]
     } ]
@@ -2245,7 +2050,7 @@
     "email" : "Alice_Brown@gmail.gb",
     "accounts" : [ {
       "IBAN" : "RO50POOB3359236199018963",
-      "balance" : 18.0,
+      "balance" : 0.22222222222222143,
       "currency" : "GBP",
       "type" : "classic",
       "cards" : [ {
@@ -2258,7 +2063,7 @@
       "currency" : "GBP",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "8188712199558265",
+        "cardNumber" : "2995112048162719",
         "status" : "active"
       } ]
     } ]
@@ -2267,21 +2072,12 @@
     "lastName" : "Mesa Juarez",
     "email" : "Jafet_Mesa_Juarez@mail.com.es",
     "accounts" : [ {
-      "IBAN" : "RO75POOB8279679254660818",
-      "balance" : 20.0,
-      "currency" : "EUR",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "6825942525318055",
-        "status" : "active"
-      } ]
-    }, {
       "IBAN" : "RO69POOB2312919212921100",
       "balance" : 1814.0,
       "currency" : "EUR",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "8889483284080840",
+        "cardNumber" : "8188712199558265",
         "status" : "active"
       } ]
     } ]
@@ -2290,21 +2086,12 @@
     "lastName" : "Coste",
     "email" : "Sylvie_Coste@yahoo.fr",
     "accounts" : [ {
-      "IBAN" : "RO37POOB8653914479106806",
-      "balance" : 20.0,
-      "currency" : "EUR",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "1388131156990910",
-        "status" : "active"
-      } ]
-    }, {
       "IBAN" : "RO24POOB6002156322256357",
       "balance" : 1158.0,
       "currency" : "EUR",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "2134768742021642",
+        "cardNumber" : "8889483284080840",
         "status" : "active"
       } ]
     } ]
@@ -2327,7 +2114,7 @@
       "currency" : "CHF",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "0687036602426775",
+        "cardNumber" : "2134768742021642",
         "status" : "active"
       } ]
     } ]
@@ -2336,21 +2123,12 @@
     "lastName" : "du Mendes",
     "email" : "Thibault_du_Mendes@zoho.fr",
     "accounts" : [ {
-      "IBAN" : "RO40POOB2135483650246268",
-      "balance" : 20.0,
-      "currency" : "EUR",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "2394479558596255",
-        "status" : "active"
-      } ]
-    }, {
       "IBAN" : "RO01POOB9893132718323396",
       "balance" : 1403.0,
       "currency" : "EUR",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "2060252995835471",
+        "cardNumber" : "0687036602426775",
         "status" : "active"
       } ]
     } ]
@@ -2560,18 +2338,10 @@
   "command" : "spendingsReport",
   "output" : {
     "IBAN" : "RO90POOB5450777208072365",
-    "balance" : 873.5,
+    "balance" : 813.7777777777778,
     "currency" : "GBP",
-    "transactions" : [ {
-      "timestamp" : 628,
-      "description" : "Card payment",
-      "amount" : 2.46,
-      "commerciant" : "Zara"
-    } ],
-    "commerciants" : [ {
-      "commerciant" : "Zara",
-      "total" : 2.46
-    } ]
+    "transactions" : [ ],
+    "commerciants" : [ ]
   },
   "timestamp" : 848
 }, {
@@ -2599,12 +2369,12 @@
     "transactions" : [ {
       "timestamp" : 632,
       "description" : "Card payment",
-      "amount" : 6.6,
+      "amount" : 6.6000000000000005,
       "commerciant" : "Microsoft"
     } ],
     "commerciants" : [ {
       "commerciant" : "Microsoft",
-      "total" : 6.6
+      "total" : 6.6000000000000005
     } ]
   },
   "timestamp" : 851
@@ -2663,7 +2433,7 @@
     "email" : "Jennifer_Gould@mail.com.ca",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 6243.0,
+      "balance" : 6242.981428571428,
       "currency" : "CAD",
       "type" : "classic",
       "cards" : [ {
@@ -2677,7 +2447,7 @@
     "email" : "Marie_Musy@yandex.ch",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 650.83,
+      "balance" : 650.8299999999999,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -2697,11 +2467,11 @@
     "email" : "Margaret_Gibbs@yandex.gb",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 873.5,
+      "balance" : 813.7777777777778,
       "currency" : "GBP",
       "type" : "classic",
       "cards" : [ {
-        "cardNumber" : "1733018068262537",
+        "cardNumber" : "7004757825892043",
         "status" : "active"
       } ]
     } ]
@@ -2725,7 +2495,7 @@
     "email" : "Zilmil_Kala@hushmail.in",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 22268.0,
+      "balance" : 16823.555555555555,
       "currency" : "INR",
       "type" : "classic",
       "cards" : [ {
@@ -2743,7 +2513,7 @@
       "currency" : "MXN",
       "type" : "classic",
       "cards" : [ {
-        "cardNumber" : "6988686155235949",
+        "cardNumber" : "1733018068262537",
         "status" : "active"
       } ]
     } ]
@@ -2753,11 +2523,11 @@
     "email" : "Alexandra_Williams@gmail.gb",
     "accounts" : [ {
       "IBAN" : "RO37POOB7013767509830666",
-      "balance" : 783.0,
+      "balance" : 765.2613431013431,
       "currency" : "GBP",
       "type" : "classic",
       "cards" : [ {
-        "cardNumber" : "5254952026068544",
+        "cardNumber" : "6988686155235949",
         "status" : "active"
       } ]
     } ]
@@ -2771,7 +2541,7 @@
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
-        "cardNumber" : "2912280039644439",
+        "cardNumber" : "5254952026068544",
         "status" : "active"
       } ]
     } ]
@@ -2781,7 +2551,7 @@
     "email" : "Emilio_Camiscione-Rugger@hushmail.it",
     "accounts" : [ {
       "IBAN" : "RO30POOB9523423715747796",
-      "balance" : 1784.5,
+      "balance" : 1770.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2795,11 +2565,11 @@
     "email" : "Frank_Carey@gmail.gb",
     "accounts" : [ {
       "IBAN" : "RO79POOB3616857825600958",
-      "balance" : 1607.7,
+      "balance" : 1589.909090909091,
       "currency" : "GBP",
       "type" : "classic",
       "cards" : [ {
-        "cardNumber" : "4729060187716142",
+        "cardNumber" : "2912280039644439",
         "status" : "active"
       } ]
     } ]
@@ -2823,7 +2593,7 @@
     "email" : "Dorothy_Villa@zoho.au",
     "accounts" : [ {
       "IBAN" : "RO96POOB6738272785416988",
-      "balance" : 1600.18,
+      "balance" : 1600.181818181818,
       "currency" : "AUD",
       "type" : "classic",
       "cards" : [ {
@@ -2865,7 +2635,7 @@
     "email" : "Nicodemo_del_Ripoll@gmail.es",
     "accounts" : [ {
       "IBAN" : "RO98POOB8412955460158769",
-      "balance" : 535.0,
+      "balance" : 515.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2893,7 +2663,7 @@
     "email" : "Pauline_Savard-Mathieu@outlook.ca",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 298.73,
+      "balance" : 298.73333333333335,
       "currency" : "CAD",
       "type" : "classic",
       "cards" : [ {
@@ -2907,7 +2677,7 @@
     "email" : "Victor_Manuel_Baez_Anaya@gmx.es",
     "accounts" : [ {
       "IBAN" : "RO10POOB4354933866366881",
-      "balance" : 974.0,
+      "balance" : 954.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2935,7 +2705,7 @@
     "email" : "Tracey_Kelly@icloud.nz",
     "accounts" : [ {
       "IBAN" : "RO38POOB0964823730995794",
-      "balance" : 791.0,
+      "balance" : 755.4444444444445,
       "currency" : "NZD",
       "type" : "classic",
       "cards" : [ {
@@ -2948,21 +2718,12 @@
     "lastName" : "Popescu",
     "email" : "Octaviana_Popescu@gmail.ro",
     "accounts" : [ {
-      "IBAN" : "RO53POOB7122855990652257",
-      "balance" : 100.0,
-      "currency" : "RON",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "8916302128573242",
-        "status" : "active"
-      } ]
-    }, {
       "IBAN" : "RO75POOB1098983729823992",
       "balance" : 626.0,
       "currency" : "RON",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "2803408755782048",
+        "cardNumber" : "4729060187716142",
         "status" : "active"
       } ]
     } ]
@@ -2971,21 +2732,12 @@
     "lastName" : "Manole",
     "email" : "Loredana_Manole@zoho.ro",
     "accounts" : [ {
-      "IBAN" : "RO71POOB1634969878734749",
-      "balance" : 100.0,
-      "currency" : "RON",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "8696843716078966",
-        "status" : "active"
-      } ]
-    }, {
       "IBAN" : "RO15POOB0048706387164463",
       "balance" : 546.0,
       "currency" : "RON",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "0692077318511511",
+        "cardNumber" : "2803408755782048",
         "status" : "active"
       } ]
     } ]
@@ -3008,7 +2760,7 @@
       "currency" : "CHF",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "4435533800578624",
+        "cardNumber" : "0692077318511511",
         "status" : "active"
       } ]
     } ]
@@ -3031,7 +2783,7 @@
       "currency" : "CAD",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "9295697829422937",
+        "cardNumber" : "4435533800578624",
         "status" : "active"
       } ]
     } ]
@@ -3040,21 +2792,12 @@
     "lastName" : "Arana Trillo",
     "email" : "Mamen_Arana_Trillo@hushmail.es",
     "accounts" : [ {
-      "IBAN" : "RO89POOB4455583483378897",
-      "balance" : 20.0,
-      "currency" : "EUR",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "5069598921863529",
-        "status" : "active"
-      } ]
-    }, {
       "IBAN" : "RO47POOB5866490978033060",
       "balance" : 943.0,
       "currency" : "EUR",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "8145060794847555",
+        "cardNumber" : "9295697829422937",
         "status" : "active"
       } ]
     } ]
@@ -3063,21 +2806,12 @@
     "lastName" : "Barer-Gehringer",
     "email" : "Juan_Barer-Gehringer@mail.com.de",
     "accounts" : [ {
-      "IBAN" : "RO36POOB6500477412147025",
-      "balance" : 20.0,
-      "currency" : "EUR",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "1851641428290185",
-        "status" : "active"
-      } ]
-    }, {
       "IBAN" : "RO45POOB6505529013808948",
       "balance" : 1177.0,
       "currency" : "EUR",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "2107645074675430",
+        "cardNumber" : "8145060794847555",
         "status" : "active"
       } ]
     } ]
@@ -3100,7 +2834,7 @@
       "currency" : "USD",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "2578053935040541",
+        "cardNumber" : "2107645074675430",
         "status" : "active"
       } ]
     } ]
@@ -3109,21 +2843,12 @@
     "lastName" : "de Naranjo",
     "email" : "Gabino_de_Naranjo@icloud.es",
     "accounts" : [ {
-      "IBAN" : "RO45POOB0388148432759748",
-      "balance" : 20.0,
-      "currency" : "EUR",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "8221841196640096",
-        "status" : "active"
-      } ]
-    }, {
       "IBAN" : "RO04POOB3492426980939341",
       "balance" : 1068.0,
       "currency" : "EUR",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "7678041819946354",
+        "cardNumber" : "2578053935040541",
         "status" : "active"
       } ]
     } ]
@@ -3133,7 +2858,7 @@
     "email" : "Baljiwan_Pa@icloud.in",
     "accounts" : [ {
       "IBAN" : "RO52POOB6271107854467609",
-      "balance" : 1581.0,
+      "balance" : 25.44444444444457,
       "currency" : "INR",
       "type" : "classic",
       "cards" : [ {
@@ -3146,7 +2871,7 @@
       "currency" : "INR",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "4090756032993928",
+        "cardNumber" : "7678041819946354",
         "status" : "active"
       } ]
     } ]
@@ -3169,7 +2894,7 @@
       "currency" : "MXN",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "2995112048162719",
+        "cardNumber" : "4090756032993928",
         "status" : "active"
       } ]
     } ]
@@ -3179,7 +2904,7 @@
     "email" : "Alice_Brown@gmail.gb",
     "accounts" : [ {
       "IBAN" : "RO50POOB3359236199018963",
-      "balance" : 18.0,
+      "balance" : 0.22222222222222143,
       "currency" : "GBP",
       "type" : "classic",
       "cards" : [ {
@@ -3192,7 +2917,7 @@
       "currency" : "GBP",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "8188712199558265",
+        "cardNumber" : "2995112048162719",
         "status" : "active"
       } ]
     } ]
@@ -3201,21 +2926,12 @@
     "lastName" : "Mesa Juarez",
     "email" : "Jafet_Mesa_Juarez@mail.com.es",
     "accounts" : [ {
-      "IBAN" : "RO75POOB8279679254660818",
-      "balance" : 20.0,
-      "currency" : "EUR",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "6825942525318055",
-        "status" : "active"
-      } ]
-    }, {
       "IBAN" : "RO69POOB2312919212921100",
       "balance" : 1814.0,
       "currency" : "EUR",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "8889483284080840",
+        "cardNumber" : "8188712199558265",
         "status" : "active"
       } ]
     } ]
@@ -3224,21 +2940,12 @@
     "lastName" : "Coste",
     "email" : "Sylvie_Coste@yahoo.fr",
     "accounts" : [ {
-      "IBAN" : "RO37POOB8653914479106806",
-      "balance" : 20.0,
-      "currency" : "EUR",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "1388131156990910",
-        "status" : "active"
-      } ]
-    }, {
       "IBAN" : "RO24POOB6002156322256357",
       "balance" : 1158.0,
       "currency" : "EUR",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "2134768742021642",
+        "cardNumber" : "8889483284080840",
         "status" : "active"
       } ]
     } ]
@@ -3261,7 +2968,7 @@
       "currency" : "CHF",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "0687036602426775",
+        "cardNumber" : "2134768742021642",
         "status" : "active"
       } ]
     } ]
@@ -3270,21 +2977,12 @@
     "lastName" : "du Mendes",
     "email" : "Thibault_du_Mendes@zoho.fr",
     "accounts" : [ {
-      "IBAN" : "RO40POOB2135483650246268",
-      "balance" : 20.0,
-      "currency" : "EUR",
-      "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "2394479558596255",
-        "status" : "active"
-      } ]
-    }, {
       "IBAN" : "RO01POOB9893132718323396",
       "balance" : 1403.0,
       "currency" : "EUR",
       "type" : "savings",
       "cards" : [ {
-        "cardNumber" : "2060252995835471",
+        "cardNumber" : "0687036602426775",
         "status" : "active"
       } ]
     } ]
@@ -3294,17 +2992,17 @@
   "command" : "spendingsReport",
   "output" : {
     "IBAN" : "RO58POOB7344468893732422",
-    "balance" : 6243.0,
+    "balance" : 6242.981428571428,
     "currency" : "CAD",
     "transactions" : [ {
       "timestamp" : 620,
       "description" : "Card payment",
-      "amount" : 0.02,
+      "amount" : 0.018571428571428572,
       "commerciant" : "Apple"
     } ],
     "commerciants" : [ {
       "commerciant" : "Apple",
-      "total" : 0.02
+      "total" : 0.018571428571428572
     } ]
   },
   "timestamp" : 881
