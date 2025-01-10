@@ -1,5 +1,6 @@
 package org.poo.visitor.transaction;
 
+import org.poo.command.CashWithdrawalCommand;
 import org.poo.command.UpgradePlanCommand;
 import org.poo.model.transaction.*;
 
@@ -100,4 +101,8 @@ public interface TransactionVisitor {
     void visit(NotClassicAccountTransaction transaction);
 
     void visit(UpgradePlanTransaction transaction);
+
+    void visit(CashWithdrawalTransaction transaction);
+
+    void visit(InterestRateIncomeTransaction transaction);
 }

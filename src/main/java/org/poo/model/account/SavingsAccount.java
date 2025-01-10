@@ -18,8 +18,10 @@ public final class SavingsAccount extends Account {
      * Adaugă dobânda la soldul contului. Soldul crește cu sold * rata_dobânzii
      */
     @Override
-    public void addInterest() {
+    public double addInterest() {
+        double oldBalance = balance;
         balance += balance * interestRate;
+        return oldBalance * interestRate;
     }
 
     /**

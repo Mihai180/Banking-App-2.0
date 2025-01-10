@@ -1,13 +1,38 @@
 [ {
-  "result" : "Command 'cashWithdrawal' at timestamp 64 is not implemented yet."
+  "command" : "cashWithdrawal",
+  "output" : {
+    "timestamp" : 64,
+    "description" : "Card not found"
+  },
+  "timestamp" : 64
 }, {
-  "result" : "Command 'cashWithdrawal' at timestamp 65 is not implemented yet."
+  "command" : "cashWithdrawal",
+  "output" : {
+    "timestamp" : 65,
+    "description" : "Card not found"
+  },
+  "timestamp" : 65
 }, {
-  "result" : "Command 'cashWithdrawal' at timestamp 66 is not implemented yet."
+  "command" : "cashWithdrawal",
+  "output" : {
+    "timestamp" : 66,
+    "description" : "Card not found"
+  },
+  "timestamp" : 66
 }, {
-  "result" : "Command 'cashWithdrawal' at timestamp 67 is not implemented yet."
+  "command" : "cashWithdrawal",
+  "output" : {
+    "timestamp" : 67,
+    "description" : "Card not found"
+  },
+  "timestamp" : 67
 }, {
-  "result" : "Command 'cashWithdrawal' at timestamp 68 is not implemented yet."
+  "command" : "cashWithdrawal",
+  "output" : {
+    "timestamp" : 68,
+    "description" : "Card not found"
+  },
+  "timestamp" : 68
 }, {
   "command" : "deleteAccount",
   "output" : {
@@ -393,6 +418,11 @@
     }, {
       "timestamp" : 223,
       "description" : "Interest rate of the account changed to 0.17"
+    }, {
+      "timestamp" : 224,
+      "description" : "Interest rate income",
+      "amount" : 586.6700000000001,
+      "currency" : "RON"
     } ]
   },
   "timestamp" : 226
@@ -496,6 +526,11 @@
   }, {
     "timestamp" : 223,
     "description" : "Interest rate of the account changed to 0.17"
+  }, {
+    "timestamp" : 224,
+    "description" : "Interest rate income",
+    "amount" : 586.6700000000001,
+    "currency" : "RON"
   }, {
     "timestamp" : 227,
     "description" : "Split payment of 1423.00 RON",
@@ -647,6 +682,11 @@
     "timestamp" : 223,
     "description" : "Interest rate of the account changed to 0.17"
   }, {
+    "timestamp" : 224,
+    "description" : "Interest rate income",
+    "amount" : 586.6700000000001,
+    "currency" : "RON"
+  }, {
     "timestamp" : 227,
     "description" : "Split payment of 1423.00 RON",
     "currency" : "RON",
@@ -716,6 +756,13 @@
     "description" : "Card not found"
   },
   "timestamp" : 246
+}, {
+  "command" : "sendMoney",
+  "output" : {
+    "timestamp" : 248,
+    "description" : "User not found"
+  },
+  "timestamp" : 248
 }, {
   "command" : "printUsers",
   "output" : [ {
@@ -857,6 +904,11 @@
   }, {
     "timestamp" : 223,
     "description" : "Interest rate of the account changed to 0.17"
+  }, {
+    "timestamp" : 224,
+    "description" : "Interest rate income",
+    "amount" : 586.6700000000001,
+    "currency" : "RON"
   }, {
     "timestamp" : 227,
     "description" : "Split payment of 1423.00 RON",
@@ -1010,6 +1062,16 @@
     "transactions" : [ {
       "timestamp" : 253,
       "description" : "New account created"
+    }, {
+      "timestamp" : 272,
+      "description" : "Interest rate income",
+      "amount" : 1.12,
+      "currency" : "USD"
+    }, {
+      "timestamp" : 377,
+      "description" : "Interest rate income",
+      "amount" : 1.1424,
+      "currency" : "USD"
     }, {
       "timestamp" : 378,
       "description" : "Interest rate of the account changed to 0.35"
@@ -1547,6 +1609,13 @@
 }, {
   "result" : "Command 'addNewBusinessAssociate' at timestamp 525 is not implemented yet."
 }, {
+  "command" : "sendMoney",
+  "output" : {
+    "timestamp" : 528,
+    "description" : "User not found"
+  },
+  "timestamp" : 528
+}, {
   "command" : "payOnline",
   "output" : {
     "timestamp" : 529,
@@ -1750,7 +1819,12 @@
   } ],
   "timestamp" : 537
 }, {
-  "result" : "Command 'cashWithdrawal' at timestamp 540 is not implemented yet."
+  "command" : "cashWithdrawal",
+  "output" : {
+    "timestamp" : 540,
+    "description" : "Card not found"
+  },
+  "timestamp" : 540
 }, {
   "command" : "printTransactions",
   "output" : [ {
@@ -1770,6 +1844,11 @@
   }, {
     "timestamp" : 223,
     "description" : "Interest rate of the account changed to 0.17"
+  }, {
+    "timestamp" : 224,
+    "description" : "Interest rate income",
+    "amount" : 586.6700000000001,
+    "currency" : "RON"
   }, {
     "timestamp" : 227,
     "description" : "Split payment of 1423.00 RON",
@@ -1805,7 +1884,12 @@
   } ],
   "timestamp" : 541
 }, {
-  "result" : "Command 'cashWithdrawal' at timestamp 543 is not implemented yet."
+  "command" : "cashWithdrawal",
+  "output" : {
+    "timestamp" : 543,
+    "description" : "Card not found"
+  },
+  "timestamp" : 543
 }, {
   "command" : "printTransactions",
   "output" : [ {
@@ -1848,7 +1932,12 @@
   } ],
   "timestamp" : 544
 }, {
-  "result" : "Command 'cashWithdrawal' at timestamp 546 is not implemented yet."
+  "command" : "cashWithdrawal",
+  "output" : {
+    "timestamp" : 546,
+    "description" : "Card not found"
+  },
+  "timestamp" : 546
 }, {
   "command" : "printTransactions",
   "output" : [ {

@@ -12,30 +12,31 @@ public class SpendingThresholdCashbackStrategy implements CashbackStrategy {
         double amount = transaction.getPaymentAmount();
         double cashbackPercent = 0.0;
         double convertedTotalSpent = ExchangeService.getInstance().convertCurrency(account.getCurrency(), "RON", account.getTotalSpent());
+        //double convertedTotalSpent = account.getTotalSpent();
         String plan = user.getCurrentPlan().getPlan();
         if (convertedTotalSpent >= 500) {
             switch (plan) {
-                case "standard":
-                case "student":
+                case "Standard":
+                case "Student":
                     cashbackPercent = 0.0025;
                     break;
-                case "silver":
+                case "Silver":
                     cashbackPercent = 0.0050;
                     break;
-                case "gold":
+                case "Gold":
                     cashbackPercent = 0.0070;
                     break;
             }
         } else if (convertedTotalSpent >= 300) {
             switch (plan) {
-                case "standard":
-                case "student":
+                case "Standard":
+                case "Student":
                     cashbackPercent = 0.0020;
                     break;
-                case "silver":
+                case "Silver":
                     cashbackPercent = 0.0040;
                     break;
-                case "gold":
+                case "Gold":
                     cashbackPercent = 0.0055;
                     break;
             }

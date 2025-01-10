@@ -161,7 +161,12 @@
   } ],
   "timestamp" : 41
 }, {
-  "result" : "Command 'cashWithdrawal' at timestamp 42 is not implemented yet."
+  "command" : "cashWithdrawal",
+  "output" : {
+    "timestamp" : 42,
+    "description" : "Card not found"
+  },
+  "timestamp" : 42
 }, {
   "result" : "Command 'acceptSplitPayment' at timestamp 53 is not implemented yet."
 }, {

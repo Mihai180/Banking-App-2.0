@@ -1,15 +1,12 @@
 package org.poo.service;
 
-import org.poo.exception.AccountNotFoundException;
-import org.poo.exception.CardNotFoundException;
-import org.poo.exception.FrozenCardException;
-import org.poo.exception.UnauthorizedAccessException;
-import org.poo.exception.InsufficientFundsException;
-import org.poo.exception.CardIsUsedException;
+import org.poo.exception.*;
 import org.poo.model.account.Account;
 import org.poo.model.card.Card;
 import org.poo.model.card.OneTimePayCard;
 import org.poo.model.card.RegularCard;
+import org.poo.model.commerciant.Commerciant;
+import org.poo.model.plan.PlanStrategy;
 import org.poo.model.user.User;
 import org.poo.utils.Utils;
 import java.util.HashMap;
@@ -210,5 +207,47 @@ public final class CardService {
             }
         }
         return "Card not found";
+    }
+
+    public String cashWithdrawal(final String cardNumber, double amount, final String email) {
+        User user = userService.getUserByEmail(email);
+        if (user == null) {
+            throw new UserNotFoundException("User not found");
+        }
+
+        Card card = cardsByNumber.get(cardNumber);
+        if (card == null) {
+            throw new CardNotFoundException("Card not found");
+        }
+
+        if (card.isBlocked()) {
+            return "The card is frozen";
+        }
+
+        if (card.isUsed()) {
+            throw new CardNotFoundException("Card not found");
+        }
+
+        Account account = card.getAccount();
+        if (!account.getCurrency().equals("RON")) {
+            amount = exchangeService.convertCurrency("RON", account.getCurrency(), amount);
+        }
+
+        if (account.getMinimumBalance() != null &&
+                account.getBalance() - amount < account.getMinimumBalance()) {
+            throw new MinimumBalancePassedException("Cannot perform " +
+                    "payment due to a minimum balance being set");
+        }
+
+        if (amount > account.getBalance()) {
+            throw new InsufficientFundsException("Insufficient funds");
+        }
+
+        account.withdraw(amount);
+        PlanStrategy plan = user.getCurrentPlan();
+        double commission = plan.calculateCommission(amount);
+        account.withdraw(commission);
+
+        return "Cash withdrawal of" + amount + ".";
     }
 }

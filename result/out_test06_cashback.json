@@ -2,7 +2,7 @@
   "command" : "spendingsReport",
   "output" : {
     "IBAN" : "RO58POOB7344468893732422",
-    "balance" : 541.2176619999997,
+    "balance" : 538.0223400000003,
     "currency" : "USD",
     "transactions" : [ {
       "timestamp" : 4,
@@ -40,8 +40,6 @@
   },
   "timestamp" : 42
 }, {
-  "result" : "Command 'cashWithdrawal' at timestamp 45 is not implemented yet."
-}, {
   "command" : "printUsers",
   "output" : [ {
     "firstName" : "Tiffany",
@@ -49,7 +47,7 @@
     "email" : "Tiffany_Leonard@hotmail.us",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 582.8843286666663,
+      "balance" : 579.689006666667,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -83,7 +81,7 @@
   "command" : "spendingsReport",
   "output" : {
     "IBAN" : "RO58POOB7344468893732422",
-    "balance" : 582.8843286666663,
+    "balance" : 579.689006666667,
     "currency" : "USD",
     "transactions" : [ {
       "timestamp" : 4,

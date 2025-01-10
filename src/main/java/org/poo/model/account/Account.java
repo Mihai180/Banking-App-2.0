@@ -18,10 +18,8 @@ public abstract class Account {
     protected Double minimumBalance;
     protected ArrayList<Card> cards;
     protected double totalSpent;
-    protected double totalSpentOnFood;
-    protected double totalSpentOnClothes;
-    protected double totalSpentOnTech;
     protected int numOfTransactions;
+    protected int numOfTransactionsOver300RON;
 
     /**
      * Constructorul inițializează contul cu IBAN, proprietar și monedă.
@@ -38,9 +36,7 @@ public abstract class Account {
         this.balance = 0.0;
         this.totalSpent = 0.0;
         this.numOfTransactions = 0;
-        this.totalSpentOnClothes = 0.0;
-        this.totalSpentOnFood = 0.0;
-        this.totalSpentOnTech = 0.0;
+        this.numOfTransactionsOver300RON = 0;
     }
 
     /**
@@ -100,36 +96,20 @@ public abstract class Account {
         return numOfTransactions;
     }
 
-    public double getTotalSpentOnClothes() {
-        return totalSpentOnClothes;
+    public int getNumOfTransactionsOver300RON() {
+        return numOfTransactionsOver300RON;
     }
 
-    public double getTotalSpentOnFood() {
-        return totalSpentOnFood;
-    }
-
-    public double getTotalSpentOnTech() {
-        return totalSpentOnTech;
+    public void increaseNumOfTransactionsOver300RON() {
+        numOfTransactionsOver300RON++;
     }
 
     public void increaseNumberOfTransactions() {
         this.numOfTransactions++;
     }
 
-    public void spendOnFood(double amount) {
-        this.totalSpentOnFood += amount;
-    }
-
-    public void spendOnClothes(double amount) {
-        this.totalSpentOnClothes += amount;
-    }
-
-    public void spendOnTech(double amount) {
-        this.totalSpentOnTech += amount;
-    }
-
-    public void spend(double amount) {
-        this.totalSpent += amount;
+    public void decreaseTotalSpent(double amount) {
+        this.totalSpent -= amount;
     }
 
     /**
@@ -196,5 +176,5 @@ public abstract class Account {
     /**
      * Metodă abstractă pentru aplicarea dobânzii în cont
      */
-    public abstract void addInterest();
+    public abstract double addInterest();
 }

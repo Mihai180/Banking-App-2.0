@@ -97,4 +97,6 @@ public abstract class Card {
      * @return Tipul cardului
      */
     public abstract String getCardType();
+
+    public abstract boolean isUsed();
 }

@@ -33,7 +33,7 @@ public final class ClassicAccount extends Account {
      * Metoda este goală deoarece nu este nevoie de aceasta operațiune la un cont classic
      */
     @Override
-    public void addInterest() {
-
+    public double addInterest() {
+        return -1;
     }
 }

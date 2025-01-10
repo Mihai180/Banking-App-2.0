@@ -263,6 +263,13 @@
 }, {
   "result" : "Command 'businessReport' at timestamp 432 is not implemented yet."
 }, {
+  "command" : "sendMoney",
+  "output" : {
+    "timestamp" : 434,
+    "description" : "User not found"
+  },
+  "timestamp" : 434
+}, {
   "result" : "Command 'businessReport' at timestamp 435 is not implemented yet."
 }, {
   "result" : "Command 'businessReport' at timestamp 436 is not implemented yet."

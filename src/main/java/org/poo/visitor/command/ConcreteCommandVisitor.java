@@ -10,6 +10,7 @@ import org.poo.model.card.Card;
 import org.poo.model.commerciant.CashbackStrategy;
 import org.poo.model.commerciant.CashbackStrategyFactory;
 import org.poo.model.commerciant.Commerciant;
+import org.poo.model.plan.GoldPlan;
 import org.poo.model.plan.PlanStrategy;
 import org.poo.model.transaction.*;
 import org.poo.model.user.User;
@@ -165,34 +166,40 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
         //double formattedAmount = Double.valueOf(df.format(convertedAmount));
         //convertedAmount = Math.round(convertedAmount * 100.0) / 100.0;
         // Crearea unei tranzacții de tip "CardPayment"
-        CardPaymentTransaction transaction = new CardPaymentTransaction(command.getTimestamp(),
-                command.getCommerciant(), convertedAmount);
-        Commerciant commerciant = CommerciantService.getCommerciantByName(command.getCommerciant());
-        double spentInRON = exchangeService.convertCurrency(associatedAccount.getCurrency(), "RON", command.getAmount());
-        //associatedAccount.spend(spentInRON);
-        associatedAccount.increaseNumberOfTransactions();
-        switch (commerciant.getType()) {
-            case "Food":
-                associatedAccount.spendOnFood(command.getAmount());
-                break;
-            case "Clothes":
-                associatedAccount.spendOnClothes(command.getAmount());
-                break;
-            case "Tech":
-                associatedAccount.spendOnTech(command.getAmount());
-                break;
+        if (command.getAmount() != 0) {
+            CardPaymentTransaction transaction = new CardPaymentTransaction(command.getTimestamp(),
+                    command.getCommerciant(), convertedAmount);
+
+            Commerciant commerciant = CommerciantService.getCommerciantByName(command.getCommerciant());
+            double spentInRON = exchangeService.convertCurrency(associatedAccount.getCurrency(), "RON", command.getAmount());
+            //associatedAccount.spend(spentInRON);
+            User user = associatedAccount.getOwner();
+            PlanStrategy plan = user.getCurrentPlan();
+            associatedAccount.increaseNumberOfTransactions();
+            if (spentInRON >= 300 && plan.getPlan().equals("Silver")) {
+                associatedAccount.increaseNumOfTransactionsOver300RON();
+            }
+
+            CashbackStrategy cashbackStrategy =
+                    CashbackStrategyFactory.getStrategy(commerciant.getCommerciant());
+
+            double amount = cashbackStrategy.calculateCashback(associatedAccount, transaction);
+            associatedAccount.deposit(amount);
+
+            if (plan.getPlan().equals("Silver") && associatedAccount.getNumOfTransactionsOver300RON() >= 5) {
+                PlanStrategy newPlan = new GoldPlan();
+                user.setCurrentPlan(newPlan);
+            }
+
+            //double convertedAmountInRON = exchangeService.convertCurrency(associatedAccount.getCurrency(), "RON", command.getAmount());
+            double commission = plan.calculateCommission(spentInRON);
+            double convertedCommission = exchangeService.convertCurrency("RON", associatedAccount.getCurrency(), commission);
+            associatedAccount.withdraw(convertedCommission);
+            associatedAccount.decreaseTotalSpent(convertedCommission);
+
+
+            associatedAccount.addTransaction(transaction);
         }
-        CashbackStrategy cashbackStrategy =
-                CashbackStrategyFactory.getStrategy(commerciant.getCommerciant());
-
-        double amount = cashbackStrategy.calculateCashback(associatedAccount, transaction);
-        associatedAccount.deposit(amount);
-
-        User user = associatedAccount.getOwner();
-        PlanStrategy plan = user.getCurrentPlan();
-        double commission = plan.calculateCommission(amount);
-        associatedAccount.withdraw(commission);
-        associatedAccount.addTransaction(transaction);
     }
 
     /**
@@ -478,10 +485,24 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                 Account account = accountService.getAccountByIBAN(command.getAccount());
                 User user = account.getOwner();
                 PlanStrategy plan = user.getCurrentPlan();
+                //double spentInRON = exchangeService.convertCurrency(associatedAccount.getCurrency(), "RON", command.getAmount());
                 double convertedAmount = exchangeService.convertCurrency(account.getCurrency(), "RON", command.getAmount());
                 double commission = plan.calculateCommission(convertedAmount);
                 double convertedCommission = exchangeService.convertCurrency("RON", account.getCurrency(), commission);
                 account.withdraw(convertedCommission);
+                account.decreaseTotalSpent(convertedCommission);
+
+                List<Commerciant> commerciants = commerciantService.getAllCommerciants();
+                for (Commerciant commerciant: commerciants) {
+                    if (commerciant.getAccount().equals(command.getReciever())) {
+                        double spentInRON = exchangeService.convertCurrency(account.getCurrency(), "RON", command.getAmount());
+                        //account.spend(spentInRON);
+                        account.increaseNumberOfTransactions();
+                        if (spentInRON >= 300) {
+                            account.increaseNumOfTransactionsOver300RON();
+                        }
+                    }
+                }
             }
 
             // Dacă transferul este reușit și contul destinatar există, efectuează conversia
@@ -495,15 +516,17 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                                         command.getAccount()).getCurrency(), currency,
                                 command.getAmount());
                 // Asigură precizia sumei convertite
-                BigDecimal preciseAmount =
+                /*BigDecimal preciseAmount =
                         new BigDecimal(convertedAmount).setScale(DECIMAL_PRECISION,
                                 RoundingMode.DOWN);
                 double finalAmount = preciseAmount.doubleValue();
+
+                 */
                 Transaction transaction =
                         new SendMoneyTransaction(command.getTimestamp(),
                                 command.getDescription(), command.getAccount(),
                                 command.getReciever(),
-                                finalAmount, currency, "received");
+                                convertedAmount, currency, "received");
                 accountService.getAccountByIBAN(command.getReciever()).addTransaction(transaction);
             }
 
@@ -518,6 +541,15 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                             new InsufficientFundsTransaction(command.getTimestamp());
                     senderAccount.addTransaction(transaction);
                 }
+            } else if (errorMessage.equals("Sender account not found.") || errorMessage.equals("Receiver account not found.")) {
+                ObjectNode cmdResult = mapper.createObjectNode();
+                cmdResult.put("command", "sendMoney");
+                ObjectNode outputNode = mapper.createObjectNode();
+                outputNode.put("timestamp", command.getTimestamp());
+                outputNode.put("description", "User not found");
+                cmdResult.set("output", outputNode);
+                this.output.add(cmdResult);
+                cmdResult.put("timestamp", command.getTimestamp());
             }
         }
     }
@@ -750,6 +782,15 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
             // Dacă contul nu este de economii, creează un rezultat de tip
             // "not savings account" în JSON
             notSavingsAccountResult(command.getCommand(), result, command.getTimestamp());
+        } else if (result.startsWith("Success")) {
+            String[] resultParts = result.split(": ");
+            if (resultParts.length > 1) {
+                String amountString = resultParts[1];
+                double amount = Double.parseDouble(amountString);
+                Account account = accountService.getAccountByIBAN(command.getAccount());
+                Transaction transaction = new InterestRateIncomeTransaction(amount, account.getCurrency(), command.getTimestamp());
+                account.addTransaction(transaction);
+            }
         }
     }
 
@@ -811,6 +852,35 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
         } catch (org.poo.exception.AccountNotFoundException exception) {
 
         } catch (PlanDowngradeException exception) {
+
+        }
+    }
+
+    public void visit(final CashWithdrawalCommand command) {
+        try {
+            String result = cardService.cashWithdrawal(command.getCardNumber(), command.getAmount(), command.getEmail());
+            if (result.startsWith("Cash withdrawal of")) {
+                Transaction transaction = new CashWithdrawalTransaction(command.getAmount(), command.getTimestamp());
+                Card card = cardService.getCardByNumber(command.getCardNumber());
+                Account account = card.getAccount();
+                account.addTransaction(transaction);
+            }
+        } catch (InsufficientFundsException exception) {
+            Transaction transaction = new InsufficientFundsTransaction(command.getTimestamp());
+            Card card = cardService.getCardByNumber(command.getCardNumber());
+            Account account = card.getAccount();
+            account.addTransaction(transaction);
+        } catch (CardNotFoundException exception) {
+            String exceptionMessage = exception.getMessage();
+            ObjectNode objectNode = mapper.createObjectNode();
+            objectNode.put("command", command.getCommand());
+            ObjectNode outputNode = mapper.createObjectNode();
+            outputNode.put("timestamp", command.getTimestamp());
+            outputNode.put("description", exceptionMessage);
+            objectNode.set("output", outputNode);
+            this.output.add(objectNode);
+            objectNode.put("timestamp", command.getTimestamp());
+        } catch (UserNotFoundException exception) {
 
         }
     }

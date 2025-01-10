@@ -307,8 +307,11 @@ public final class AccountService {
         if (account.getAccountType().equals("classic")) {
             return "This is not a savings account";
         }
-        account.addInterest();
-        return "Success";
+        double amount = account.addInterest();
+        if (amount < 0) {
+            return null;
+        }
+        return "Success: " + amount;
     }
 
     private Account findClassicAccountByCurrency(User user, String currency) {

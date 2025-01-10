@@ -63,4 +63,9 @@ public final class OneTimePayCard extends Card {
     public String getCardType() {
         return "OneTimePayCard";
     }
+
+    @Override
+    public boolean isUsed() {
+        return isUsed;
+    }
 }

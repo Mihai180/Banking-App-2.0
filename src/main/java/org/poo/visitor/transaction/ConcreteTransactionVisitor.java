@@ -152,4 +152,19 @@ public final class ConcreteTransactionVisitor implements TransactionVisitor {
         transactionNode.put("accountIBAN", transaction.getAccount());
         transactionNode.put("newPlanType", transaction.getNewPlanType());
     }
+
+    @Override
+    public void visit(final CashWithdrawalTransaction transaction) {
+        transactionNode.put("timestamp", transaction.getTimestamp());
+        transactionNode.put("description", transaction.getDescription());
+        transactionNode.put("amount", transaction.getAmount());
+    }
+
+    @Override
+    public void visit(final InterestRateIncomeTransaction transaction) {
+        transactionNode.put("timestamp", transaction.getTimestamp());
+        transactionNode.put("description", transaction.getDescription());
+        transactionNode.put("amount", transaction.getAmount());
+        transactionNode.put("currency", transaction.getCurrency());
+    }
 }

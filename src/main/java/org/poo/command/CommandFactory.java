@@ -74,6 +74,9 @@ public final class CommandFactory {
             case "upgradePlan":
                 return new UpgradePlanCommand(input.getCommand(), input.getNewPlanType(),
                         input.getAccount(), input.getTimestamp());
+            case "cashWithdrawal":
+                return new CashWithdrawalCommand(input.getCommand(), input.getCardNumber(),
+                        input.getAmount(), input.getEmail(), input.getLocation(), input.getTimestamp());
             default:
                 return new NotImplementedCommand(commandName, input.getTimestamp());
         }

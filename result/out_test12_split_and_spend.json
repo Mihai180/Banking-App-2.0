@@ -333,29 +333,19 @@
 }, {
   "result" : "Command 'acceptSplitPayment' at timestamp 153 is not implemented yet."
 }, {
-  "result" : "Command 'cashWithdrawal' at timestamp 155 is not implemented yet."
-}, {
   "result" : "Command 'acceptSplitPayment' at timestamp 156 is not implemented yet."
 }, {
   "result" : "Command 'acceptSplitPayment' at timestamp 157 is not implemented yet."
-}, {
-  "result" : "Command 'cashWithdrawal' at timestamp 159 is not implemented yet."
 }, {
   "result" : "Command 'acceptSplitPayment' at timestamp 160 is not implemented yet."
 }, {
   "result" : "Command 'acceptSplitPayment' at timestamp 164 is not implemented yet."
 }, {
-  "result" : "Command 'cashWithdrawal' at timestamp 165 is not implemented yet."
-}, {
   "result" : "Command 'acceptSplitPayment' at timestamp 166 is not implemented yet."
 }, {
   "result" : "Command 'acceptSplitPayment' at timestamp 168 is not implemented yet."
 }, {
-  "result" : "Command 'cashWithdrawal' at timestamp 170 is not implemented yet."
-}, {
   "result" : "Command 'acceptSplitPayment' at timestamp 171 is not implemented yet."
-}, {
-  "result" : "Command 'cashWithdrawal' at timestamp 173 is not implemented yet."
 }, {
   "result" : "Command 'acceptSplitPayment' at timestamp 174 is not implemented yet."
 }, {
@@ -500,10 +490,18 @@
     "involvedAccounts" : [ "RO79POOB3616857825600958", "RO76POOB4035116042454483", "RO58POOB7344468893732422", "RO58POOB2721178218599590", "RO90POOB5450777208072365", "RO37POOB7013767509830666" ],
     "error" : "Account RO58POOB2721178218599590 has insufficient funds for a split payment."
   }, {
+    "timestamp" : 165,
+    "description" : "Cash withdrawal of 420.0",
+    "amount" : 420.0
+  }, {
     "timestamp" : 169,
     "description" : "Upgrade plan",
     "accountIBAN" : "RO58POOB7344468893732422",
     "newPlanType" : "silver"
+  }, {
+    "timestamp" : 170,
+    "description" : "Cash withdrawal of 64.0",
+    "amount" : 64.0
   }, {
     "timestamp" : 177,
     "description" : "Card payment",

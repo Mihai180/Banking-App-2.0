@@ -43,4 +43,9 @@ public final class RegularCard extends Card {
     public String getCardType() {
         return "Regular";
     }
+
+    @Override
+    public boolean isUsed() {
+        return false;
+    }
 }

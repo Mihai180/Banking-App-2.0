@@ -34,13 +34,33 @@
   },
   "timestamp" : 523
 }, {
-  "result" : "Command 'cashWithdrawal' at timestamp 527 is not implemented yet."
+  "command" : "cashWithdrawal",
+  "output" : {
+    "timestamp" : 527,
+    "description" : "Card not found"
+  },
+  "timestamp" : 527
 }, {
-  "result" : "Command 'cashWithdrawal' at timestamp 532 is not implemented yet."
+  "command" : "cashWithdrawal",
+  "output" : {
+    "timestamp" : 532,
+    "description" : "Card not found"
+  },
+  "timestamp" : 532
 }, {
-  "result" : "Command 'cashWithdrawal' at timestamp 545 is not implemented yet."
+  "command" : "cashWithdrawal",
+  "output" : {
+    "timestamp" : 545,
+    "description" : "Card not found"
+  },
+  "timestamp" : 545
 }, {
-  "result" : "Command 'cashWithdrawal' at timestamp 555 is not implemented yet."
+  "command" : "cashWithdrawal",
+  "output" : {
+    "timestamp" : 555,
+    "description" : "Card not found"
+  },
+  "timestamp" : 555
 }, {
   "command" : "printTransactions",
   "output" : [ {
@@ -1223,7 +1243,12 @@
   } ],
   "timestamp" : 701
 }, {
-  "result" : "Command 'cashWithdrawal' at timestamp 703 is not implemented yet."
+  "command" : "cashWithdrawal",
+  "output" : {
+    "timestamp" : 703,
+    "description" : "Card not found"
+  },
+  "timestamp" : 703
 }, {
   "command" : "printUsers",
   "output" : [ {

@@ -120,4 +120,6 @@ public interface CommandVisitor {
     void visit(WithdrawSavingsCommand command);
 
     void visit(UpgradePlanCommand command);
+
+    void visit(CashWithdrawalCommand command);
 }
