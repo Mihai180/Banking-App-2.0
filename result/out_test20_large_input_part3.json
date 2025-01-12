@@ -1627,7 +1627,7 @@
     "email" : "Heather_Sheppard@hotmail.ch",
     "accounts" : [ {
       "IBAN" : "RO65POOB8944016386845896",
-      "balance" : 1497.0500000000002,
+      "balance" : 1497.0548,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -2434,7 +2434,7 @@
   "command" : "spendingsReport",
   "output" : {
     "IBAN" : "RO65POOB8944016386845896",
-    "balance" : 1497.0500000000002,
+    "balance" : 1497.0548,
     "currency" : "CHF",
     "transactions" : [ {
       "timestamp" : 632,
@@ -2623,7 +2623,7 @@
     "email" : "Heather_Sheppard@hotmail.ch",
     "accounts" : [ {
       "IBAN" : "RO65POOB8944016386845896",
-      "balance" : 1497.0500000000002,
+      "balance" : 1497.0548,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {

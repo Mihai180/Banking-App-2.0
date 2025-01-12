@@ -7,4 +7,5 @@ import org.poo.model.user.User;
 
 public interface CashbackStrategy {
     double calculateCashback(Account account, CardPaymentTransaction transaction);
+    String getCashbackType();
 }

@@ -22,4 +22,9 @@ public class NrOfTransactionsCashbackStrategy implements CashbackStrategy {
         }
         return 0;
     }
+
+    @Override
+    public String getCashbackType() {
+        return "NrOfTransactions";
+    }
 }

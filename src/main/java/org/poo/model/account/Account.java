@@ -1,6 +1,7 @@
 package org.poo.model.account;
 
 import org.poo.model.card.Card;
+import org.poo.model.commerciant.Commerciant;
 import org.poo.model.transaction.Transaction;
 import org.poo.model.user.User;
 
@@ -20,6 +21,8 @@ public abstract class Account {
     protected double totalSpent;
     protected int numOfTransactions;
     protected int numOfTransactionsOver300RON;
+    protected boolean cahsbackEarned;
+    protected ArrayList<Commerciant> commerciants;
 
     /**
      * Constructorul inițializează contul cu IBAN, proprietar și monedă.
@@ -37,6 +40,7 @@ public abstract class Account {
         this.totalSpent = 0.0;
         this.numOfTransactions = 0;
         this.numOfTransactionsOver300RON = 0;
+        this.cahsbackEarned = false;
     }
 
     /**
@@ -98,6 +102,26 @@ public abstract class Account {
 
     public int getNumOfTransactionsOver300RON() {
         return numOfTransactionsOver300RON;
+    }
+
+    public boolean isCahsbackEarned() {
+        return cahsbackEarned;
+    }
+
+    public void cashbackEarned() {
+        cahsbackEarned = true;
+    }
+
+    public ArrayList<Commerciant> getCommerciants() {
+        return commerciants;
+    }
+
+    public void addCommerciant(Commerciant commerciant) {
+        commerciants.add(commerciant);
+    }
+
+    public void increaseTotalSpent(double amount) {
+        totalSpent += amount;
     }
 
     public void increaseNumOfTransactionsOver300RON() {

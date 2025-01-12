@@ -229,8 +229,11 @@ public final class CardService {
         }
 
         Account account = card.getAccount();
+        PlanStrategy plan = user.getCurrentPlan();
+        double commission = plan.calculateCommission(amount);
         if (!account.getCurrency().equals("RON")) {
             amount = exchangeService.convertCurrency("RON", account.getCurrency(), amount);
+            commission = exchangeService.convertCurrency("RON", account.getCurrency(), commission);
         }
 
         if (account.getMinimumBalance() != null &&
@@ -244,9 +247,13 @@ public final class CardService {
         }
 
         account.withdraw(amount);
-        PlanStrategy plan = user.getCurrentPlan();
-        double commission = plan.calculateCommission(amount);
+        /*if (!account.getCurrency().equals("RON")) {
+            commission = exchangeService.convertCurrency("RON", account.getCurrency(), commission);
+        }
+
+         */
         account.withdraw(commission);
+        account.decreaseTotalSpent(commission);
 
         return "Cash withdrawal of" + amount + ".";
     }

@@ -83,7 +83,7 @@
     "email" : "Karen_McIsaac@zoho.nz",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 240.0895384615385,
+      "balance" : 239.9852307692308,
       "currency" : "NZD",
       "type" : "classic",
       "cards" : [ {
@@ -1022,7 +1022,7 @@
     "email" : "Karen_McIsaac@zoho.nz",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 115.64509401709405,
+      "balance" : 115.54078632478637,
       "currency" : "NZD",
       "type" : "classic",
       "cards" : [ {
@@ -1561,7 +1561,7 @@
     "email" : "Karen_McIsaac@zoho.nz",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 115.64509401709405,
+      "balance" : 115.54078632478637,
       "currency" : "NZD",
       "type" : "classic",
       "cards" : [ {
@@ -2245,7 +2245,7 @@
     "email" : "Karen_McIsaac@zoho.nz",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 115.64509401709405,
+      "balance" : 115.54078632478637,
       "currency" : "NZD",
       "type" : "classic",
       "cards" : [ ]
@@ -3017,7 +3017,7 @@
     "email" : "Karen_McIsaac@zoho.nz",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 115.64509401709405,
+      "balance" : 115.54078632478637,
       "currency" : "NZD",
       "type" : "classic",
       "cards" : [ ]
@@ -3193,7 +3193,7 @@
       } ]
     }, {
       "IBAN" : "RO04POOB3492426980939341",
-      "balance" : 1189.4297045714288,
+      "balance" : 1189.0921714285716,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -3565,7 +3565,7 @@
     "email" : "Karen_McIsaac@zoho.nz",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 115.64509401709405,
+      "balance" : 115.54078632478637,
       "currency" : "NZD",
       "type" : "classic",
       "cards" : [ ]
@@ -3741,7 +3741,7 @@
       } ]
     }, {
       "IBAN" : "RO04POOB3492426980939341",
-      "balance" : 1189.4297045714288,
+      "balance" : 1189.0921714285716,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -4073,7 +4073,7 @@
   "command" : "spendingsReport",
   "output" : {
     "IBAN" : "RO76POOB4035116042454483",
-    "balance" : 115.64509401709405,
+    "balance" : 115.54078632478637,
     "currency" : "NZD",
     "transactions" : [ {
       "timestamp" : 292,

@@ -171,7 +171,12 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                     command.getCommerciant(), convertedAmount);
 
             Commerciant commerciant = CommerciantService.getCommerciantByName(command.getCommerciant());
-            double spentInRON = exchangeService.convertCurrency(associatedAccount.getCurrency(), "RON", command.getAmount());
+            double spentInRON = exchangeService.convertCurrency(associatedAccount.getCurrency(), "RON", convertedAmount);
+            /*if (commerciant.getCashbackStrategy().equals("spendingThreshold")) {
+                associatedAccount.increaseTotalSpent(convertedAmount);
+            }
+
+             */
             //associatedAccount.spend(spentInRON);
             User user = associatedAccount.getOwner();
             PlanStrategy plan = user.getCurrentPlan();
@@ -180,25 +185,34 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                 associatedAccount.increaseNumOfTransactionsOver300RON();
             }
 
-            CashbackStrategy cashbackStrategy =
-                    CashbackStrategyFactory.getStrategy(commerciant.getCommerciant());
-
-            double amount = cashbackStrategy.calculateCashback(associatedAccount, transaction);
-            associatedAccount.deposit(amount);
-
             if (plan.getPlan().equals("Silver") && associatedAccount.getNumOfTransactionsOver300RON() >= 5) {
                 PlanStrategy newPlan = new GoldPlan();
                 user.setCurrentPlan(newPlan);
             }
 
-            //double convertedAmountInRON = exchangeService.convertCurrency(associatedAccount.getCurrency(), "RON", command.getAmount());
-            double commission = plan.calculateCommission(spentInRON);
-            double convertedCommission = exchangeService.convertCurrency("RON", associatedAccount.getCurrency(), commission);
-            associatedAccount.withdraw(convertedCommission);
-            associatedAccount.decreaseTotalSpent(convertedCommission);
+            plan = user.getCurrentPlan();
 
+            CashbackStrategy cashbackStrategy =
+                    CashbackStrategyFactory.getStrategy(commerciant.getCommerciant());
 
-            associatedAccount.addTransaction(transaction);
+            if (!associatedAccount.isCahsbackEarned()) {
+                double amount = cashbackStrategy.calculateCashback(associatedAccount, transaction);
+                associatedAccount.deposit(amount);
+                associatedAccount.cashbackEarned();
+
+                double commission = plan.calculateCommission(spentInRON);
+                double convertedCommission = exchangeService.convertCurrency("RON", associatedAccount.getCurrency(), commission);
+                associatedAccount.withdraw(convertedCommission);
+                associatedAccount.decreaseTotalSpent(convertedCommission);
+
+                associatedAccount.addTransaction(transaction);
+            } else {
+                double commission = plan.calculateCommission(spentInRON);
+                double convertedCommission = exchangeService.convertCurrency("RON", associatedAccount.getCurrency(), commission);
+                associatedAccount.withdraw(convertedCommission);
+                associatedAccount.decreaseTotalSpent(convertedCommission);
+                associatedAccount.addTransaction(transaction);
+            }
         }
     }
 
@@ -492,16 +506,18 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                 account.withdraw(convertedCommission);
                 account.decreaseTotalSpent(convertedCommission);
 
-                List<Commerciant> commerciants = commerciantService.getAllCommerciants();
+                /*List<Commerciant> commerciants = commerciantService.getAllCommerciants();
                 for (Commerciant commerciant: commerciants) {
                     if (commerciant.getAccount().equals(command.getReciever())) {
+
+                 */
                         double spentInRON = exchangeService.convertCurrency(account.getCurrency(), "RON", command.getAmount());
                         //account.spend(spentInRON);
                         account.increaseNumberOfTransactions();
                         if (spentInRON >= 300) {
                             account.increaseNumOfTransactionsOver300RON();
-                        }
-                    }
+                       // }
+                    //}
                 }
             }
 

@@ -56,4 +56,8 @@ public class SpendingThresholdCashbackStrategy implements CashbackStrategy {
         }
         return amount * cashbackPercent;
     }
+
+    public String getCashbackType() {
+        return "SpendingTreshold";
+    }
 }
