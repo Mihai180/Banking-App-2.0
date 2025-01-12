@@ -700,7 +700,7 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
         }
 
          */
-        if (command.getType().equals("equal")) {
+        /*if (command.getType().equals("equal")) {
             int nrOfAccounts = command.getAccounts().size();
             double splitAmount = command.getAmount() / nrOfAccounts;
             for (String iban : command.getAccounts()) {
@@ -709,8 +709,8 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                 if (!account.getCurrency().equals(command.getCurrency())) {
                     convertedAmount = exchangeService.convertCurrency(command.getCurrency(),
                             account.getCurrency(), splitAmount);
-                    account.addAmountForSplit(convertedAmount);
                 }
+                account.addAmountForSplit(convertedAmount);
             }
         } else if (command.getType().equals("custom")) {
             for (int i = 0; i < command.getAccounts().size(); i++) {
@@ -719,10 +719,12 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                 if (!account.getCurrency().equals(command.getCurrency())) {
                     amountForUser = exchangeService.convertCurrency(command.getCurrency(),
                             account.getCurrency(), amountForUser);
-                    account.addAmountForSplit(amountForUser);
                 }
+                account.addAmountForSplit(amountForUser);
             }
         }
+
+         */
         Integer splitTimestamp = command.getTimestamp();
         pendingSplits.put(splitTimestamp, command);
         Map<String, Boolean> acceptMap = new HashMap<>();
@@ -960,7 +962,30 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
         Map<String, Boolean> acceptMap = acceptanceMaps.get(splitTimestamp);
         if (acceptMap != null) {
             acceptMap.put(email, true);
-
+            SplitPaymentCommand splitPaymentCommand = pendingSplits.get(splitTimestamp);
+            if (splitPaymentCommand.getType().equals("equal")) {
+                int nrOfAccounts = splitPaymentCommand.getAccounts().size();
+                double splitAmount = splitPaymentCommand.getAmount() / nrOfAccounts;
+                for (String iban : splitPaymentCommand.getAccounts()) {
+                    Account account = accountService.getAccountByIBAN(iban);
+                    double convertedAmount = splitAmount;
+                    if (!account.getCurrency().equals(splitPaymentCommand.getCurrency())) {
+                        convertedAmount = exchangeService.convertCurrency(splitPaymentCommand.getCurrency(),
+                                account.getCurrency(), splitAmount);
+                    }
+                    account.addAmountForSplit(convertedAmount);
+                }
+            } else if (splitPaymentCommand.getType().equals("custom")) {
+                for (int i = 0; i < splitPaymentCommand.getAccounts().size(); i++) {
+                    Account account = accountService.getAccountByIBAN(splitPaymentCommand.getAccounts().get(i));
+                    double amountForUser = splitPaymentCommand.getAmountForUsers().get(i);
+                    if (!account.getCurrency().equals(splitPaymentCommand.getCurrency())) {
+                        amountForUser = exchangeService.convertCurrency(splitPaymentCommand.getCurrency(),
+                                account.getCurrency(), amountForUser);
+                    }
+                    account.addAmountForSplit(amountForUser);
+                }
+            }
         }
 
         boolean allAccepted = acceptMap.values().stream().allMatch(Boolean::booleanValue);
@@ -987,22 +1012,43 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                                     spCmd.getAccounts(),
                                     amount
                             );
+                            int nrOfAccounts = spCmd.getAccounts().size();
+                            double splitAmount = spCmd.getAmount() / nrOfAccounts;
                             for (String iban : spCmd.getAccounts()) {
                                 Account account = accountService.getAccountByIBAN(iban);
+                                double convertedAmount = splitAmount;
+                                if (!account.getCurrency().equals(spCmd.getCurrency())) {
+                                    convertedAmount = exchangeService.convertCurrency(spCmd.getCurrency(),
+                                            account.getCurrency(), splitAmount);
+                                }
+                                account.decreaseAmountForSplit(convertedAmount);
                                 account.addTransaction(transaction);
                             }
                         } else if (spCmd.getType().equals("custom")) {
                             String formattedAmount = String.format("%.2f", spCmd.getAmount());
-                            Transaction transaction = new CustomSplitPaymentTransaction(spCmd.getTimestamp(), spCmd.getCurrency(), spCmd.getAmountForUsers(), spCmd.getAccounts(), formattedAmount);
+                            Transaction transaction = new CustomSplitPaymentTransaction(
+                                    spCmd.getTimestamp(),
+                                    spCmd.getCurrency(), spCmd.getAmountForUsers(), spCmd.getAccounts(),
+                                    formattedAmount);
                             for (String iban : spCmd.getAccounts()) {
                                 Account account = accountService.getAccountByIBAN(iban);
                                 account.addTransaction(transaction);
+                            }
+
+                            for (int i = 0; i < spCmd.getAccounts().size(); i++) {
+                                Account account = accountService.getAccountByIBAN(spCmd.getAccounts().get(i));
+                                double amountForUser = spCmd.getAmountForUsers().get(i);
+                                if (!account.getCurrency().equals(spCmd.getCurrency())) {
+                                    amountForUser = exchangeService.convertCurrency(spCmd.getCurrency(),
+                                            account.getCurrency(), amountForUser);
+                                }
+                                account.decreaseAmountForSplit(amountForUser);
                             }
                         }
                     }
 
                     String regex = "Account \\S+ has insufficient funds for a split payment\\.";
-                    if (result.trim().matches(regex)) {
+                    if (result.trim().matches(regex) && spCmd.getType().equals("equal")) {
                         double amount = spCmd.getAmount() / spCmd.getAccounts().size();
                         Transaction transaction = new InssuficientFundsForSplitTransaction(
                                 spCmd.getAmount(),
@@ -1012,6 +1058,18 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                                 result,
                                 amount
                         );
+                        for (String iban : spCmd.getAccounts()) {
+                            Account account = accountService.getAccountByIBAN(iban);
+                            account.addTransaction(transaction);
+                        }
+                    } else if (result.trim().matches(regex) && spCmd.getType().equals("custom")) {
+                        Transaction transaction = new InsufficientFundsForCustomSplitTransaction(
+                                spCmd.getAmount(),
+                                spCmd.getCurrency(),
+                                spCmd.getAccounts(),
+                                spCmd.getTimestamp(),
+                                result,
+                                spCmd.getAmountForUsers());
                         for (String iban : spCmd.getAccounts()) {
                             Account account = accountService.getAccountByIBAN(iban);
                             account.addTransaction(transaction);

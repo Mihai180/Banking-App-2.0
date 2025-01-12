@@ -129,7 +129,13 @@ public abstract class Account {
      */
 
     public void addAmountForSplit(double amount) {
-        amountForSplit += amount;
+        if (amount <= this.balance) {
+            amountForSplit += amount;
+        }
+    }
+
+    public void decreaseAmountForSplit(double amount) {
+        amountForSplit -= amount;
     }
 
     public void increaseTotalSpent(double amount) {

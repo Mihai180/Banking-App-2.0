@@ -282,20 +282,57 @@ public final class AccountService {
         }
         else if (type.equals("custom")) {
         String lastIban = null;
-        for (int i = 0; i < accounts.size(); i++) {
+        /*for (int i = 0; i < accounts.size(); i++) {
             Account account = getAccountByIBAN(accounts.get(i));
-            double amountForUser = amountForUsers.get(i);
             if (account == null) {
                 throw new AccountNotFoundException("Account not found with IBAN: " + accounts.get(i));
             }
+            double amountForUser = amountForUsers.get(i);
             if (!account.getCurrency().equals(currency)) {
                 amountForUser = exchangeService.convertCurrency(currency,
                         account.getCurrency(), amountForUser);
             }
-            account.withdraw(amountForUser);
+            if (account.getBalance() < amountForUser) {
+                lastIban = accounts.get(i);
             }
+        }
+        if (lastIban != null) {
+            return "Account " + lastIban + " has insufficient funds for a split payment.";
+        }
+
+         */
+
+            for (int i = 0; i < accounts.size(); i++) {
+                Account account = getAccountByIBAN(accounts.get(i));
+                if (account == null) {
+                    throw new AccountNotFoundException("Account not found with IBAN: " + accounts.get(i));
+                }
+
+                double amountForUser = amountForUsers.get(i);
+                if (!account.getCurrency().equals(currency)) {
+                    amountForUser = exchangeService.convertCurrency(currency,
+                            account.getCurrency(), amountForUser);
+                }
+
+                if (account.getBalance() < amountForUser) {
+                    return "Account " + accounts.get(i) + " has insufficient funds for a split payment.";
+                }
+            }
+        for (int i = 0; i < accounts.size(); i++) {
+            Account account = getAccountByIBAN(accounts.get(i));
+
+            double amountForUser = amountForUsers.get(i);
+            if (!account.getCurrency().equals(currency)) {
+                amountForUser = exchangeService.convertCurrency(currency,
+                        account.getCurrency(), amountForUser);
+            }
+
+            account.withdraw(amountForUser);
+        }
+
         return "Success";
         }
+
         return "Error";
     }
 
