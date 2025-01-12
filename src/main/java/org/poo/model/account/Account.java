@@ -22,7 +22,8 @@ public abstract class Account {
     protected int numOfTransactions;
     protected int numOfTransactionsOver300RON;
     protected boolean cahsbackEarned;
-    protected ArrayList<Commerciant> commerciants;
+    //protected ArrayList<Commerciant> commerciants;
+    protected double amountForSplit;
 
     /**
      * Constructorul inițializează contul cu IBAN, proprietar și monedă.
@@ -41,6 +42,7 @@ public abstract class Account {
         this.numOfTransactions = 0;
         this.numOfTransactionsOver300RON = 0;
         this.cahsbackEarned = false;
+        this.amountForSplit = 0.0;
     }
 
     /**
@@ -108,16 +110,26 @@ public abstract class Account {
         return cahsbackEarned;
     }
 
+    public double getAmountForSplit() {
+        return amountForSplit;
+    }
+
     public void cashbackEarned() {
         cahsbackEarned = true;
     }
 
-    public ArrayList<Commerciant> getCommerciants() {
+    /*public ArrayList<Commerciant> getCommerciants() {
         return commerciants;
     }
 
     public void addCommerciant(Commerciant commerciant) {
         commerciants.add(commerciant);
+    }
+
+     */
+
+    public void addAmountForSplit(double amount) {
+        amountForSplit += amount;
     }
 
     public void increaseTotalSpent(double amount) {

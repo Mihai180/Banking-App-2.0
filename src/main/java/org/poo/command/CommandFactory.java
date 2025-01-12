@@ -57,7 +57,7 @@ public final class CommandFactory {
                         input.getInterestRate(), input.getCommand());
             case "splitPayment":
                 return new SplitPaymentCommand(input.getAccounts(), input.getTimestamp(),
-                        input.getCurrency(), input.getAmount());
+                        input.getCurrency(), input.getAmount(), input.getSplitPaymentType(), input.getAmountForUsers());
             case "report":
                 return new ReportCommand(input.getCommand(), input.getTimestamp(),
                         input.getStartTimestamp(), input.getEndTimestamp(), input.getAccount());
@@ -77,6 +77,9 @@ public final class CommandFactory {
             case "cashWithdrawal":
                 return new CashWithdrawalCommand(input.getCommand(), input.getCardNumber(),
                         input.getAmount(), input.getEmail(), input.getLocation(), input.getTimestamp());
+            case "acceptSplitPayment":
+                return new AcceptSplitPayment(input.getCommand(), input.getEmail(),
+                        input.getSplitPaymentType(), input.getTimestamp());
             default:
                 return new NotImplementedCommand(commandName, input.getTimestamp());
         }

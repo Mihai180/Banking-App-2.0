@@ -4,6 +4,7 @@ import org.poo.exception.*;
 import org.poo.model.account.Account;
 import org.poo.model.account.ClassicAccount;
 import org.poo.model.account.SavingsAccount;
+import org.poo.model.commerciant.Commerciant;
 import org.poo.model.plan.PlanFactory;
 import org.poo.model.plan.PlanStrategy;
 import org.poo.model.transaction.Transaction;
@@ -188,7 +189,7 @@ public final class AccountService {
                 amount
         );
 
-        if (senderAccount.getBalance() < amount) {
+        if (senderAccount.getBalance() < amount || senderAccount.getBalance() - senderAccount.getAmountForSplit() < amount) {
             throw new InsufficientFundsException("Insufficient funds in sender's account");
         }
 
@@ -243,40 +244,59 @@ public final class AccountService {
      * @throws AccountNotFoundException dacă unul dintre conturile specificate nu este găsit
      */
     public String splitPayment(final List<String> accounts, final String currency,
-                               final double amount) {
-        int nrOfAccounts = accounts.size();
-        double splitAmount = amount / nrOfAccounts;
-        String lastIban = null;
-        for (String iban : accounts) {
-            Account account = getAccountByIBAN(iban);
-            if (account == null) {
-                throw new AccountNotFoundException("Account not found with IBAN: " + iban);
-            }
-            double convertedAmount = splitAmount;
-            if (!account.getCurrency().equals(currency)) {
-                convertedAmount = exchangeService.convertCurrency(currency,
-                        account.getCurrency(), splitAmount);
-            }
-            if (account.getBalance() < convertedAmount) {
-                lastIban = iban;
-            }
-        }
-        if (lastIban != null) {
-            return "Account " + lastIban + " has insufficient funds for a split payment.";
-        }
-        for (String iban : accounts) {
-            Account account = getAccountByIBAN(iban);
-            if (account != null) {
+                               final double amount, final String type, final List<Double> amountForUsers) {
+        if (type.equals("equal")) {
+            int nrOfAccounts = accounts.size();
+            double splitAmount = amount / nrOfAccounts;
+            String lastIban = null;
+            for (String iban : accounts) {
+                Account account = getAccountByIBAN(iban);
+                if (account == null) {
+                    throw new AccountNotFoundException("Account not found with IBAN: " + iban);
+                }
                 double convertedAmount = splitAmount;
                 if (!account.getCurrency().equals(currency)) {
                     convertedAmount = exchangeService.convertCurrency(currency,
-                            account.getCurrency(),
-                            splitAmount);
+                            account.getCurrency(), splitAmount);
                 }
-                account.withdraw(convertedAmount);
+                if (account.getBalance() < convertedAmount) {
+                    lastIban = iban;
+                }
             }
+            if (lastIban != null) {
+                return "Account " + lastIban + " has insufficient funds for a split payment.";
+            }
+            for (String iban : accounts) {
+                Account account = getAccountByIBAN(iban);
+                if (account != null) {
+                    double convertedAmount = splitAmount;
+                    if (!account.getCurrency().equals(currency)) {
+                        convertedAmount = exchangeService.convertCurrency(currency,
+                                account.getCurrency(),
+                                splitAmount);
+                    }
+                    account.withdraw(convertedAmount);
+                }
+            }
+            return "Success";
         }
+        else if (type.equals("custom")) {
+        String lastIban = null;
+        for (int i = 0; i < accounts.size(); i++) {
+            Account account = getAccountByIBAN(accounts.get(i));
+            double amountForUser = amountForUsers.get(i);
+            if (account == null) {
+                throw new AccountNotFoundException("Account not found with IBAN: " + accounts.get(i));
+            }
+            if (!account.getCurrency().equals(currency)) {
+                amountForUser = exchangeService.convertCurrency(currency,
+                        account.getCurrency(), amountForUser);
+            }
+            account.withdraw(amountForUser);
+            }
         return "Success";
+        }
+        return "Error";
     }
 
     /**

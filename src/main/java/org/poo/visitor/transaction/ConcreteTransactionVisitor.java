@@ -89,6 +89,7 @@ public final class ConcreteTransactionVisitor implements TransactionVisitor {
         transactionNode.put("timestamp", transaction.getTimestamp());
         transactionNode.put("description", transaction.getDescription()
                 + transaction.getAmount() + " " + transaction.getCurrency());
+        transactionNode.put("splitPaymentType", "equal");
         transactionNode.put("currency", transaction.getCurrency());
         transactionNode.put("amount", transaction.getSplitAmount());
         ArrayNode involvedAccountsArray = mapper.createArrayNode();
@@ -166,5 +167,23 @@ public final class ConcreteTransactionVisitor implements TransactionVisitor {
         transactionNode.put("description", transaction.getDescription());
         transactionNode.put("amount", transaction.getAmount());
         transactionNode.put("currency", transaction.getCurrency());
+    }
+
+    @Override
+    public void visit(final CustomSplitPaymentTransaction transaction) {
+        transactionNode.put("timestamp", transaction.getTimestamp());
+        transactionNode.put("description", transaction.getDescription() + transaction.getAmount() + " " + transaction.getCurrency());
+        transactionNode.put("splitPaymentType", "custom");
+        transactionNode.put("currency", transaction.getCurrency());
+        ArrayNode amountForUsers = mapper.createArrayNode();
+        for (Double amount : transaction.getAmountForUsers()) {
+            amountForUsers.add(amount);
+        }
+        transactionNode.set("amountForUsers", amountForUsers);
+        ArrayNode involvedAccountsArray = mapper.createArrayNode();
+        for (String iban : transaction.getInvolvedAccounts()) {
+            involvedAccountsArray.add(iban);
+        }
+        transactionNode.set("involvedAccounts", involvedAccountsArray);
     }
 }

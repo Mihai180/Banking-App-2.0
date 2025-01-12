@@ -1,17 +1,8 @@
 [ {
-  "result" : "Command 'acceptSplitPayment' at timestamp 24 is not implemented yet."
-}, {
   "command" : "printTransactions",
   "output" : [ {
     "timestamp" : 1,
     "description" : "New account created"
-  }, {
-    "timestamp" : 21,
-    "description" : "Split payment of 3976.33 EUR",
-    "currency" : "EUR",
-    "amount" : 795.266,
-    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ],
-    "error" : "Account RO90POOB5450777208072365 has insufficient funds for a split payment."
   }, {
     "timestamp" : 23,
     "description" : "Shopping at Galeries Lafayette",
@@ -33,19 +24,8 @@
   "output" : [ {
     "timestamp" : 3,
     "description" : "New account created"
-  }, {
-    "timestamp" : 21,
-    "description" : "Split payment of 3976.33 EUR",
-    "currency" : "EUR",
-    "amount" : 795.266,
-    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ],
-    "error" : "Account RO90POOB5450777208072365 has insufficient funds for a split payment."
   } ],
   "timestamp" : 27
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 29 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 33 is not implemented yet."
 }, {
   "command" : "printUsers",
   "output" : [ {
@@ -168,39 +148,15 @@
   },
   "timestamp" : 42
 }, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 53 is not implemented yet."
-}, {
   "command" : "printTransactions",
   "output" : [ {
     "timestamp" : 3,
     "description" : "New account created"
   }, {
-    "timestamp" : 21,
-    "description" : "Split payment of 3976.33 EUR",
-    "currency" : "EUR",
-    "amount" : 795.266,
-    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ],
-    "error" : "Account RO90POOB5450777208072365 has insufficient funds for a split payment."
-  }, {
-    "timestamp" : 28,
-    "description" : "Split payment of 2235.00 EUR",
-    "currency" : "EUR",
-    "amount" : 745.0,
-    "involvedAccounts" : [ "RO58POOB7344468893732422", "RO90POOB5450777208072365", "RO30POOB9523423715747796" ],
-    "error" : "Account RO90POOB5450777208072365 has insufficient funds for a split payment."
-  }, {
     "timestamp" : 54,
-    "description" : "Weekly groceries from Carrefour",
-    "senderIBAN" : "RO90POOB5450777208072365",
-    "receiverIBAN" : "RO58POOB7344468893732422",
-    "amount" : "2737.0 RON",
-    "transferType" : "sent"
+    "description" : "Insufficient funds"
   } ],
   "timestamp" : 55
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 56 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 74 is not implemented yet."
 }, {
   "command" : "printTransactions",
   "output" : [ {
@@ -209,10 +165,10 @@
   }, {
     "timestamp" : 21,
     "description" : "Split payment of 3976.33 EUR",
+    "splitPaymentType" : "custom",
     "currency" : "EUR",
-    "amount" : 795.266,
-    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ],
-    "error" : "Account RO90POOB5450777208072365 has insufficient funds for a split payment."
+    "amountForUsers" : [ 813.33, 893.0, 665.0, 1570.0, 35.0 ],
+    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ]
   }, {
     "timestamp" : 23,
     "description" : "Shopping at Galeries Lafayette",
@@ -220,20 +176,6 @@
     "receiverIBAN" : "RO69POOB6209498372540635",
     "amount" : "1081.0 EUR",
     "transferType" : "sent"
-  }, {
-    "timestamp" : 28,
-    "description" : "Split payment of 2235.00 EUR",
-    "currency" : "EUR",
-    "amount" : 745.0,
-    "involvedAccounts" : [ "RO58POOB7344468893732422", "RO90POOB5450777208072365", "RO30POOB9523423715747796" ],
-    "error" : "Account RO90POOB5450777208072365 has insufficient funds for a split payment."
-  }, {
-    "timestamp" : 54,
-    "description" : "Weekly groceries from Carrefour",
-    "senderIBAN" : "RO90POOB5450777208072365",
-    "receiverIBAN" : "RO58POOB7344468893732422",
-    "amount" : "547.4 EUR",
-    "transferType" : "received"
   } ],
   "timestamp" : 80
 }, {
@@ -244,10 +186,10 @@
   }, {
     "timestamp" : 21,
     "description" : "Split payment of 3976.33 EUR",
+    "splitPaymentType" : "custom",
     "currency" : "EUR",
-    "amount" : 795.266,
-    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ],
-    "error" : "Account RO90POOB5450777208072365 has insufficient funds for a split payment."
+    "amountForUsers" : [ 813.33, 893.0, 665.0, 1570.0, 35.0 ],
+    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ]
   }, {
     "timestamp" : 23,
     "description" : "Shopping at Galeries Lafayette",
@@ -265,24 +207,13 @@
   }, {
     "timestamp" : 21,
     "description" : "Split payment of 3976.33 EUR",
+    "splitPaymentType" : "custom",
     "currency" : "EUR",
-    "amount" : 795.266,
-    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ],
-    "error" : "Account RO90POOB5450777208072365 has insufficient funds for a split payment."
-  }, {
-    "timestamp" : 28,
-    "description" : "Split payment of 2235.00 EUR",
-    "currency" : "EUR",
-    "amount" : 745.0,
-    "involvedAccounts" : [ "RO58POOB7344468893732422", "RO90POOB5450777208072365", "RO30POOB9523423715747796" ],
-    "error" : "Account RO90POOB5450777208072365 has insufficient funds for a split payment."
+    "amountForUsers" : [ 813.33, 893.0, 665.0, 1570.0, 35.0 ],
+    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ]
   }, {
     "timestamp" : 54,
-    "description" : "Weekly groceries from Carrefour",
-    "senderIBAN" : "RO90POOB5450777208072365",
-    "receiverIBAN" : "RO58POOB7344468893732422",
-    "amount" : "2737.0 RON",
-    "transferType" : "sent"
+    "description" : "Insufficient funds"
   } ],
   "timestamp" : 82
 }, {
@@ -293,10 +224,10 @@
   }, {
     "timestamp" : 21,
     "description" : "Split payment of 3976.33 EUR",
+    "splitPaymentType" : "custom",
     "currency" : "EUR",
-    "amount" : 795.266,
-    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ],
-    "error" : "Account RO90POOB5450777208072365 has insufficient funds for a split payment."
+    "amountForUsers" : [ 813.33, 893.0, 665.0, 1570.0, 35.0 ],
+    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ]
   } ],
   "timestamp" : 83
 }, {
@@ -307,10 +238,10 @@
   }, {
     "timestamp" : 21,
     "description" : "Split payment of 3976.33 EUR",
+    "splitPaymentType" : "custom",
     "currency" : "EUR",
-    "amount" : 795.266,
-    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ],
-    "error" : "Account RO90POOB5450777208072365 has insufficient funds for a split payment."
+    "amountForUsers" : [ 813.33, 893.0, 665.0, 1570.0, 35.0 ],
+    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ]
   } ],
   "timestamp" : 84
 }, {
@@ -335,7 +266,7 @@
     "email" : "Anastasie_Raymond@outlook.fr",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 2403.4,
+      "balance" : 963.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ ]
@@ -346,7 +277,7 @@
     "email" : "Elodie_du_Verdier@hotmail.fr",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 4056.0,
+      "balance" : 4021.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ ]
@@ -357,7 +288,7 @@
     "email" : "Mariana_Tudor@gmail.ro",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 341.0,
+      "balance" : 3078.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ ]
@@ -379,7 +310,7 @@
     "email" : "David_Johnson@gmail.us",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 3601.0,
+      "balance" : 2697.3,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ ]
@@ -442,10 +373,6 @@
   } ],
   "timestamp" : 87
 }, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 88 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 163 is not implemented yet."
-}, {
   "command" : "payOnline",
   "output" : {
     "timestamp" : 226,
@@ -495,10 +422,10 @@
   }, {
     "timestamp" : 21,
     "description" : "Split payment of 3976.33 EUR",
+    "splitPaymentType" : "custom",
     "currency" : "EUR",
-    "amount" : 795.266,
-    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ],
-    "error" : "Account RO90POOB5450777208072365 has insufficient funds for a split payment."
+    "amountForUsers" : [ 813.33, 893.0, 665.0, 1570.0, 35.0 ],
+    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ]
   }, {
     "timestamp" : 23,
     "description" : "Shopping at Galeries Lafayette",
@@ -513,13 +440,6 @@
     "amount" : 745.0,
     "involvedAccounts" : [ "RO58POOB7344468893732422", "RO90POOB5450777208072365", "RO30POOB9523423715747796" ],
     "error" : "Account RO90POOB5450777208072365 has insufficient funds for a split payment."
-  }, {
-    "timestamp" : 54,
-    "description" : "Weekly groceries from Carrefour",
-    "senderIBAN" : "RO90POOB5450777208072365",
-    "receiverIBAN" : "RO58POOB7344468893732422",
-    "amount" : "547.4 EUR",
-    "transferType" : "received"
   } ],
   "timestamp" : 232
 }, {
@@ -530,10 +450,10 @@
   }, {
     "timestamp" : 21,
     "description" : "Split payment of 3976.33 EUR",
+    "splitPaymentType" : "custom",
     "currency" : "EUR",
-    "amount" : 795.266,
-    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ],
-    "error" : "Account RO90POOB5450777208072365 has insufficient funds for a split payment."
+    "amountForUsers" : [ 813.33, 893.0, 665.0, 1570.0, 35.0 ],
+    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ]
   }, {
     "timestamp" : 23,
     "description" : "Shopping at Galeries Lafayette",
@@ -551,10 +471,10 @@
   }, {
     "timestamp" : 21,
     "description" : "Split payment of 3976.33 EUR",
+    "splitPaymentType" : "custom",
     "currency" : "EUR",
-    "amount" : 795.266,
-    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ],
-    "error" : "Account RO90POOB5450777208072365 has insufficient funds for a split payment."
+    "amountForUsers" : [ 813.33, 893.0, 665.0, 1570.0, 35.0 ],
+    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ]
   }, {
     "timestamp" : 28,
     "description" : "Split payment of 2235.00 EUR",
@@ -564,11 +484,7 @@
     "error" : "Account RO90POOB5450777208072365 has insufficient funds for a split payment."
   }, {
     "timestamp" : 54,
-    "description" : "Weekly groceries from Carrefour",
-    "senderIBAN" : "RO90POOB5450777208072365",
-    "receiverIBAN" : "RO58POOB7344468893732422",
-    "amount" : "2737.0 RON",
-    "transferType" : "sent"
+    "description" : "Insufficient funds"
   } ],
   "timestamp" : 234
 }, {
@@ -579,10 +495,10 @@
   }, {
     "timestamp" : 21,
     "description" : "Split payment of 3976.33 EUR",
+    "splitPaymentType" : "custom",
     "currency" : "EUR",
-    "amount" : 795.266,
-    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ],
-    "error" : "Account RO90POOB5450777208072365 has insufficient funds for a split payment."
+    "amountForUsers" : [ 813.33, 893.0, 665.0, 1570.0, 35.0 ],
+    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ]
   } ],
   "timestamp" : 235
 }, {
@@ -593,10 +509,10 @@
   }, {
     "timestamp" : 21,
     "description" : "Split payment of 3976.33 EUR",
+    "splitPaymentType" : "custom",
     "currency" : "EUR",
-    "amount" : 795.266,
-    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ],
-    "error" : "Account RO90POOB5450777208072365 has insufficient funds for a split payment."
+    "amountForUsers" : [ 813.33, 893.0, 665.0, 1570.0, 35.0 ],
+    "involvedAccounts" : [ "RO58POOB2721178218599590", "RO58POOB7344468893732422", "RO65POOB8944016386845896", "RO90POOB5450777208072365", "RO69POOB6209498372540635" ]
   } ],
   "timestamp" : 236
 }, {
@@ -621,7 +537,7 @@
     "email" : "Anastasie_Raymond@outlook.fr",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 2403.4,
+      "balance" : 963.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ ]
@@ -632,7 +548,7 @@
     "email" : "Elodie_du_Verdier@hotmail.fr",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 4056.0,
+      "balance" : 4021.0,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ ]
@@ -643,7 +559,7 @@
     "email" : "Mariana_Tudor@gmail.ro",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 341.0,
+      "balance" : 3078.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ ]
@@ -665,7 +581,7 @@
     "email" : "David_Johnson@gmail.us",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 3601.0,
+      "balance" : 2697.3,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ ]

@@ -22,11 +22,7 @@ import javax.security.auth.login.AccountNotFoundException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Comparator;
-import java.util.ArrayList;
+import java.util.*;
 
 
 /**
@@ -45,7 +41,11 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
     private final ArrayNode output;
     private final ObjectMapper mapper;
     // Constantă pentru precizia zecimală
-    private static final int DECIMAL_PRECISION = 14;
+    //private static final int DECIMAL_PRECISION = 14;
+    private final Map<Integer, SplitPaymentCommand> pendingSplits = new HashMap<>();
+    private final Map<Integer, Map<String, Boolean>> acceptanceMaps = new HashMap<>();
+    private final Map<String, Deque<Integer>> userPendingSplits = new HashMap<>();
+    //Map<Account, Double> accountAmounts = new HashMap<>();
 
     public ConcreteCommandVisitor(final UserService userService,
                                   final AccountService accountService,
@@ -671,8 +671,8 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
     @Override
     public void visit(final SplitPaymentCommand command) {
         // Împarte o plată între mai multe conturi utilizând serviciul de conturi
-        String result = accountService.splitPayment(command.getAccounts(),
-                command.getCurrency(), command.getAmount());
+        /*String result = accountService.splitPayment(command.getAccounts(),
+                command.getCurrency(), command.getAmount(), command.getType(), command.getAmountForUsers());
         if (result.equals("Success")) {
             // Dacă plata împărțită a fost reușită, înregistrează tranzacțiile corespunzătoare
             double amount = command.getAmount() / command.getAccounts().size();
@@ -698,6 +698,48 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                 account.addTransaction(transaction);
             }
         }
+
+         */
+        if (command.getType().equals("equal")) {
+            int nrOfAccounts = command.getAccounts().size();
+            double splitAmount = command.getAmount() / nrOfAccounts;
+            for (String iban : command.getAccounts()) {
+                Account account = accountService.getAccountByIBAN(iban);
+                double convertedAmount = splitAmount;
+                if (!account.getCurrency().equals(command.getCurrency())) {
+                    convertedAmount = exchangeService.convertCurrency(command.getCurrency(),
+                            account.getCurrency(), splitAmount);
+                    account.addAmountForSplit(convertedAmount);
+                }
+            }
+        } else if (command.getType().equals("custom")) {
+            for (int i = 0; i < command.getAccounts().size(); i++) {
+                Account account = accountService.getAccountByIBAN(command.getAccounts().get(i));
+                double amountForUser = command.getAmountForUsers().get(i);
+                if (!account.getCurrency().equals(command.getCurrency())) {
+                    amountForUser = exchangeService.convertCurrency(command.getCurrency(),
+                            account.getCurrency(), amountForUser);
+                    account.addAmountForSplit(amountForUser);
+                }
+            }
+        }
+        Integer splitTimestamp = command.getTimestamp();
+        pendingSplits.put(splitTimestamp, command);
+        Map<String, Boolean> acceptMap = new HashMap<>();
+        for (String accountIban : command.getAccounts()) {
+            // 1) Lookup the user’s email for this IBAN (some userService or stored mapping)
+            Account account = accountService.getAccountByIBAN(accountIban);
+            User user = account.getOwner();
+            String email = user.getEmail();
+
+            acceptMap.put(email, false);
+
+            // Add this splitTimestamp to the user's queue
+            userPendingSplits.putIfAbsent(email, new ArrayDeque<>());
+            userPendingSplits.get(email).offer(splitTimestamp);
+        }
+
+        acceptanceMaps.put(splitTimestamp, acceptMap);
     }
 
     /**
@@ -899,5 +941,92 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
         } catch (UserNotFoundException exception) {
 
         }
+    }
+
+    @Override
+    public void visit(AcceptSplitPayment command) {
+        String email = command.getEmail();
+
+        Deque<Integer> queue = userPendingSplits.get(email);
+        if (queue == null || queue.isEmpty()) {
+            return;
+        }
+
+        Integer splitTimestamp = queue.peek();
+        if (splitTimestamp == null) {
+            return;
+        }
+
+        Map<String, Boolean> acceptMap = acceptanceMaps.get(splitTimestamp);
+        if (acceptMap != null) {
+            acceptMap.put(email, true);
+
+        }
+
+        boolean allAccepted = acceptMap.values().stream().allMatch(Boolean::booleanValue);
+        if (allAccepted) {
+            SplitPaymentCommand spCmd = pendingSplits.get(splitTimestamp);
+            if (spCmd != null) {
+                try {
+                    String result = accountService.splitPayment(
+                            spCmd.getAccounts(),
+                            spCmd.getCurrency(),
+                            spCmd.getAmount(),
+                            spCmd.getType(),
+                            spCmd.getAmountForUsers()
+                    );
+
+                    if ("Success".equals(result)) {
+                        if (spCmd.getType().equals("equal")) {
+                            double amount = spCmd.getAmount() / spCmd.getAccounts().size();
+                            String formattedAmount = String.format("%.2f", spCmd.getAmount());
+                            Transaction transaction = new SplitPaymentTransaction(
+                                    spCmd.getTimestamp(),
+                                    spCmd.getCurrency(),
+                                    formattedAmount,
+                                    spCmd.getAccounts(),
+                                    amount
+                            );
+                            for (String iban : spCmd.getAccounts()) {
+                                Account account = accountService.getAccountByIBAN(iban);
+                                account.addTransaction(transaction);
+                            }
+                        } else if (spCmd.getType().equals("custom")) {
+                            String formattedAmount = String.format("%.2f", spCmd.getAmount());
+                            Transaction transaction = new CustomSplitPaymentTransaction(spCmd.getTimestamp(), spCmd.getCurrency(), spCmd.getAmountForUsers(), spCmd.getAccounts(), formattedAmount);
+                            for (String iban : spCmd.getAccounts()) {
+                                Account account = accountService.getAccountByIBAN(iban);
+                                account.addTransaction(transaction);
+                            }
+                        }
+                    }
+
+                    String regex = "Account \\S+ has insufficient funds for a split payment\\.";
+                    if (result.trim().matches(regex)) {
+                        double amount = spCmd.getAmount() / spCmd.getAccounts().size();
+                        Transaction transaction = new InssuficientFundsForSplitTransaction(
+                                spCmd.getAmount(),
+                                spCmd.getCurrency(),
+                                spCmd.getAccounts(),
+                                spCmd.getTimestamp(),
+                                result,
+                                amount
+                        );
+                        for (String iban : spCmd.getAccounts()) {
+                            Account account = accountService.getAccountByIBAN(iban);
+                            account.addTransaction(transaction);
+                        }
+                    }
+
+                    pendingSplits.remove(splitTimestamp);
+                    acceptanceMaps.remove(splitTimestamp);
+
+                } catch (org.poo.exception.AccountNotFoundException e) {
+
+                }
+            }
+        }
+
+        queue.poll();
     }
 }

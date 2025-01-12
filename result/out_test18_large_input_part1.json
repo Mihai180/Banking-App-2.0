@@ -433,26 +433,12 @@
 }, {
   "result" : "Command 'businessReport' at timestamp 398 is not implemented yet."
 }, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 402 is not implemented yet."
-}, {
   "command" : "payOnline",
   "output" : {
     "timestamp" : 403,
     "description" : "Card not found"
   },
   "timestamp" : 403
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 405 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 408 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 411 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 414 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 417 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 420 is not implemented yet."
 }, {
   "command" : "payOnline",
   "output" : {
@@ -461,8 +447,6 @@
   },
   "timestamp" : 421
 }, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 423 is not implemented yet."
-}, {
   "command" : "payOnline",
   "output" : {
     "timestamp" : 424,
@@ -470,16 +454,12 @@
   },
   "timestamp" : 424
 }, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 426 is not implemented yet."
-}, {
   "command" : "payOnline",
   "output" : {
     "timestamp" : 427,
     "description" : "Card not found"
   },
   "timestamp" : 427
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 429 is not implemented yet."
 }, {
   "command" : "printUsers",
   "output" : [ {
@@ -2789,13 +2769,6 @@
     "cardHolder" : "Ruth_Turnbull@yandex.nz",
     "account" : "RO10POOB4354933866366881"
   }, {
-    "timestamp" : 399,
-    "description" : "Split payment of 6079.00 EUR",
-    "currency" : "EUR",
-    "amount" : 303.95,
-    "involvedAccounts" : [ "RO65POOB8944016386845896", "RO68POOB1848616931405475", "RO69POOB9846198978826791", "RO38POOB0964823730995794", "RO30POOB9523423715747796", "RO69POOB6209498372540635", "RO33POOB4049920806186500", "RO79POOB3616857825600958", "RO58POOB7344468893732422", "RO00POOB5687892910835215", "RO90POOB5450777208072365", "RO98POOB8412955460158769", "RO58POOB2721178218599590", "RO76POOB4035116042454483", "RO96POOB6738272785416988", "RO10POOB4354933866366881", "RO19POOB4981055641668812", "RO33POOB9999273999620457", "RO37POOB7013767509830666", "RO32POOB0130532963818359" ],
-    "error" : "Account RO10POOB4354933866366881 has insufficient funds for a split payment."
-  }, {
     "timestamp" : 479,
     "description" : "New account created"
   }, {
@@ -2819,7 +2792,7 @@
     "email" : "Simion_Mazilescu@icloud.ro",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 1022.0,
+      "balance" : 1665.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -2833,7 +2806,7 @@
     "email" : "Michael_Williams@protonmail.ca",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 254.11111111111111,
+      "balance" : 409.1111111111111,
       "currency" : "CAD",
       "type" : "classic",
       "cards" : [ {
@@ -2856,7 +2829,7 @@
       } ]
     }, {
       "IBAN" : "RO45POOB0388148432759748",
-      "balance" : 348.11,
+      "balance" : 244.11,
       "currency" : "AUD",
       "type" : "savings",
       "cards" : [ ]
@@ -2890,7 +2863,7 @@
     "email" : "Brandon_Wells@mail.com.ch",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 919.9111111111112,
+      "balance" : 880.5555555555555,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -2904,7 +2877,7 @@
     "email" : "Eusebiu_Ardelean@hushmail.ro",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 234.0,
+      "balance" : 777.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -2924,7 +2897,7 @@
     "email" : "Vinicio_Tapia@yandex.es",
     "accounts" : [ {
       "IBAN" : "RO37POOB7013767509830666",
-      "balance" : 937.6,
+      "balance" : 882.6,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2992,7 +2965,7 @@
     "email" : "Anthony_Johnson_MD@mail.com.us",
     "accounts" : [ {
       "IBAN" : "RO00POOB5687892910835215",
-      "balance" : 729.5384615384615,
+      "balance" : 708.0,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -3006,7 +2979,7 @@
     "email" : "Melanie_Bochud@gmx.ch",
     "accounts" : [ {
       "IBAN" : "RO96POOB6738272785416988",
-      "balance" : 1060.4615384615386,
+      "balance" : 953.0,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -3099,7 +3072,7 @@
       } ]
     }, {
       "IBAN" : "RO46POOB9051076190383154",
-      "balance" : 1035.1822222222222,
+      "balance" : 879.448888888889,
       "currency" : "NZD",
       "type" : "savings",
       "cards" : [ ]
@@ -3187,12 +3160,6 @@
   },
   "timestamp" : 527
 }, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 528 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 529 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 530 is not implemented yet."
-}, {
   "command" : "printUsers",
   "output" : [ {
     "firstName" : "Simion",
@@ -3200,7 +3167,7 @@
     "email" : "Simion_Mazilescu@icloud.ro",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 1022.0,
+      "balance" : 1665.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -3214,7 +3181,7 @@
     "email" : "Michael_Williams@protonmail.ca",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 254.11111111111111,
+      "balance" : 409.1111111111111,
       "currency" : "CAD",
       "type" : "classic",
       "cards" : [ {
@@ -3237,7 +3204,7 @@
       } ]
     }, {
       "IBAN" : "RO45POOB0388148432759748",
-      "balance" : 348.11,
+      "balance" : 244.11,
       "currency" : "AUD",
       "type" : "savings",
       "cards" : [ ]
@@ -3271,7 +3238,7 @@
     "email" : "Brandon_Wells@mail.com.ch",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 919.9111111111112,
+      "balance" : 880.5555555555555,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -3285,7 +3252,7 @@
     "email" : "Eusebiu_Ardelean@hushmail.ro",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 234.0,
+      "balance" : 777.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -3305,7 +3272,7 @@
     "email" : "Vinicio_Tapia@yandex.es",
     "accounts" : [ {
       "IBAN" : "RO37POOB7013767509830666",
-      "balance" : 937.6,
+      "balance" : 882.6,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -3373,7 +3340,7 @@
     "email" : "Anthony_Johnson_MD@mail.com.us",
     "accounts" : [ {
       "IBAN" : "RO00POOB5687892910835215",
-      "balance" : 729.5384615384615,
+      "balance" : 708.0,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -3387,7 +3354,7 @@
     "email" : "Melanie_Bochud@gmx.ch",
     "accounts" : [ {
       "IBAN" : "RO96POOB6738272785416988",
-      "balance" : 1060.4615384615386,
+      "balance" : 953.0,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -3480,7 +3447,7 @@
       } ]
     }, {
       "IBAN" : "RO46POOB9051076190383154",
-      "balance" : 1035.1822222222222,
+      "balance" : 879.448888888889,
       "currency" : "NZD",
       "type" : "savings",
       "cards" : [ ]
@@ -3573,35 +3540,15 @@
 }, {
   "result" : "Command 'addNewBusinessAssociate' at timestamp 542 is not implemented yet."
 }, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 584 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 585 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 586 is not implemented yet."
-}, {
   "result" : "Command 'rejectSplitPayment' at timestamp 587 is not implemented yet."
 }, {
   "result" : "Command 'rejectSplitPayment' at timestamp 588 is not implemented yet."
 }, {
   "result" : "Command 'rejectSplitPayment' at timestamp 589 is not implemented yet."
 }, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 590 is not implemented yet."
-}, {
   "result" : "Command 'rejectSplitPayment' at timestamp 591 is not implemented yet."
 }, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 592 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 593 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 594 is not implemented yet."
-}, {
   "result" : "Command 'rejectSplitPayment' at timestamp 595 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 596 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 597 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 598 is not implemented yet."
 }, {
   "result" : "Command 'rejectSplitPayment' at timestamp 599 is not implemented yet."
 }, {
@@ -3612,7 +3559,7 @@
     "email" : "Simion_Mazilescu@icloud.ro",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 1022.0,
+      "balance" : 1665.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -3626,7 +3573,7 @@
     "email" : "Michael_Williams@protonmail.ca",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 254.11111111111111,
+      "balance" : 409.1111111111111,
       "currency" : "CAD",
       "type" : "classic",
       "cards" : [ {
@@ -3649,7 +3596,7 @@
       } ]
     }, {
       "IBAN" : "RO45POOB0388148432759748",
-      "balance" : 348.11,
+      "balance" : 244.11,
       "currency" : "AUD",
       "type" : "savings",
       "cards" : [ ]
@@ -3683,7 +3630,7 @@
     "email" : "Brandon_Wells@mail.com.ch",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 919.9111111111112,
+      "balance" : 880.5555555555555,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -3697,7 +3644,7 @@
     "email" : "Eusebiu_Ardelean@hushmail.ro",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 234.0,
+      "balance" : 777.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -3717,7 +3664,7 @@
     "email" : "Vinicio_Tapia@yandex.es",
     "accounts" : [ {
       "IBAN" : "RO37POOB7013767509830666",
-      "balance" : 937.6,
+      "balance" : 882.6,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -3785,7 +3732,7 @@
     "email" : "Anthony_Johnson_MD@mail.com.us",
     "accounts" : [ {
       "IBAN" : "RO00POOB5687892910835215",
-      "balance" : 729.5384615384615,
+      "balance" : 708.0,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -3799,7 +3746,7 @@
     "email" : "Melanie_Bochud@gmx.ch",
     "accounts" : [ {
       "IBAN" : "RO96POOB6738272785416988",
-      "balance" : 1060.4615384615386,
+      "balance" : 953.0,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -3892,7 +3839,7 @@
       } ]
     }, {
       "IBAN" : "RO46POOB9051076190383154",
-      "balance" : 1035.1822222222222,
+      "balance" : 879.448888888889,
       "currency" : "NZD",
       "type" : "savings",
       "cards" : [ ]
@@ -3998,7 +3945,7 @@
     "email" : "Simion_Mazilescu@icloud.ro",
     "accounts" : [ {
       "IBAN" : "RO58POOB7344468893732422",
-      "balance" : 1022.0,
+      "balance" : 1665.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -4012,7 +3959,7 @@
     "email" : "Michael_Williams@protonmail.ca",
     "accounts" : [ {
       "IBAN" : "RO69POOB6209498372540635",
-      "balance" : 254.11111111111111,
+      "balance" : 409.1111111111111,
       "currency" : "CAD",
       "type" : "classic",
       "cards" : [ {
@@ -4035,7 +3982,7 @@
       } ]
     }, {
       "IBAN" : "RO45POOB0388148432759748",
-      "balance" : 348.11,
+      "balance" : 244.11,
       "currency" : "AUD",
       "type" : "savings",
       "cards" : [ ]
@@ -4078,7 +4025,7 @@
     "email" : "Brandon_Wells@mail.com.ch",
     "accounts" : [ {
       "IBAN" : "RO58POOB2721178218599590",
-      "balance" : 919.9111111111112,
+      "balance" : 880.5555555555555,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -4092,7 +4039,7 @@
     "email" : "Eusebiu_Ardelean@hushmail.ro",
     "accounts" : [ {
       "IBAN" : "RO76POOB4035116042454483",
-      "balance" : 234.0,
+      "balance" : 777.0,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -4112,7 +4059,7 @@
     "email" : "Vinicio_Tapia@yandex.es",
     "accounts" : [ {
       "IBAN" : "RO37POOB7013767509830666",
-      "balance" : 937.6,
+      "balance" : 882.6,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -4189,7 +4136,7 @@
     "email" : "Anthony_Johnson_MD@mail.com.us",
     "accounts" : [ {
       "IBAN" : "RO00POOB5687892910835215",
-      "balance" : 729.5384615384615,
+      "balance" : 708.0,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ {
@@ -4203,7 +4150,7 @@
     "email" : "Melanie_Bochud@gmx.ch",
     "accounts" : [ {
       "IBAN" : "RO96POOB6738272785416988",
-      "balance" : 1060.4615384615386,
+      "balance" : 953.0,
       "currency" : "CHF",
       "type" : "classic",
       "cards" : [ {
@@ -4314,7 +4261,7 @@
       } ]
     }, {
       "IBAN" : "RO46POOB9051076190383154",
-      "balance" : 1035.1822222222222,
+      "balance" : 879.448888888889,
       "currency" : "NZD",
       "type" : "savings",
       "cards" : [ ]
@@ -4412,16 +4359,6 @@
     } ]
   } ],
   "timestamp" : 624
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 625 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 626 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 627 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 628 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 629 is not implemented yet."
 }, {
   "result" : "Command 'businessReport' at timestamp 630 is not implemented yet."
 }, {

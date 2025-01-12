@@ -68,14 +68,4 @@
     "description" : "User not found"
   },
   "timestamp" : 400
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 402 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 403 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 404 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 405 is not implemented yet."
-}, {
-  "result" : "Command 'acceptSplitPayment' at timestamp 406 is not implemented yet."
 } ]

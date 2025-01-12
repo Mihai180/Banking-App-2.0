@@ -105,4 +105,6 @@ public interface TransactionVisitor {
     void visit(CashWithdrawalTransaction transaction);
 
     void visit(InterestRateIncomeTransaction transaction);
+
+    void visit(CustomSplitPaymentTransaction transaction);
 }

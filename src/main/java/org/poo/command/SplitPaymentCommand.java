@@ -14,13 +14,17 @@ public final class SplitPaymentCommand implements Command {
     private final int timestamp;
     private final String currency;
     private final double amount;
+    private final String type;
+    private final List<Double> amountForUsers;
 
     public SplitPaymentCommand(final List<String> accounts, final int timestamp,
-                               final String currency, final double amount) {
+                               final String currency, final double amount, final String type, final List<Double> amountForUsers) {
         this.accounts = accounts;
         this.timestamp = timestamp;
         this.currency = currency;
         this.amount = amount;
+        this.type = type;
+        this.amountForUsers = amountForUsers;
     }
 
     public List<String> getAccounts() {
@@ -37,6 +41,14 @@ public final class SplitPaymentCommand implements Command {
 
     public double getAmount() {
         return amount;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public List<Double> getAmountForUsers() {
+        return amountForUsers;
     }
 
     @Override

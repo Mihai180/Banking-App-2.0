@@ -122,4 +122,6 @@ public interface CommandVisitor {
     void visit(UpgradePlanCommand command);
 
     void visit(CashWithdrawalCommand command);
+
+    void visit(AcceptSplitPayment command);
 }
