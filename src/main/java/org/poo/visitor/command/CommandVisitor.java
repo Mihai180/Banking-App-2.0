@@ -132,4 +132,6 @@ public interface CommandVisitor {
     void visit(ChangeDepositLimitCommand command);
 
     void visit(BusinessReportCommand command);
+
+    void visit(RejectSplitPaymentCommand command);
 }

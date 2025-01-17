@@ -93,6 +93,9 @@ public final class CommandFactory {
                 return new BusinessReportCommand(input.getCommand(), input.getType(),
                         input.getStartTimestamp(), input.getEndTimestamp(), input.getAccount(),
                         input.getTimestamp());
+            case "rejectSplitPayment":
+                return new RejectSplitPaymentCommand(input.getCommand(), input.getEmail(),
+                        input.getSplitPaymentType(), input.getTimestamp());
             default:
                 return new NotImplementedCommand(commandName, input.getTimestamp());
         }

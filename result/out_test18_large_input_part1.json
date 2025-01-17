@@ -3583,20 +3583,6 @@
   } ],
   "timestamp" : 531
 }, {
-  "result" : "Command 'rejectSplitPayment' at timestamp 532 is not implemented yet."
-}, {
-  "result" : "Command 'rejectSplitPayment' at timestamp 587 is not implemented yet."
-}, {
-  "result" : "Command 'rejectSplitPayment' at timestamp 588 is not implemented yet."
-}, {
-  "result" : "Command 'rejectSplitPayment' at timestamp 589 is not implemented yet."
-}, {
-  "result" : "Command 'rejectSplitPayment' at timestamp 591 is not implemented yet."
-}, {
-  "result" : "Command 'rejectSplitPayment' at timestamp 595 is not implemented yet."
-}, {
-  "result" : "Command 'rejectSplitPayment' at timestamp 599 is not implemented yet."
-}, {
   "command" : "printUsers",
   "output" : [ {
     "firstName" : "Simion",

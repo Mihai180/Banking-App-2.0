@@ -206,4 +206,23 @@ public final class ConcreteTransactionVisitor implements TransactionVisitor {
         transactionNode.set("involvedAccounts", involvedAccountsArray);
         transactionNode.put("error", transaction.getError());
     }
+
+    @Override
+    public void visit(final UserRejectedSplitTransaction transaction) {
+        transactionNode.put("timestamp", transaction.getTimestamp());
+        transactionNode.put("description", transaction.getDescription());
+        transactionNode.put("splitPaymentType", transaction.getSplitPaymentType());
+        transactionNode.put("currency", transaction.getCurrency());
+        ArrayNode amountForUsers = mapper.createArrayNode();
+        for (Double amount : transaction.getAmountForUsers()) {
+            amountForUsers.add(amount);
+        }
+        transactionNode.set("amountForUsers", amountForUsers);
+        ArrayNode involvedAccountsArray = mapper.createArrayNode();
+        for (String iban : transaction.getInvolvedAccounts()) {
+            involvedAccountsArray.add(iban);
+        }
+        transactionNode.set("involvedAccounts", involvedAccountsArray);
+        transactionNode.put("error", transaction.getError());
+    }
 }

@@ -573,8 +573,7 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
 
             // Dacă transferul este reușit și contul destinatar există, efectuează conversia
             // valutară și înregistrează tranzacția de primire
-            if (result.equals("Success")
-                    && accountService.getAccountByIBAN(command.getReciever()) != null) {
+            if (result.equals("Success")) {
                 String currency =
                         accountService.getAccountByIBAN(command.getReciever()).getCurrency();
                 double convertedAmount =
@@ -1016,6 +1015,18 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
     public void visit(AcceptSplitPayment command) {
         String email = command.getEmail();
 
+        User user = userService.getUserByEmail(email);
+        if (user == null) {
+            ObjectNode objectNode = mapper.createObjectNode();
+            objectNode.put("command", command.getCommand());
+            ObjectNode outputNode = mapper.createObjectNode();
+            outputNode.put("timestamp", command.getTimestamp());
+            outputNode.put("description", "User not found");
+            objectNode.put("output", outputNode);
+            objectNode.put("timestamp", command.getTimestamp());
+            this.output.add(objectNode);
+        }
+
         Deque<Integer> queue = userPendingSplits.get(email);
         if (queue == null || queue.isEmpty()) {
             return;
@@ -1254,5 +1265,56 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
         reportResult.set("output", outputNode);
         reportResult.put("timestamp", command.getTimestamp());
         this.output.add(reportResult);
+    }
+
+    @Override
+    public void visit(RejectSplitPaymentCommand command) {
+        String email = command.getEmail();
+
+        User user = userService.getUserByEmail(email);
+        if (user == null) {
+            ObjectNode objectNode = mapper.createObjectNode();
+            objectNode.put("command", command.getCommand());
+            ObjectNode outputNode = mapper.createObjectNode();
+            outputNode.put("timestamp", command.getTimestamp());
+            outputNode.put("description", "User not found");
+            objectNode.put("output", outputNode);
+            objectNode.put("timestamp", command.getTimestamp());
+            this.output.add(objectNode);
+        }
+
+        Deque<Integer> queue = userPendingSplits.get(email);
+        if (queue == null || queue.isEmpty()) {
+            return;
+        }
+
+        Integer splitTimestamp = queue.peek();
+        if (splitTimestamp == null) {
+            return;
+        }
+
+        Map<String, Boolean> acceptMap = acceptanceMaps.get(splitTimestamp);
+        if (acceptMap != null) {
+            acceptMap.put(email, false);
+            SplitPaymentCommand spCmd = pendingSplits.get(splitTimestamp);
+            if (spCmd != null) {
+                UserRejectedSplitTransaction transaction = new UserRejectedSplitTransaction(
+                        spCmd.getAmount(),
+                        spCmd.getCurrency(),
+                        spCmd.getAccounts(),
+                        spCmd.getTimestamp(),
+                        "One user rejected the payment.",
+                        spCmd.getAmountForUsers(),
+                        spCmd.getType()
+                );
+
+                for (String iban : spCmd.getAccounts()) {
+                    Account account = accountService.getAccountByIBAN(iban);
+                    account.addTransaction(transaction);
+                }
+            }
+        }
+
+        queue.poll();
     }
 }

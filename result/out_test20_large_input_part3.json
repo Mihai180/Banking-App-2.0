@@ -2461,8 +2461,6 @@
   },
   "timestamp" : 840
 }, {
-  "result" : "Command 'rejectSplitPayment' at timestamp 842 is not implemented yet."
-}, {
   "command" : "spendingsReport",
   "output" : {
     "IBAN" : "RO69POOB9846198978826791",

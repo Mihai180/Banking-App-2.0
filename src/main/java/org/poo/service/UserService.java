@@ -69,9 +69,11 @@ public final class UserService {
      */
     public User getUserByEmail(final String email) {
         User user = usersByEmail.get(email);
-        if (user == null) {
+        /*if (user == null) {
             throw new UserNotFoundException("User not found: " + email);
         }
+
+         */
 
         return user;
     }

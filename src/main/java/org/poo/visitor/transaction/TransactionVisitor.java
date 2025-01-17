@@ -107,4 +107,6 @@ public interface TransactionVisitor {
     void visit(CustomSplitPaymentTransaction transaction);
 
     void visit(InsufficientFundsForCustomSplitTransaction transaction);
+
+    void visit(UserRejectedSplitTransaction transaction);
 }
