@@ -124,4 +124,12 @@ public interface CommandVisitor {
     void visit(CashWithdrawalCommand command);
 
     void visit(AcceptSplitPayment command);
+
+    void visit(AddNewBusinessAssociateCommand command);
+
+    void visit(ChangeSpendingLimitCommand command);
+
+    void visit(ChangeDepositLimitCommand command);
+
+    void visit(BusinessReportCommand command);
 }

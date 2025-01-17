@@ -283,8 +283,6 @@
   } ],
   "timestamp" : 349
 }, {
-  "result" : "Command 'changeSpendingLimit' at timestamp 350 is not implemented yet."
-}, {
   "command" : "cashWithdrawal",
   "output" : {
     "timestamp" : 355,
@@ -425,13 +423,32 @@
   },
   "timestamp" : 389
 }, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 392 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 394 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 396 is not implemented yet."
-}, {
-  "result" : "Command 'businessReport' at timestamp 398 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO53POOB7122855990652257",
+    "balance" : 443.0,
+    "currency" : "EUR",
+    "spending limit" : 100.0,
+    "deposit limit" : 100.0,
+    "statistics type" : "transaction",
+    "managers" : [ {
+      "username" : "Zavala Donna",
+      "spent" : 0.0,
+      "deposited" : 122.0
+    }, {
+      "username" : "Turnbull Ruth",
+      "spent" : 0.0,
+      "deposited" : 148.0
+    }, {
+      "username" : "Tapia Vinicio",
+      "spent" : 0.0,
+      "deposited" : 173.0
+    } ],
+    "employees" : [ ],
+    "total spent" : 0.0,
+    "total deposited" : 443.0
+  },
+  "timestamp" : 398
 }, {
   "command" : "payOnline",
   "output" : {
@@ -521,7 +538,7 @@
       "IBAN" : "RO53POOB7122855990652257",
       "balance" : 443.0,
       "currency" : "EUR",
-      "type" : "classic",
+      "type" : "business",
       "cards" : [ ]
     } ]
   }, {
@@ -751,19 +768,12 @@
   } ],
   "timestamp" : 430
 }, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 431 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 432 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 433 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 434 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 435 is not implemented yet."
-}, {
-  "result" : "Command 'changeSpendingLimit' at timestamp 436 is not implemented yet."
-}, {
-  "result" : "Command 'changeSpendingLimit' at timestamp 437 is not implemented yet."
+  "command" : "changeSpendingLimit",
+  "output" : {
+    "timestamp" : 436,
+    "description" : "You must be owner in order to change spending limit."
+  },
+  "timestamp" : 436
 }, {
   "command" : "cashWithdrawal",
   "output" : {
@@ -793,7 +803,52 @@
   },
   "timestamp" : 446
 }, {
-  "result" : "Command 'businessReport' at timestamp 447 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO53POOB7122855990652257",
+    "balance" : 899.0,
+    "currency" : "EUR",
+    "spending limit" : 357.0,
+    "deposit limit" : 100.0,
+    "statistics type" : "transaction",
+    "managers" : [ {
+      "username" : "Zavala Donna",
+      "spent" : 0.0,
+      "deposited" : 303.0
+    }, {
+      "username" : "Turnbull Ruth",
+      "spent" : 0.0,
+      "deposited" : 274.0
+    }, {
+      "username" : "Tapia Vinicio",
+      "spent" : 0.0,
+      "deposited" : 322.0
+    } ],
+    "employees" : [ {
+      "username" : "Johnson MD Anthony",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "del Andres Lisandro",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "van de Veen-Verhoeven Nick",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Boyer Bernadette",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Picard Alain",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 899.0
+  },
+  "timestamp" : 447
 }, {
   "command" : "printUsers",
   "output" : [ {
@@ -853,9 +908,9 @@
       } ]
     }, {
       "IBAN" : "RO53POOB7122855990652257",
-      "balance" : 1297.0,
+      "balance" : 899.0,
       "currency" : "EUR",
-      "type" : "classic",
+      "type" : "business",
       "cards" : [ {
         "cardNumber" : "9281102140265301",
         "status" : "active"
@@ -1160,9 +1215,9 @@
       } ]
     }, {
       "IBAN" : "RO53POOB7122855990652257",
-      "balance" : 1297.0,
+      "balance" : 899.0,
       "currency" : "EUR",
-      "type" : "classic",
+      "type" : "business",
       "cards" : [ {
         "cardNumber" : "9281102140265301",
         "status" : "active"
@@ -1476,9 +1531,9 @@
       } ]
     }, {
       "IBAN" : "RO53POOB7122855990652257",
-      "balance" : 1297.0,
+      "balance" : 899.0,
       "currency" : "EUR",
-      "type" : "classic",
+      "type" : "business",
       "cards" : [ {
         "cardNumber" : "9281102140265301",
         "status" : "active"
@@ -1801,9 +1856,9 @@
       } ]
     }, {
       "IBAN" : "RO53POOB7122855990652257",
-      "balance" : 1297.0,
+      "balance" : 899.0,
       "currency" : "EUR",
-      "type" : "classic",
+      "type" : "business",
       "cards" : [ {
         "cardNumber" : "9281102140265301",
         "status" : "active"
@@ -2135,9 +2190,9 @@
       } ]
     }, {
       "IBAN" : "RO53POOB7122855990652257",
-      "balance" : 1297.0,
+      "balance" : 899.0,
       "currency" : "EUR",
-      "type" : "classic",
+      "type" : "business",
       "cards" : [ {
         "cardNumber" : "9281102140265301",
         "status" : "active"
@@ -2478,9 +2533,9 @@
       } ]
     }, {
       "IBAN" : "RO53POOB7122855990652257",
-      "balance" : 1297.0,
+      "balance" : 899.0,
       "currency" : "EUR",
-      "type" : "classic",
+      "type" : "business",
       "cards" : [ {
         "cardNumber" : "9281102140265301",
         "status" : "active"
@@ -2849,9 +2904,9 @@
       } ]
     }, {
       "IBAN" : "RO53POOB7122855990652257",
-      "balance" : 1297.0,
+      "balance" : 899.0,
       "currency" : "EUR",
-      "type" : "classic",
+      "type" : "business",
       "cards" : [ {
         "cardNumber" : "9281102140265301",
         "status" : "active"
@@ -3224,9 +3279,9 @@
       } ]
     }, {
       "IBAN" : "RO53POOB7122855990652257",
-      "balance" : 1297.0,
+      "balance" : 899.0,
       "currency" : "EUR",
-      "type" : "classic",
+      "type" : "business",
       "cards" : [ {
         "cardNumber" : "9281102140265301",
         "status" : "active"
@@ -3530,16 +3585,6 @@
 }, {
   "result" : "Command 'rejectSplitPayment' at timestamp 532 is not implemented yet."
 }, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 538 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 539 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 540 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 541 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 542 is not implemented yet."
-}, {
   "result" : "Command 'rejectSplitPayment' at timestamp 587 is not implemented yet."
 }, {
   "result" : "Command 'rejectSplitPayment' at timestamp 588 is not implemented yet."
@@ -3616,9 +3661,9 @@
       } ]
     }, {
       "IBAN" : "RO53POOB7122855990652257",
-      "balance" : 289.4413375,
+      "balance" : 114.33713311688314,
       "currency" : "EUR",
-      "type" : "classic",
+      "type" : "business",
       "cards" : [ {
         "cardNumber" : "9281102140265301",
         "status" : "active"
@@ -3847,7 +3892,7 @@
       "IBAN" : "RO75POOB8279679254660818",
       "balance" : 17247.0,
       "currency" : "NZD",
-      "type" : "classic",
+      "type" : "business",
       "cards" : [ {
         "cardNumber" : "1388131156990910",
         "status" : "active"
@@ -3929,7 +3974,40 @@
   } ],
   "timestamp" : 600
 }, {
-  "result" : "Command 'businessReport' at timestamp 601 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO75POOB8279679254660818",
+    "balance" : 17247.0,
+    "currency" : "NZD",
+    "spending limit" : 177.7777777777778,
+    "deposit limit" : 177.7777777777778,
+    "statistics type" : "transaction",
+    "managers" : [ ],
+    "employees" : [ {
+      "username" : "Zavala Donna",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Ardelean Eusebiu",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Tapia Vinicio",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Picard Alain",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Mazilescu Simion",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 0.0
+  },
+  "timestamp" : 601
 }, {
   "command" : "deleteAccount",
   "output" : {
@@ -4002,9 +4080,9 @@
       } ]
     }, {
       "IBAN" : "RO53POOB7122855990652257",
-      "balance" : 289.4413375,
+      "balance" : 114.33713311688314,
       "currency" : "EUR",
-      "type" : "classic",
+      "type" : "business",
       "cards" : [ {
         "cardNumber" : "9281102140265301",
         "status" : "active"
@@ -4269,7 +4347,7 @@
       "IBAN" : "RO75POOB8279679254660818",
       "balance" : 17247.0,
       "currency" : "NZD",
-      "type" : "classic",
+      "type" : "business",
       "cards" : [ {
         "cardNumber" : "1388131156990910",
         "status" : "active"
@@ -4313,7 +4391,7 @@
       } ]
     }, {
       "IBAN" : "RO71POOB1634969878734749",
-      "balance" : 333.0,
+      "balance" : 329.6,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -4322,7 +4400,7 @@
       } ]
     }, {
       "IBAN" : "RO09POOB4346339013848470",
-      "balance" : 346.0,
+      "balance" : 345.6142857142857,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -4331,7 +4409,7 @@
       } ]
     }, {
       "IBAN" : "RO50POOB3913194831046423",
-      "balance" : 311.0,
+      "balance" : 215.56625,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -4340,7 +4418,7 @@
       } ]
     }, {
       "IBAN" : "RO89POOB4455583483378897",
-      "balance" : 335.0,
+      "balance" : 293.3144545454545,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -4349,7 +4427,7 @@
       } ]
     }, {
       "IBAN" : "RO36POOB6500477412147025",
-      "balance" : 329.0,
+      "balance" : 328.82,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -4360,7 +4438,85 @@
   } ],
   "timestamp" : 624
 }, {
-  "result" : "Command 'businessReport' at timestamp 630 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO53POOB7122855990652257",
+    "balance" : 114.33713311688314,
+    "currency" : "EUR",
+    "spending limit" : 357.0,
+    "deposit limit" : 100.0,
+    "statistics type" : "transaction",
+    "managers" : [ {
+      "username" : "Zavala Donna",
+      "spent" : 0.0,
+      "deposited" : 303.0
+    }, {
+      "username" : "Turnbull Ruth",
+      "spent" : 0.0,
+      "deposited" : 274.0
+    }, {
+      "username" : "Tapia Vinicio",
+      "spent" : 0.0,
+      "deposited" : 322.0
+    } ],
+    "employees" : [ {
+      "username" : "Johnson MD Anthony",
+      "spent" : 158.65515,
+      "deposited" : 0.0
+    }, {
+      "username" : "del Andres Lisandro",
+      "spent" : 153.67757142857144,
+      "deposited" : 0.0
+    }, {
+      "username" : "van de Veen-Verhoeven Nick",
+      "spent" : 243.0495,
+      "deposited" : 0.0
+    }, {
+      "username" : "Boyer Bernadette",
+      "spent" : 2.4920999999999998,
+      "deposited" : 0.0
+    }, {
+      "username" : "Picard Alain",
+      "spent" : 226.41054545454546,
+      "deposited" : 0.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 899.0
+  },
+  "timestamp" : 630
 }, {
-  "result" : "Command 'businessReport' at timestamp 631 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO75POOB8279679254660818",
+    "balance" : 17247.0,
+    "currency" : "NZD",
+    "spending limit" : 177.7777777777778,
+    "deposit limit" : 177.7777777777778,
+    "statistics type" : "transaction",
+    "managers" : [ ],
+    "employees" : [ {
+      "username" : "Zavala Donna",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Ardelean Eusebiu",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Tapia Vinicio",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Picard Alain",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Mazilescu Simion",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 0.0
+  },
+  "timestamp" : 631
 } ]

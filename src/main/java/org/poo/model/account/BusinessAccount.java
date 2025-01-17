@@ -3,24 +3,30 @@ package org.poo.model.account;
 import org.poo.model.user.User;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-/**
- * Clasa finală ClassicAccount reprezintă un tip specific de cont,
- * care extinde clasa abstractă Account
- */
-public final class ClassicAccount extends Account {
-    public ClassicAccount(final String iban, final User owner, final String currency) {
+public class BusinessAccount extends Account {
+    private List<User> managers;
+    private List<User> employees;
+    private double spendingLimit;
+    private double depositLimit;
+    public BusinessAccount(final String iban, final User owner, final String currency) {
         super(iban, owner, currency);
+        this.managers = new ArrayList<>();
+        this.employees = new ArrayList<>();
+        this.spendingLimit = 500;
+        this.depositLimit = 500;
     }
 
     /**
      * Returnează tipul contului ca fiind "classic"
-     * @return "classic"
+     * @return "business"
      */
     @Override
     public String getAccountType() {
-        return "classic";
+        return "business";
     }
 
     /**
@@ -42,46 +48,51 @@ public final class ClassicAccount extends Account {
 
     @Override
     public void addManager(final User user) {
-
+        if (!managers.contains(user)) {
+            managers.add(user);
+        }
     }
 
     @Override
     public void addEmployee(final User user) {
-
+        if (!employees.contains(user)) {
+            employees.add(user);
+        }
     }
 
     @Override
     public double getSpendingLimit() {
-        return 0;
+        return spendingLimit;
     }
 
     @Override
     public double getDepositLimit() {
-        return 0;
+        return depositLimit;
     }
 
     @Override
-    public boolean isEmployee(final String email) {
-        return false;
+    public boolean isEmployee(String email) {
+        return employees.stream().anyMatch(user -> user.getEmail().equals(email));
     }
+
 
     @Override
     public void changeSpendingLimit(double amount) {
-
+        this.spendingLimit = amount;
     }
 
     @Override
     public void changeDepositLimit(double amount) {
-
+        this.depositLimit = amount;
     }
 
     @Override
-    public ArrayList<User> getManagers() {
-        return null;
+    public List<User> getEmployees() {
+        return employees;
     }
 
     @Override
-    public ArrayList<User> getEmployees() {
-        return null;
+    public List<User> getManagers() {
+        return managers;
     }
 }

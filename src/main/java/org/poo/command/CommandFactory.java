@@ -24,7 +24,7 @@ public final class CommandFactory {
                         input.getAccountType(), input.getCurrency(), input.getInterestRate());
             case "addFunds":
                 return new AddFundsCommand(commandName, input.getTimestamp(), input.getAccount(),
-                        input.getAmount());
+                        input.getAmount(), input.getEmail());
             case "createCard":
             case "createOneTimeCard":
                 return new CreateCardCommand(commandName, input.getTimestamp(), input.getAccount(),
@@ -80,6 +80,19 @@ public final class CommandFactory {
             case "acceptSplitPayment":
                 return new AcceptSplitPayment(input.getCommand(), input.getEmail(),
                         input.getSplitPaymentType(), input.getTimestamp());
+            case "addNewBusinessAssociate":
+                return new AddNewBusinessAssociateCommand(input.getCommand(), input.getAccount(),
+                        input.getRole(), input.getEmail(), input.getTimestamp());
+            case "changeSpendingLimit":
+                return new ChangeSpendingLimitCommand(input.getCommand(), input.getEmail(),
+                        input.getAccount(), input.getAmount(), input.getTimestamp());
+            case "changeDepositLimit":
+                return new ChangeDepositLimitCommand(input.getCommand(), input.getEmail(),
+                        input.getAccount(), input.getAmount(), input.getTimestamp());
+            case "businessReport":
+                return new BusinessReportCommand(input.getCommand(), input.getType(),
+                        input.getStartTimestamp(), input.getEndTimestamp(), input.getAccount(),
+                        input.getTimestamp());
             default:
                 return new NotImplementedCommand(commandName, input.getTimestamp());
         }

@@ -1,7 +1,5 @@
 package org.poo.visitor.transaction;
 
-import org.poo.command.CashWithdrawalCommand;
-import org.poo.command.UpgradePlanCommand;
 import org.poo.model.transaction.*;
 
 /**

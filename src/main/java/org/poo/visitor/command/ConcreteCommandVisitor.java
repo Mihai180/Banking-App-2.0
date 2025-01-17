@@ -18,7 +18,6 @@ import org.poo.service.*;
 import org.poo.service.commerciant.CommerciantService;
 import org.poo.visitor.transaction.ConcreteTransactionVisitor;
 
-import javax.security.auth.login.AccountNotFoundException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
@@ -179,8 +178,17 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
              */
             //associatedAccount.spend(spentInRON);
             User user = associatedAccount.getOwner();
+            /*if (associatedAccount.getAccountType().equals("business")) {
+                user.addExpense(associatedAccount, convertedAmount);
+                //System.out.println("Adding expense: " + convertedAmount + " for account: " + associatedAccount.getIban());
+                //System.out.println("User: " + user.getFirstName() + " " + user.getLastName());
+                //System.out.println("Account: " + associatedAccount.getIban() + " - Adding expense: " + convertedAmount);
+
+            }
+
+             */
             PlanStrategy plan = user.getCurrentPlan();
-            associatedAccount.increaseNumberOfTransactions();
+            //associatedAccount.increaseNumberOfTransactions();
             if (spentInRON >= 300 && plan.getPlan().equals("Silver")) {
                 associatedAccount.increaseNumOfTransactionsOver300RON();
             }
@@ -213,6 +221,44 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                 associatedAccount.decreaseTotalSpent(convertedCommission);
                 associatedAccount.addTransaction(transaction);
             }
+
+            /*if (!associatedAccount.isCahsbackEarned() && cashbackStrategy.getCashbackType().equals("NrOfTransactions")) {
+                double amount = cashbackStrategy.calculateCashback(associatedAccount, transaction);
+                associatedAccount.deposit(amount);
+                associatedAccount.cashbackEarned();
+                associatedAccount.decreaseTotalSpent(amount);
+                associatedAccount.increaseNumberOfTransactions();
+
+                double commission = plan.calculateCommission(spentInRON);
+                double convertedCommission = exchangeService.convertCurrency("RON", associatedAccount.getCurrency(), commission);
+                associatedAccount.withdraw(convertedCommission);
+                associatedAccount.decreaseTotalSpent(convertedCommission);
+
+                associatedAccount.addTransaction(transaction);
+            } else if (cashbackStrategy.getCashbackType().equals("SpendingTreshold")) {
+                double amount = cashbackStrategy.calculateCashback(associatedAccount, transaction);
+                associatedAccount.deposit(amount);
+
+                double commission = plan.calculateCommission(spentInRON);
+                double convertedCommission = exchangeService.convertCurrency("RON", associatedAccount.getCurrency(), commission);
+                associatedAccount.withdraw(convertedCommission);
+                associatedAccount.decreaseTotalSpent(convertedCommission);
+
+                associatedAccount.addTransaction(transaction);
+            } else {
+                double commission = plan.calculateCommission(spentInRON);
+                double convertedCommission = exchangeService.convertCurrency("RON", associatedAccount.getCurrency(), commission);
+                associatedAccount.withdraw(convertedCommission);
+                associatedAccount.decreaseTotalSpent(convertedCommission);
+                double amountToDecrease = exchangeService.convertCurrency(command.getCurrency(),
+                        associatedAccount.getCurrency(), command.getAmount());
+                associatedAccount.decreaseTotalSpent(amountToDecrease);
+
+
+                associatedAccount.addTransaction(transaction);
+            }
+
+             */
         }
     }
 
@@ -287,7 +333,11 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
     @Override
     public void visit(final AddFundsCommand command) {
         // Adaugă fonduri într-un cont specificat
-        accountService.addFunds(command.getAccountIBAN(), command.getAmount());
+        try {
+            accountService.addFunds(command.getAccountIBAN(), command.getAmount(), command.getEmail());
+        } catch (DepositLimitExcedeedException exception) {
+
+        }
     }
 
     /**
@@ -906,11 +956,19 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                     command.getNewPlanType(), command.getTimestamp());
             account.addTransaction(transaction);
         } catch (InsufficientFundsException exception) {
-
+            Transaction transaction = new InsufficientFundsTransaction(command.getTimestamp());
+            accountService.getAccountByIBAN(command.getAccount()).addTransaction(transaction);
         } catch (UnknownPlanException exception) {
 
         } catch (org.poo.exception.AccountNotFoundException exception) {
-
+            ObjectNode objectNode = mapper.createObjectNode();
+            objectNode.put("command", command.getCommand());
+            ObjectNode outputNode = mapper.createObjectNode();
+            outputNode.put("timestamp", command.getTimestamp());
+            outputNode.put("description", "Account not found");
+            objectNode.set("output", outputNode);
+            this.output.add(objectNode);
+            objectNode.put("timestamp", command.getTimestamp());
         } catch (PlanDowngradeException exception) {
 
         }
@@ -942,6 +1000,15 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
             objectNode.put("timestamp", command.getTimestamp());
         } catch (UserNotFoundException exception) {
 
+        } catch (AccountNotFoundException exception) {
+            ObjectNode objectNode = mapper.createObjectNode();
+            objectNode.put("command", command.getCommand());
+            ObjectNode outputNode = mapper.createObjectNode();
+            outputNode.put("timestamp", command.getTimestamp());
+            outputNode.put("description", "Account not found");
+            objectNode.set("output", outputNode);
+            this.output.add(objectNode);
+            objectNode.put("timestamp", command.getTimestamp());
         }
     }
 
@@ -1086,5 +1153,106 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
         }
 
         queue.poll();
+    }
+
+    @Override
+    public void visit(AddNewBusinessAssociateCommand command) {
+        try {
+            accountService.addNewBusinessAssociate(command.getAccount(), command.getRole(), command.getEmail());
+        } catch (Exception exception) {
+
+        }
+    }
+
+    @Override
+    public void visit(ChangeSpendingLimitCommand command) {
+        try {
+            accountService.changeSpendingLimit(command.getAccount(), command.getAmount(), command.getEmail());
+        } catch (UnauthorizedAccessException exception) {
+            ObjectNode objectNode = mapper.createObjectNode();
+            objectNode.put("command", command.getCommand());
+            ObjectNode outputNode = mapper.createObjectNode();
+            outputNode.put("timestamp", command.getTimestamp());
+            outputNode.put("description", "You must be owner in order to change spending limit.");
+            objectNode.put("output", outputNode);
+            objectNode.put("timestamp", command.getTimestamp());
+            this.output.add(objectNode);
+        }
+    }
+
+    @Override
+    public void visit(ChangeDepositLimitCommand command) {
+        try {
+            accountService.changeDepositLimit(command.getAccount(), command.getAmount(), command.getEmail());
+        } catch (Exception exception) {
+
+        }
+    }
+
+    @Override
+    public void visit(BusinessReportCommand command) {
+        Account account = accountService.getAccountByIBAN(command.getAccount());
+        ObjectNode reportResult = mapper.createObjectNode();
+        reportResult.put("command", command.getCommand());
+        if (account == null) {
+            // Dacă contul nu este găsit, creează un rezultat de tip "not found" în JSON
+            notFoundResult(command.getCommand(), "Account not found",
+                    command.getTimestamp());
+            return;
+        }
+        if (!account.getAccountType().equals("business")) {
+            return;
+        }
+
+        double depositLimit = account.getDepositLimit();
+        depositLimit = exchangeService.convertCurrency("RON", account.getCurrency(), depositLimit);
+
+        double spendingLimit = account.getSpendingLimit();
+        spendingLimit = exchangeService.convertCurrency("RON", account.getCurrency(), spendingLimit);
+
+        ObjectNode outputNode = mapper.createObjectNode();
+        outputNode.put("IBAN", account.getIban());
+        outputNode.put("balance", account.getBalance());
+        outputNode.put("currency", account.getCurrency());
+        outputNode.put("spending limit", spendingLimit);
+        outputNode.put("deposit limit", depositLimit);
+        outputNode.put("statistics type", "transaction");
+
+        ArrayNode managersArray = mapper.createArrayNode();
+        account.getManagers().stream()
+                .map(manager -> {
+                    ObjectNode managerNode = mapper.createObjectNode();
+                    managerNode.put("username",  manager.getLastName() + " " + manager.getFirstName());
+                    managerNode.put("spent", manager.getSpentForBusiness(account.getIban()));
+                    managerNode.put("deposited", manager.getDepositedForBusiness(account));
+                    return managerNode;
+                })
+                .forEach(managersArray::add);
+        outputNode.set("managers", managersArray);
+
+        ArrayNode employeesArray = mapper.createArrayNode();
+        account.getEmployees().stream()
+                .map(employee -> {
+                    ObjectNode employeeNode = mapper.createObjectNode();
+                    employeeNode.put("username", employee.getLastName() + " " + employee.getFirstName());
+                    employeeNode.put("spent", employee.getSpentForBusiness(account.getIban()));
+                    employeeNode.put("deposited", employee.getDepositedForBusiness(account));
+                    return employeeNode;
+                })
+                .forEach(employeesArray::add);
+        outputNode.set("employees", employeesArray);
+        double totalSpent = account.getManagers().stream()
+                .mapToDouble(manager -> manager.getSpentForBusiness(account.getIban()))
+                .sum();
+        double totalDeposited = account.getManagers().stream()
+                .mapToDouble(manager -> manager.getDepositedForBusiness(account))
+                .sum();
+
+        outputNode.put("total spent", totalSpent);
+        outputNode.put("total deposited", totalDeposited);
+
+        reportResult.set("output", outputNode);
+        reportResult.put("timestamp", command.getTimestamp());
+        this.output.add(reportResult);
     }
 }

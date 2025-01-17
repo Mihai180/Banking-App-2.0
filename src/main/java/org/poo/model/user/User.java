@@ -25,6 +25,8 @@ public final class User {
     private final ArrayList<Account> accounts;
     private final Map<String, String> aliases;
     private PlanStrategy currentPlan;
+    private Map<String, Double> spentForBusiness;
+    private Map<Account, Double> depositedForBusiness;
 
     public User(final String firstName, final String lastName, final String email,
                 final String birthDate, final String occupation) {
@@ -40,6 +42,8 @@ public final class User {
         } else {
             this.currentPlan = new StandardPlan();
         }
+        this.spentForBusiness = new HashMap<>();
+        this.depositedForBusiness = new HashMap<>();
     }
 
     public String getFirstName() {
@@ -77,6 +81,40 @@ public final class User {
     public void setCurrentPlan(final PlanStrategy currentPlan) {
         this.currentPlan = currentPlan;
     }
+
+    public double getSpentForBusiness(final String account) {
+        //System.out.println("Contents of spentForBusiness: " + spentForBusiness);
+        if (spentForBusiness.containsKey(account)) {
+            return spentForBusiness.get(account);
+        }
+        return 0;
+    }
+
+    public double getDepositedForBusiness(final Account account) {
+        if (depositedForBusiness.containsKey(account)) {
+            return depositedForBusiness.get(account);
+        }
+        return 0;
+    }
+
+    public void addDepositedForBusiness(final Account account, final double amount) {
+        if (depositedForBusiness.containsKey(account)) {
+            double currentExpense = depositedForBusiness.get(account);
+            depositedForBusiness.put(account, currentExpense + amount);
+        } else {
+            depositedForBusiness.put(account, amount);
+        }
+    }
+
+    public void addExpense(final String account, final double expense) {
+        if (this.spentForBusiness.containsKey(account)) {
+            double currentExpense = this.spentForBusiness.get(account);
+            this.spentForBusiness.put(account, currentExpense + expense);
+        } else {
+            this.spentForBusiness.put(account, expense);
+        }
+    }
+
 
     /**
      * Adaugă un cont nou la lista de conturi ale utilizatorului

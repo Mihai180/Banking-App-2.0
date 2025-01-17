@@ -1,23 +1,127 @@
 [ {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 3 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO69POOB6209498372540635",
+    "balance" : 0.0,
+    "currency" : "RON",
+    "spending limit" : 500.0,
+    "deposit limit" : 135.0,
+    "statistics type" : "transaction",
+    "managers" : [ ],
+    "employees" : [ {
+      "username" : "Stanescu Damian",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Voinea Valentin",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Albu Pompilia",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "King Daniel",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 0.0
+  },
+  "timestamp" : 75
 }, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 15 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO69POOB6209498372540635",
+    "balance" : 2627.81,
+    "currency" : "RON",
+    "spending limit" : 500.0,
+    "deposit limit" : 135.0,
+    "statistics type" : "transaction",
+    "managers" : [ ],
+    "employees" : [ {
+      "username" : "Stanescu Damian",
+      "spent" : 253.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Voinea Valentin",
+      "spent" : 342.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Albu Pompilia",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "King Daniel",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 0.0
+  },
+  "timestamp" : 84
 }, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 24 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO69POOB6209498372540635",
+    "balance" : 4469.6426999999985,
+    "currency" : "RON",
+    "spending limit" : 500.0,
+    "deposit limit" : 135.0,
+    "statistics type" : "transaction",
+    "managers" : [ ],
+    "employees" : [ {
+      "username" : "Stanescu Damian",
+      "spent" : 253.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Voinea Valentin",
+      "spent" : 854.05,
+      "deposited" : 0.0
+    }, {
+      "username" : "Albu Pompilia",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "King Daniel",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 0.0
+  },
+  "timestamp" : 161
 }, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 30 is not implemented yet."
-}, {
-  "result" : "Command 'changeDepositLimit' at timestamp 34 is not implemented yet."
-}, {
-  "result" : "Command 'businessReport' at timestamp 75 is not implemented yet."
-}, {
-  "result" : "Command 'businessReport' at timestamp 84 is not implemented yet."
-}, {
-  "result" : "Command 'businessReport' at timestamp 161 is not implemented yet."
-}, {
-  "result" : "Command 'businessReport' at timestamp 162 is not implemented yet."
-}, {
-  "result" : "Command 'changeDepositLimit' at timestamp 164 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO69POOB6209498372540635",
+    "balance" : 4469.6426999999985,
+    "currency" : "RON",
+    "spending limit" : 500.0,
+    "deposit limit" : 135.0,
+    "statistics type" : "transaction",
+    "managers" : [ ],
+    "employees" : [ {
+      "username" : "Stanescu Damian",
+      "spent" : 253.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Voinea Valentin",
+      "spent" : 854.05,
+      "deposited" : 0.0
+    }, {
+      "username" : "Albu Pompilia",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "King Daniel",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 0.0
+  },
+  "timestamp" : 162
 }, {
   "command" : "sendMoney",
   "output" : {
@@ -25,14 +129,6 @@
     "description" : "User not found"
   },
   "timestamp" : 210
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 211 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 227 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 244 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 264 is not implemented yet."
 }, {
   "command" : "sendMoney",
   "output" : {

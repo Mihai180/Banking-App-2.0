@@ -6,6 +6,8 @@ import org.poo.model.transaction.Transaction;
 import org.poo.model.user.User;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Clasa abstractă Account reprezintă o bază comună pentru tipurile de conturi bancare
@@ -219,4 +221,22 @@ public abstract class Account {
      * Metodă abstractă pentru aplicarea dobânzii în cont
      */
     public abstract double addInterest();
+
+    public abstract void addEmployee(final User user);
+
+    public abstract void addManager(final User user);
+
+    public abstract double getSpendingLimit();
+
+    public abstract double getDepositLimit();
+
+    public abstract boolean isEmployee(final String email);
+
+    public abstract void changeDepositLimit(double amount);
+
+    public abstract void changeSpendingLimit(double amount);
+
+    public abstract List<User> getManagers();
+
+    public abstract List<User> getEmployees();
 }

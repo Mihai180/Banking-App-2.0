@@ -2,6 +2,7 @@ package org.poo.service;
 
 import org.poo.exception.*;
 import org.poo.model.account.Account;
+import org.poo.model.account.BusinessAccount;
 import org.poo.model.account.ClassicAccount;
 import org.poo.model.account.SavingsAccount;
 import org.poo.model.commerciant.Commerciant;
@@ -74,8 +75,10 @@ public final class AccountService {
         Account account;
         if (accountType.equals("savings")) {
             account = new SavingsAccount(iban, user, currency, interestRate);
-        } else {
+        } else if (accountType.equals("classic")) {
             account = new ClassicAccount(iban, user, currency);
+        } else {
+            account = new BusinessAccount(iban, user, currency);
         }
 
         user.addAccount(account);
@@ -89,12 +92,24 @@ public final class AccountService {
      * @param amount este suma de adăugat
      * @throws AccountNotFoundException dacă contul cu IBAN-ul specificat nu este găsit
      */
-    public void addFunds(final String iban, final Double amount) {
+    public void addFunds(final String iban, final Double amount, final String email) {
         Account account = getAccountByIBAN(iban);
         if (account == null) {
             throw new AccountNotFoundException("Account not found with IBAN: from addFunds "
                     + iban);
         }
+
+        double amountInRon = exchangeService.convertCurrency(account.getCurrency(), "RON", amount);
+        if (account.getAccountType().equals("business") && account.isEmployee(email) &&
+                amountInRon > account.getDepositLimit()) {
+            throw new DepositLimitExcedeedException("Deposit limit exceeded");
+        }
+
+        User user = userService.getUserByEmail(email);
+        if (account.getAccountType().equals("business")) {
+            user.addDepositedForBusiness(account, amount);
+        }
+
         account.deposit(amount);
     }
 
@@ -450,5 +465,61 @@ public final class AccountService {
 
         account.withdraw(fee);
         owner.setCurrentPlan(requestedPlan);
+    }
+
+    public void addNewBusinessAssociate(final String iban, final String role, final String email) {
+        Account account = getAccountByIBAN(iban);
+        if (account == null) {
+            throw new AccountNotFoundException("Account not found with IBAN: " + iban);
+        }
+
+        User user = userService.getUserByEmail(email);
+        if (user == null) {
+            throw new UserNotFoundException("User not found");
+        }
+
+        if (role.equals("employee")) {
+            account.addEmployee(user);
+        } else if (role.equals("manager")) {
+            account.addManager(user);
+        }
+    }
+
+    public void changeSpendingLimit(final String iban, double limit, final String email) {
+        Account account = getAccountByIBAN(iban);
+        if (account == null) {
+            throw new AccountNotFoundException("Account not found with IBAN: " + iban);
+        }
+
+        if (!account.getOwner().getEmail().equals(email)) {
+            throw new UnauthorizedAccessException("You are not authorized to make this transaction.");
+        }
+
+        if (!account.getCurrency().equals("RON")) {
+            limit = exchangeService.convertCurrency(account.getCurrency(), "RON", limit);
+        }
+
+        if (account.getAccountType().equals("business")) {
+            account.changeSpendingLimit(limit);
+        }
+    }
+
+    public void changeDepositLimit(final String iban, double limit, final String email) {
+        Account account = getAccountByIBAN(iban);
+        if (account == null) {
+            throw new AccountNotFoundException("Account not found with IBAN: " + iban);
+        }
+
+        if (!account.getOwner().getEmail().equals(email)) {
+            throw new UnauthorizedAccessException("You are not authorized to make this transaction.");
+        }
+
+        if (!account.getCurrency().equals("RON")) {
+            limit = exchangeService.convertCurrency(account.getCurrency(), "RON", limit);
+        }
+
+        if (account.getAccountType().equals("business")) {
+            account.changeDepositLimit(limit);
+        }
     }
 }

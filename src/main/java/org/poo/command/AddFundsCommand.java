@@ -12,13 +12,15 @@ public final class AddFundsCommand implements Command {
     private final int timestamp;
     private final String accountIBAN;
     private final double amount;
+    private final String email;
 
     public AddFundsCommand(final String commandName, final int timestamp,
-                           final String accountIBAN, final double amount) {
+                           final String accountIBAN, final double amount, final String email) {
         this.commandName = commandName;
         this.timestamp = timestamp;
         this.accountIBAN = accountIBAN;
         this.amount = amount;
+        this.email = email;
     }
 
     public String getCommandName() {
@@ -35,6 +37,10 @@ public final class AddFundsCommand implements Command {
 
     public double getAmount() {
         return amount;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     @Override

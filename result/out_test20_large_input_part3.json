@@ -1524,6 +1524,9 @@
     "card" : "8509650399173661",
     "cardHolder" : "Hulda_Kaiser@outlook.ch",
     "account" : "RO32POOB0130532963818359"
+  }, {
+    "timestamp" : 554,
+    "description" : "Insufficient funds"
   } ],
   "timestamp" : 610
 }, {
@@ -2091,41 +2094,12 @@
   } ],
   "timestamp" : 777
 }, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 779 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 780 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 781 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 782 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 783 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 784 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 785 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 786 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 787 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 788 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 789 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 790 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 791 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 792 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 793 is not implemented yet."
-}, {
-  "result" : "Command 'changeDepositLimit' at timestamp 794 is not implemented yet."
-}, {
-  "result" : "Command 'changeSpendingLimit' at timestamp 795 is not implemented yet."
-}, {
-  "result" : "Command 'changeDepositLimit' at timestamp 797 is not implemented yet."
+  "command" : "changeSpendingLimit",
+  "output" : {
+    "timestamp" : 795,
+    "description" : "You must be owner in order to change spending limit."
+  },
+  "timestamp" : 795
 }, {
   "command" : "payOnline",
   "output" : {
@@ -2337,9 +2311,155 @@
   },
   "timestamp" : 838
 }, {
-  "result" : "Command 'businessReport' at timestamp 839 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO73POOB7862625166958832",
+    "balance" : 4711.0,
+    "currency" : "CHF",
+    "spending limit" : 122.22222222222223,
+    "deposit limit" : 211.0,
+    "statistics type" : "transaction",
+    "managers" : [ {
+      "username" : "Arana Trillo Mamen",
+      "spent" : 0.0,
+      "deposited" : 3337.0
+    }, {
+      "username" : "Sheppard Heather",
+      "spent" : 0.0,
+      "deposited" : 923.0
+    }, {
+      "username" : "del Ripoll Nicodemo",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "du Mendes Thibault",
+      "spent" : 0.0,
+      "deposited" : 451.0
+    }, {
+      "username" : "Charette Gregoire",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    } ],
+    "employees" : [ {
+      "username" : "Manuel Baez Anaya Victor",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Charette Gregoire",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Barer-Gehringer Juan",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Camiscione-Rugger Emilio",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "del Ripoll Nicodemo",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Farrell Heather",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Kaiser Hulda",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Stone Elizabeth",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Villa Dorothy",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Carey Frank",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 4711.0
+  },
+  "timestamp" : 839
 }, {
-  "result" : "Command 'businessReport' at timestamp 840 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO73POOB7862625166958832",
+    "balance" : 4711.0,
+    "currency" : "CHF",
+    "spending limit" : 122.22222222222223,
+    "deposit limit" : 211.0,
+    "statistics type" : "transaction",
+    "managers" : [ {
+      "username" : "Arana Trillo Mamen",
+      "spent" : 0.0,
+      "deposited" : 3337.0
+    }, {
+      "username" : "Sheppard Heather",
+      "spent" : 0.0,
+      "deposited" : 923.0
+    }, {
+      "username" : "del Ripoll Nicodemo",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "du Mendes Thibault",
+      "spent" : 0.0,
+      "deposited" : 451.0
+    }, {
+      "username" : "Charette Gregoire",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    } ],
+    "employees" : [ {
+      "username" : "Manuel Baez Anaya Victor",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Charette Gregoire",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Barer-Gehringer Juan",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Camiscione-Rugger Emilio",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "del Ripoll Nicodemo",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Farrell Heather",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Kaiser Hulda",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Stone Elizabeth",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Villa Dorothy",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Carey Frank",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 4711.0
+  },
+  "timestamp" : 840
 }, {
   "result" : "Command 'rejectSplitPayment' at timestamp 842 is not implemented yet."
 }, {
@@ -2548,7 +2668,7 @@
       "IBAN" : "RO73POOB7862625166958832",
       "balance" : 4711.0,
       "currency" : "CHF",
-      "type" : "classic",
+      "type" : "business",
       "cards" : [ ]
     } ]
   }, {

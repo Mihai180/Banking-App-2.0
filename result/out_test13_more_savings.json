@@ -989,13 +989,13 @@
     "email" : "Kevin_Edwards@outlook.us",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 244.0,
+      "balance" : 210.0,
       "currency" : "USD",
-      "type" : "classic",
+      "type" : "business",
       "cards" : [ ]
     }, {
       "IBAN" : "RO10POOB4354933866366881",
-      "balance" : 24.2624,
+      "balance" : 58.2624,
       "currency" : "USD",
       "type" : "savings",
       "cards" : [ ]
@@ -1025,12 +1025,25 @@
   } ],
   "timestamp" : 380
 }, {
-  "result" : "Command 'businessReport' at timestamp 381 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO68POOB1848616931405475",
+    "balance" : 210.0,
+    "currency" : "USD",
+    "spending limit" : 111.11111111111111,
+    "deposit limit" : 111.11111111111111,
+    "statistics type" : "transaction",
+    "managers" : [ ],
+    "employees" : [ ],
+    "total spent" : 0.0,
+    "total deposited" : 0.0
+  },
+  "timestamp" : 381
 }, {
   "command" : "report",
   "output" : {
     "IBAN" : "RO10POOB4354933866366881",
-    "balance" : 24.2624,
+    "balance" : 58.2624,
     "currency" : "USD",
     "transactions" : [ {
       "timestamp" : 253,
@@ -1050,10 +1063,7 @@
       "description" : "Interest rate of the account changed to 0.35"
     }, {
       "timestamp" : 379,
-      "description" : "Savings withdrawal",
-      "savingsAccountIBAN" : "RO10POOB4354933866366881",
-      "classicAccountIBAN" : "RO68POOB1848616931405475",
-      "amount" : 34.0
+      "description" : "You do not have a classic account."
     } ]
   },
   "timestamp" : 382
@@ -1156,19 +1166,19 @@
     "email" : "Kevin_Edwards@outlook.us",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 471.0,
+      "balance" : 210.0,
       "currency" : "USD",
-      "type" : "classic",
+      "type" : "business",
       "cards" : [ ]
     }, {
       "IBAN" : "RO10POOB4354933866366881",
-      "balance" : 613.2624,
+      "balance" : 647.2624,
       "currency" : "USD",
       "type" : "savings",
       "cards" : [ ]
     }, {
       "IBAN" : "RO33POOB9999273999620457",
-      "balance" : 0.0,
+      "balance" : 227.0,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ ]
@@ -1308,19 +1318,19 @@
     "email" : "Kevin_Edwards@outlook.us",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 471.0,
+      "balance" : 210.0,
       "currency" : "USD",
-      "type" : "classic",
+      "type" : "business",
       "cards" : [ ]
     }, {
       "IBAN" : "RO10POOB4354933866366881",
-      "balance" : 613.2624,
+      "balance" : 647.2624,
       "currency" : "USD",
       "type" : "savings",
       "cards" : [ ]
     }, {
       "IBAN" : "RO33POOB9999273999620457",
-      "balance" : 0.0,
+      "balance" : 227.0,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ ]
@@ -1361,20 +1371,6 @@
     } ]
   } ],
   "timestamp" : 391
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 392 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 407 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 414 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 424 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 435 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 439 is not implemented yet."
-}, {
-  "result" : "Command 'changeSpendingLimit' at timestamp 453 is not implemented yet."
 }, {
   "command" : "payOnline",
   "output" : {
@@ -1516,19 +1512,19 @@
     "email" : "Kevin_Edwards@outlook.us",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 180.42000000000002,
+      "balance" : 20.62199999999999,
       "currency" : "USD",
-      "type" : "classic",
+      "type" : "business",
       "cards" : [ ]
     }, {
       "IBAN" : "RO10POOB4354933866366881",
-      "balance" : 613.2624,
+      "balance" : 647.2624,
       "currency" : "USD",
       "type" : "savings",
       "cards" : [ ]
     }, {
       "IBAN" : "RO33POOB9999273999620457",
-      "balance" : 0.0,
+      "balance" : 227.0,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ ]
@@ -1551,7 +1547,7 @@
       "cards" : [ ]
     }, {
       "IBAN" : "RO53POOB7122855990652257",
-      "balance" : 481.5,
+      "balance" : 27.0,
       "currency" : "RON",
       "type" : "savings",
       "cards" : [ ]
@@ -1569,18 +1565,6 @@
     } ]
   } ],
   "timestamp" : 463
-}, {
-  "result" : "Command 'changeDepositLimit' at timestamp 464 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 465 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 478 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 487 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 508 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 525 is not implemented yet."
 }, {
   "command" : "sendMoney",
   "output" : {
@@ -1638,7 +1622,64 @@
   },
   "timestamp" : 535
 }, {
-  "result" : "Command 'businessReport' at timestamp 536 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO68POOB1848616931405475",
+    "balance" : 7230.622,
+    "currency" : "USD",
+    "spending limit" : 189.0,
+    "deposit limit" : 1300.0,
+    "statistics type" : "transaction",
+    "managers" : [ {
+      "username" : "Ashley Michael",
+      "spent" : 0.0,
+      "deposited" : 1274.0
+    }, {
+      "username" : "Popa George",
+      "spent" : 0.0,
+      "deposited" : 1875.0
+    }, {
+      "username" : "Chretien Gregoire",
+      "spent" : 0.0,
+      "deposited" : 1302.0
+    }, {
+      "username" : "Hudson Christina",
+      "spent" : 0.0,
+      "deposited" : 1153.0
+    }, {
+      "username" : "Dochioiu Norbert",
+      "spent" : 0.0,
+      "deposited" : 1606.0
+    } ],
+    "employees" : [ {
+      "username" : "de Leduc Nicolas",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Suciu Barbu",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Popa Nicoleta",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Dobre Floarea",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Shields John",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Webb Kelly",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 7210.0
+  },
+  "timestamp" : 536
 }, {
   "command" : "printUsers",
   "output" : [ {
@@ -1738,19 +1779,19 @@
     "email" : "Kevin_Edwards@outlook.us",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 7390.42,
+      "balance" : 7230.622,
       "currency" : "USD",
-      "type" : "classic",
+      "type" : "business",
       "cards" : [ ]
     }, {
       "IBAN" : "RO10POOB4354933866366881",
-      "balance" : 613.2624,
+      "balance" : 647.2624,
       "currency" : "USD",
       "type" : "savings",
       "cards" : [ ]
     }, {
       "IBAN" : "RO33POOB9999273999620457",
-      "balance" : 0.0,
+      "balance" : 227.0,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ ]
@@ -1773,7 +1814,7 @@
       "cards" : [ ]
     }, {
       "IBAN" : "RO53POOB7122855990652257",
-      "balance" : 481.5,
+      "balance" : 27.0,
       "currency" : "RON",
       "type" : "savings",
       "cards" : [ ]
@@ -1847,13 +1888,6 @@
     "senderIBAN" : "RO68POOB1848616931405475",
     "receiverIBAN" : "RO38POOB0964823730995794",
     "amount" : "45.0 RON",
-    "transferType" : "received"
-  }, {
-    "timestamp" : 462,
-    "description" : "Netflix subscription renewal",
-    "senderIBAN" : "RO68POOB1848616931405475",
-    "receiverIBAN" : "RO53POOB7122855990652257",
-    "amount" : "454.5 RON",
     "transferType" : "received"
   } ],
   "timestamp" : 541
@@ -2040,19 +2074,19 @@
     "email" : "Kevin_Edwards@outlook.us",
     "accounts" : [ {
       "IBAN" : "RO68POOB1848616931405475",
-      "balance" : 7981.42,
+      "balance" : 7821.622,
       "currency" : "USD",
-      "type" : "classic",
+      "type" : "business",
       "cards" : [ ]
     }, {
       "IBAN" : "RO10POOB4354933866366881",
-      "balance" : 613.2624,
+      "balance" : 647.2624,
       "currency" : "USD",
       "type" : "savings",
       "cards" : [ ]
     }, {
       "IBAN" : "RO33POOB9999273999620457",
-      "balance" : 0.0,
+      "balance" : 227.0,
       "currency" : "USD",
       "type" : "classic",
       "cards" : [ ]
@@ -2075,7 +2109,7 @@
       "cards" : [ ]
     }, {
       "IBAN" : "RO53POOB7122855990652257",
-      "balance" : 481.5,
+      "balance" : 27.0,
       "currency" : "RON",
       "type" : "savings",
       "cards" : [ ]

@@ -134,9 +134,11 @@ public final class CardService {
             throw new FrozenCardException("Card is frozen");
         }
 
-        if (!card.getOwner().getEmail().equals(email)) {
+        /*if (!card.getOwner().getEmail().equals(email)) {
             throw new UnauthorizedAccessException("Unauthorized access to card");
         }
+
+         */
 
         double finalAmount = amount;
         if (!card.getAccount().getCurrency().equals(currency)) {
@@ -148,7 +150,17 @@ public final class CardService {
             throw new InsufficientFundsException("Insufficient funds");
         }
 
-        //finalAmount = Math.round(finalAmount * 100.0) / 100.0;
+        double amountInRon = exchangeService.convertCurrency(card.getAccount().getCurrency(), "RON", finalAmount);
+        if (card.getAccount().getAccountType().equals("business") &&
+                amountInRon > card.getAccount().getSpendingLimit() && card.getAccount().isEmployee(email)) {
+            throw new PaymentLimitExcedeedException("Payment limit exceeded");
+        }
+
+        User user = userService.getUserByEmail(email);
+        if (card.getAccount().getAccountType().equals("business")) {
+            user.addExpense(card.getAccount().getIban(), finalAmount);
+        }
+
         String result = card.makePayment(finalAmount, cardsByNumber);
 
         if (result.equals("You can't pay this amount because is used")) {

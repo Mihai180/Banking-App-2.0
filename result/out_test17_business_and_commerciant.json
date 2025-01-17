@@ -1,65 +1,75 @@
 [ {
-  "result" : "Command 'changeSpendingLimit' at timestamp 208 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO98POOB8412955460158769",
+    "balance" : 119.0,
+    "currency" : "USD",
+    "spending limit" : 280.0,
+    "deposit limit" : 107.14285714285714,
+    "statistics type" : "transaction",
+    "managers" : [ ],
+    "employees" : [ {
+      "username" : "Lee Joe",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Albu Dida",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Marin Silvia",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 0.0
+  },
+  "timestamp" : 262
 }, {
-  "result" : "Command 'changeSpendingLimit' at timestamp 221 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO32POOB0130532963818359",
+    "balance" : 39.0,
+    "currency" : "USD",
+    "spending limit" : 895.9999999999999,
+    "deposit limit" : 107.14285714285714,
+    "statistics type" : "transaction",
+    "managers" : [ ],
+    "employees" : [ ],
+    "total spent" : 0.0,
+    "total deposited" : 0.0
+  },
+  "timestamp" : 263
 }, {
-  "result" : "Command 'changeSpendingLimit' at timestamp 236 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO68POOB1848616931405475",
+    "balance" : 749.0,
+    "currency" : "RON",
+    "spending limit" : 473.0,
+    "deposit limit" : 500.0,
+    "statistics type" : "transaction",
+    "managers" : [ ],
+    "employees" : [ ],
+    "total spent" : 0.0,
+    "total deposited" : 0.0
+  },
+  "timestamp" : 264
 }, {
-  "result" : "Command 'changeSpendingLimit' at timestamp 257 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 259 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 260 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 261 is not implemented yet."
-}, {
-  "result" : "Command 'businessReport' at timestamp 262 is not implemented yet."
-}, {
-  "result" : "Command 'businessReport' at timestamp 263 is not implemented yet."
-}, {
-  "result" : "Command 'businessReport' at timestamp 264 is not implemented yet."
-}, {
-  "result" : "Command 'businessReport' at timestamp 265 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 266 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 267 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 268 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 269 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 270 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 271 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 272 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 273 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 274 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 275 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 276 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 277 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 278 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 279 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 280 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 281 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 282 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 283 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 284 is not implemented yet."
-}, {
-  "result" : "Command 'addNewBusinessAssociate' at timestamp 285 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO10POOB4354933866366881",
+    "balance" : 741.0,
+    "currency" : "RON",
+    "spending limit" : 500.0,
+    "deposit limit" : 500.0,
+    "statistics type" : "transaction",
+    "managers" : [ ],
+    "employees" : [ ],
+    "total spent" : 0.0,
+    "total deposited" : 0.0
+  },
+  "timestamp" : 265
 }, {
   "command" : "payOnline",
   "output" : {
@@ -67,8 +77,6 @@
     "description" : "Card not found"
   },
   "timestamp" : 297
-}, {
-  "result" : "Command 'changeSpendingLimit' at timestamp 302 is not implemented yet."
 }, {
   "command" : "payOnline",
   "output" : {
@@ -83,8 +91,6 @@
     "description" : "Card not found"
   },
   "timestamp" : 307
-}, {
-  "result" : "Command 'changeSpendingLimit' at timestamp 311 is not implemented yet."
 }, {
   "command" : "payOnline",
   "output" : {
@@ -107,8 +113,6 @@
   },
   "timestamp" : 325
 }, {
-  "result" : "Command 'changeSpendingLimit' at timestamp 328 is not implemented yet."
-}, {
   "command" : "payOnline",
   "output" : {
     "timestamp" : 330,
@@ -116,16 +120,12 @@
   },
   "timestamp" : 330
 }, {
-  "result" : "Command 'changeSpendingLimit' at timestamp 332 is not implemented yet."
-}, {
   "command" : "payOnline",
   "output" : {
     "timestamp" : 334,
     "description" : "Card not found"
   },
   "timestamp" : 334
-}, {
-  "result" : "Command 'changeSpendingLimit' at timestamp 339 is not implemented yet."
 }, {
   "command" : "payOnline",
   "output" : {
@@ -141,8 +141,6 @@
   },
   "timestamp" : 349
 }, {
-  "result" : "Command 'changeSpendingLimit' at timestamp 353 is not implemented yet."
-}, {
   "command" : "payOnline",
   "output" : {
     "timestamp" : 355,
@@ -157,16 +155,12 @@
   },
   "timestamp" : 359
 }, {
-  "result" : "Command 'changeSpendingLimit' at timestamp 362 is not implemented yet."
-}, {
   "command" : "payOnline",
   "output" : {
     "timestamp" : 365,
     "description" : "Card not found"
   },
   "timestamp" : 365
-}, {
-  "result" : "Command 'changeSpendingLimit' at timestamp 367 is not implemented yet."
 }, {
   "command" : "payOnline",
   "output" : {
@@ -182,8 +176,6 @@
   },
   "timestamp" : 372
 }, {
-  "result" : "Command 'changeSpendingLimit' at timestamp 378 is not implemented yet."
-}, {
   "command" : "payOnline",
   "output" : {
     "timestamp" : 380,
@@ -191,16 +183,12 @@
   },
   "timestamp" : 380
 }, {
-  "result" : "Command 'changeSpendingLimit' at timestamp 386 is not implemented yet."
-}, {
   "command" : "payOnline",
   "output" : {
     "timestamp" : 389,
     "description" : "Card not found"
   },
   "timestamp" : 389
-}, {
-  "result" : "Command 'changeSpendingLimit' at timestamp 392 is not implemented yet."
 }, {
   "command" : "payOnline",
   "output" : {
@@ -216,16 +204,12 @@
   },
   "timestamp" : 400
 }, {
-  "result" : "Command 'changeSpendingLimit' at timestamp 406 is not implemented yet."
-}, {
   "command" : "payOnline",
   "output" : {
     "timestamp" : 408,
     "description" : "Card not found"
   },
   "timestamp" : 408
-}, {
-  "result" : "Command 'changeSpendingLimit' at timestamp 412 is not implemented yet."
 }, {
   "command" : "payOnline",
   "output" : {
@@ -255,13 +239,157 @@
   },
   "timestamp" : 425
 }, {
-  "result" : "Command 'businessReport' at timestamp 429 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO98POOB8412955460158769",
+    "balance" : 1254.0,
+    "currency" : "USD",
+    "spending limit" : 868.0,
+    "deposit limit" : 107.14285714285714,
+    "statistics type" : "transaction",
+    "managers" : [ {
+      "username" : "Mocanu Mirela",
+      "spent" : 0.0,
+      "deposited" : 145.0
+    }, {
+      "username" : "Ellis DDS Alexander",
+      "spent" : 0.0,
+      "deposited" : 144.0
+    }, {
+      "username" : "Vallee Genevieve",
+      "spent" : 0.0,
+      "deposited" : 146.0
+    } ],
+    "employees" : [ {
+      "username" : "Lee Joe",
+      "spent" : 0.0,
+      "deposited" : 163.0
+    }, {
+      "username" : "Albu Dida",
+      "spent" : 0.0,
+      "deposited" : 40.0
+    }, {
+      "username" : "Marin Silvia",
+      "spent" : 0.0,
+      "deposited" : 84.0
+    }, {
+      "username" : "Poulain Gilbert",
+      "spent" : 0.0,
+      "deposited" : 281.0
+    }, {
+      "username" : "Booker James",
+      "spent" : 0.0,
+      "deposited" : 132.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 435.0
+  },
+  "timestamp" : 429
 }, {
-  "result" : "Command 'businessReport' at timestamp 430 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO32POOB0130532963818359",
+    "balance" : 1024.0,
+    "currency" : "USD",
+    "spending limit" : 94.0,
+    "deposit limit" : 107.14285714285714,
+    "statistics type" : "transaction",
+    "managers" : [ {
+      "username" : "Mocanu Mirela",
+      "spent" : 0.0,
+      "deposited" : 200.0
+    }, {
+      "username" : "Poulain Gilbert",
+      "spent" : 0.0,
+      "deposited" : 165.0
+    }, {
+      "username" : "Booker James",
+      "spent" : 0.0,
+      "deposited" : 167.0
+    }, {
+      "username" : "Ellis DDS Alexander",
+      "spent" : 0.0,
+      "deposited" : 152.0
+    } ],
+    "employees" : [ {
+      "username" : "Vallee Genevieve",
+      "spent" : 0.0,
+      "deposited" : 301.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 684.0
+  },
+  "timestamp" : 430
 }, {
-  "result" : "Command 'businessReport' at timestamp 431 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO68POOB1848616931405475",
+    "balance" : 859.0,
+    "currency" : "RON",
+    "spending limit" : 473.0,
+    "deposit limit" : 500.0,
+    "statistics type" : "transaction",
+    "managers" : [ {
+      "username" : "Mocanu Mirela",
+      "spent" : 0.0,
+      "deposited" : 110.0
+    } ],
+    "employees" : [ {
+      "username" : "Poulain Gilbert",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Booker James",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Ellis DDS Alexander",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Vallee Genevieve",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 110.0
+  },
+  "timestamp" : 431
 }, {
-  "result" : "Command 'businessReport' at timestamp 432 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO10POOB4354933866366881",
+    "balance" : 1117.0,
+    "currency" : "RON",
+    "spending limit" : 500.0,
+    "deposit limit" : 500.0,
+    "statistics type" : "transaction",
+    "managers" : [ {
+      "username" : "Mocanu Mirela",
+      "spent" : 0.0,
+      "deposited" : 116.0
+    }, {
+      "username" : "Poulain Gilbert",
+      "spent" : 0.0,
+      "deposited" : 124.0
+    }, {
+      "username" : "Ellis DDS Alexander",
+      "spent" : 0.0,
+      "deposited" : 136.0
+    } ],
+    "employees" : [ {
+      "username" : "Booker James",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Vallee Genevieve",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 376.0
+  },
+  "timestamp" : 432
 }, {
   "command" : "sendMoney",
   "output" : {
@@ -270,11 +398,155 @@
   },
   "timestamp" : 434
 }, {
-  "result" : "Command 'businessReport' at timestamp 435 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO98POOB8412955460158769",
+    "balance" : 3151.0,
+    "currency" : "USD",
+    "spending limit" : 868.0,
+    "deposit limit" : 107.14285714285714,
+    "statistics type" : "transaction",
+    "managers" : [ {
+      "username" : "Mocanu Mirela",
+      "spent" : 0.0,
+      "deposited" : 145.0
+    }, {
+      "username" : "Ellis DDS Alexander",
+      "spent" : 0.0,
+      "deposited" : 144.0
+    }, {
+      "username" : "Vallee Genevieve",
+      "spent" : 0.0,
+      "deposited" : 146.0
+    } ],
+    "employees" : [ {
+      "username" : "Lee Joe",
+      "spent" : 0.0,
+      "deposited" : 163.0
+    }, {
+      "username" : "Albu Dida",
+      "spent" : 0.0,
+      "deposited" : 40.0
+    }, {
+      "username" : "Marin Silvia",
+      "spent" : 0.0,
+      "deposited" : 84.0
+    }, {
+      "username" : "Poulain Gilbert",
+      "spent" : 0.0,
+      "deposited" : 281.0
+    }, {
+      "username" : "Booker James",
+      "spent" : 0.0,
+      "deposited" : 132.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 435.0
+  },
+  "timestamp" : 435
 }, {
-  "result" : "Command 'businessReport' at timestamp 436 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO32POOB0130532963818359",
+    "balance" : 1024.0,
+    "currency" : "USD",
+    "spending limit" : 94.0,
+    "deposit limit" : 107.14285714285714,
+    "statistics type" : "transaction",
+    "managers" : [ {
+      "username" : "Mocanu Mirela",
+      "spent" : 0.0,
+      "deposited" : 200.0
+    }, {
+      "username" : "Poulain Gilbert",
+      "spent" : 0.0,
+      "deposited" : 165.0
+    }, {
+      "username" : "Booker James",
+      "spent" : 0.0,
+      "deposited" : 167.0
+    }, {
+      "username" : "Ellis DDS Alexander",
+      "spent" : 0.0,
+      "deposited" : 152.0
+    } ],
+    "employees" : [ {
+      "username" : "Vallee Genevieve",
+      "spent" : 0.0,
+      "deposited" : 301.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 684.0
+  },
+  "timestamp" : 436
 }, {
-  "result" : "Command 'businessReport' at timestamp 437 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO68POOB1848616931405475",
+    "balance" : 859.0,
+    "currency" : "RON",
+    "spending limit" : 473.0,
+    "deposit limit" : 500.0,
+    "statistics type" : "transaction",
+    "managers" : [ {
+      "username" : "Mocanu Mirela",
+      "spent" : 0.0,
+      "deposited" : 110.0
+    } ],
+    "employees" : [ {
+      "username" : "Poulain Gilbert",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Booker James",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Ellis DDS Alexander",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Vallee Genevieve",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 110.0
+  },
+  "timestamp" : 437
 }, {
-  "result" : "Command 'businessReport' at timestamp 438 is not implemented yet."
+  "command" : "businessReport",
+  "output" : {
+    "IBAN" : "RO10POOB4354933866366881",
+    "balance" : 1117.0,
+    "currency" : "RON",
+    "spending limit" : 500.0,
+    "deposit limit" : 500.0,
+    "statistics type" : "transaction",
+    "managers" : [ {
+      "username" : "Mocanu Mirela",
+      "spent" : 0.0,
+      "deposited" : 116.0
+    }, {
+      "username" : "Poulain Gilbert",
+      "spent" : 0.0,
+      "deposited" : 124.0
+    }, {
+      "username" : "Ellis DDS Alexander",
+      "spent" : 0.0,
+      "deposited" : 136.0
+    } ],
+    "employees" : [ {
+      "username" : "Booker James",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    }, {
+      "username" : "Vallee Genevieve",
+      "spent" : 0.0,
+      "deposited" : 0.0
+    } ],
+    "total spent" : 0.0,
+    "total deposited" : 376.0
+  },
+  "timestamp" : 438
 } ]
