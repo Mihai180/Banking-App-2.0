@@ -4,6 +4,11 @@ import org.poo.visitor.transaction.TransactionVisitor;
 
 import java.util.List;
 
+/**
+ * Clasa finală InsufficientFundsForCustomSplitTransaction reprezintă
+ * o tranzacție specifică pentru fonduri insuficiente la un custom
+ * split payment
+ */
 public final class InsufficientFundsForCustomSplitTransaction extends Transaction {
     private final double amount;
     private final List<Double> amountForUsers;

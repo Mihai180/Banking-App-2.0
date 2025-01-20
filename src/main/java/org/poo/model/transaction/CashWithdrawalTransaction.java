@@ -2,6 +2,10 @@ package org.poo.model.transaction;
 
 import org.poo.visitor.transaction.TransactionVisitor;
 
+/**
+ * Clasa finală CashWithdrawalTransaction reprezintă o tranzacție specifică pentru
+ * retragerea de numerar
+ */
 public final class CashWithdrawalTransaction extends Transaction {
     private final double amount;
     public CashWithdrawalTransaction(final double amount, final int timestamp) {

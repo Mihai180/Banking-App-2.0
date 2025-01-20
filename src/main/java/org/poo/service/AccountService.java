@@ -192,12 +192,6 @@ public final class AccountService {
 
         Account senderAccount = getAccountByIBAN(senderIban);
         Account receiverAccount = getAccountByIBAN(receiverIban);
-        /*
-        if (senderAccount == null) {
-            throw new AccountNotFoundException("Sender account not found.");
-        }
-
-         */
 
         if (receiverAccount == null) {
             throw new AccountNotFoundException("Receiver account not found.");

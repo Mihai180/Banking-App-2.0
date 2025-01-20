@@ -4,6 +4,10 @@ import org.poo.visitor.transaction.TransactionVisitor;
 
 import java.util.List;
 
+/**
+ * Clasa finală UserRejectedSplitTransaction reprezintă
+ * o tranzacție specifică pentru refuzarea unui split payment
+ */
 public final class UserRejectedSplitTransaction extends Transaction {
     private final double amount;
     private final List<Double> amountForUsers;

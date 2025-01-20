@@ -5,7 +5,7 @@ import org.poo.visitor.command.CommandVisitor;
 /**
  * Comanda utilizată pentru generarea unui raport cu toate tranzacțiile.
  * Această clasă stochează informațiile necesare pentru generarea raportului,
- * iar logica comenzii este realizată de CommandVisitor
+ * iar logica, comenzii este realizată de CommandVisitor
  */
 public final class ReportCommand implements Command {
     private final String command;

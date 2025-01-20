@@ -2,6 +2,11 @@ package org.poo.command;
 
 import org.poo.visitor.command.CommandVisitor;
 
+/**
+ * Comanda utilizată pentru a retrage dintr-un cont de economii.
+ * Această clasă stochează informațiile necesare pentru a retrage
+ * dintr-un cont de economii, iar logica, comenzii este realizată de CommandVisitor
+ */
 public final class WithdrawSavingsCommand implements Command {
     private String command;
     private String account;

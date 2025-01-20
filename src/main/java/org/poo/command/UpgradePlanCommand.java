@@ -2,6 +2,11 @@ package org.poo.command;
 
 import org.poo.visitor.command.CommandVisitor;
 
+/**
+ * Comanda utilizată pentru a face upgrade planului.
+ * Această clasă stochează informațiile necesare pentru a face upgrade planului,
+ * iar logica, comenzii este realizată de CommandVisitor
+ */
 public final class UpgradePlanCommand implements Command {
     private String command;
     private String newPlanType;

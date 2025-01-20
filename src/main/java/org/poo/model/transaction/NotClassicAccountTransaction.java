@@ -2,6 +2,11 @@ package org.poo.model.transaction;
 
 import org.poo.visitor.transaction.TransactionVisitor;
 
+/**
+ * Clasa finală NotClassicAccountTransaction reprezintă
+ * o tranzacție specifică pentru faptul că un cont nu
+ * este de tip clasic
+ */
 public final class NotClassicAccountTransaction extends Transaction {
     public NotClassicAccountTransaction(final int timestamp) {
         super(timestamp);

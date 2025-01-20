@@ -71,12 +71,6 @@ public final class CardService {
             throw new AccountNotFoundException("Account not found with IBAN: " + accountIBAN);
         }
 
-        /*if (!account.getOwner().getEmail().equals(email)) {
-            return null;
-        }
-
-         */
-
         User user = userService.getUserByEmail(email);
         String cardNumber = Utils.generateCardNumber();
         Card card = null;
@@ -101,12 +95,6 @@ public final class CardService {
         if (card == null) {
             return;
         }
-
-        /*if (!card.getOwner().getEmail().equals(email)) {
-            return;
-        }
-
-         */
 
         cardsByNumber.remove(cardNumber);
         card.getAccount().getCards().remove(card);
@@ -136,12 +124,6 @@ public final class CardService {
         if (card.isBlocked()) {
             throw new FrozenCardException("Card is frozen");
         }
-
-        /*if (!card.getOwner().getEmail().equals(email)) {
-            throw new UnauthorizedAccessException("Unauthorized access to card");
-        }
-
-         */
 
         double finalAmount = amount;
         if (!card.getAccount().getCurrency().equals(currency)) {

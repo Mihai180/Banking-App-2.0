@@ -2,6 +2,11 @@ package org.poo.model.transaction;
 
 import org.poo.visitor.transaction.TransactionVisitor;
 
+/**
+ * Clasa finală NotMinimumAgeRequiredTransaction reprezintă
+ * o tranzacție specifică pentru faptul că nu a fost atinsă
+ * vârsta minimă
+ */
 public final class NotMinimumAgeRequiredTransaction extends Transaction {
     public NotMinimumAgeRequiredTransaction(final int timestamp) {
         super(timestamp);

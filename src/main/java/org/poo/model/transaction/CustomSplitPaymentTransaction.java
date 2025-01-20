@@ -4,6 +4,10 @@ import org.poo.visitor.transaction.TransactionVisitor;
 
 import java.util.List;
 
+/**
+ * Clasa finală CustomSplitPaymentTransaction reprezintă o tranzacție specifică pentru
+ * un custom split payment
+ */
 public final class CustomSplitPaymentTransaction extends Transaction {
     private final String currency;
     private final List<Double> amountForUsers;

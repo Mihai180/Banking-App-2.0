@@ -2,6 +2,11 @@ package org.poo.model.transaction;
 
 import org.poo.visitor.transaction.TransactionVisitor;
 
+/**
+ * Clasa finală UpgradeToSamePlanTransaction reprezintă
+ * o tranzacție specifică pentru încercarea de upgrade al planului
+ * la același plan
+ */
 public final class UpgradeToSamePlanTransaction extends Transaction {
     public UpgradeToSamePlanTransaction(final int timestamp, final String description) {
         super(timestamp);

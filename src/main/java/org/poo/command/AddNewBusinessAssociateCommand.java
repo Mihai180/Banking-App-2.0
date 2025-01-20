@@ -2,6 +2,11 @@ package org.poo.command;
 
 import org.poo.visitor.command.CommandVisitor;
 
+/**
+ * Comanda utilizată pentru adăugarea unui nou asociat la un cont business.
+ * Această clasă stochează informațiile necesare pentru adăugarea unui nou asociat
+ * la un cont business, iar logica, comenzii este realizată de CommandVisitor
+ */
 public final class AddNewBusinessAssociateCommand implements Command {
     private final String command;
     private final String account;

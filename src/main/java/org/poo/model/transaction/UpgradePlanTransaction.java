@@ -2,6 +2,10 @@ package org.poo.model.transaction;
 
 import org.poo.visitor.transaction.TransactionVisitor;
 
+/**
+ * Clasa finală UpgradePlanTransaction reprezintă
+ * o tranzacție specifică pentru upgrade-ul planului
+ */
 public final class UpgradePlanTransaction extends Transaction {
     private final String account;
     private final String newPlanType;

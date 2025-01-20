@@ -5,7 +5,7 @@ import org.poo.visitor.command.CommandVisitor;
 /**
  * Comanda utilizată pentru generarea unui raport de cheltuieli.
  * Această clasă stochează informațiile necesare pentru generarea raportului,
- * iar logica comenzii este realizată de CommandVisitor
+ * iar logica, comenzii este realizată de CommandVisitor
  */
 public final class SpendingsReportCommand implements Command {
     private final int startTimestamp;

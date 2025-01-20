@@ -2,7 +2,7 @@ package org.poo.model.commerciant;
 
 import org.poo.model.account.Account;
 import org.poo.model.transaction.CardPaymentTransaction;
-import org.poo.service.commerciant.CommerciantService;
+import org.poo.service.CommerciantService;
 
 public final class NrOfTransactionsCashbackStrategy implements CashbackStrategy {
     private static final double FOOD_CASHBACK_RATE = 0.02;

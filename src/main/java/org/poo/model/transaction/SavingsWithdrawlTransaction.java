@@ -2,6 +2,11 @@ package org.poo.model.transaction;
 
 import org.poo.visitor.transaction.TransactionVisitor;
 
+/**
+ * Clasa finală SavingsWithdrawlTransaction reprezintă
+ * o tranzacție specifică pentru retragerea de bani
+ * dintr-un cont de tip savings
+ */
 public final class SavingsWithdrawlTransaction extends Transaction {
     private String savingsAccountIBAN;
     private String classicAccountIBAN;

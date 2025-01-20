@@ -2,6 +2,11 @@ package org.poo.command;
 
 import org.poo.visitor.command.CommandVisitor;
 
+/**
+ * Comanda utilizată pentru afișarea unui raport business.
+ * Această clasă stochează informațiile necesare pentru afișarea unui raport business,
+ * iar logica, comenzii este realizată de CommandVisitor
+ */
 public final class BusinessReportCommand implements Command {
     private final String command;
     private final String type;

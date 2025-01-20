@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Comanda utilizată pentru o plată împărțită între mai multe conturi.
  * Această clasă stochează informațiile necesare pentru efectuarea plății,
- * iar logica comenzii este realizată de CommandVisitor
+ * iar logica, comenzii este realizată de CommandVisitor
  */
 public final class SplitPaymentCommand implements Command {
     private final List<String> accounts;

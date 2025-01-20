@@ -11,7 +11,7 @@ import org.poo.fileio.CommandInput;
 import org.poo.fileio.ObjectInput;
 import org.poo.fileio.UserInput;
 import org.poo.service.*;
-import org.poo.service.commerciant.CommerciantService;
+import org.poo.service.CommerciantService;
 import org.poo.utils.Utils;
 import org.poo.visitor.command.ConcreteCommandVisitor;
 import java.io.File;

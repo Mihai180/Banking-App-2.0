@@ -1,6 +1,6 @@
 package org.poo.model.commerciant;
 
-import org.poo.service.commerciant.CommerciantService;
+import org.poo.service.CommerciantService;
 
 public final class CashbackStrategyFactory {
     /**

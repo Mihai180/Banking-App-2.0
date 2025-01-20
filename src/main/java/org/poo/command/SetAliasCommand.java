@@ -5,7 +5,7 @@ import org.poo.visitor.command.CommandVisitor;
 /**
  * Comanda utilizată pentru setarea aliasurilor.
  * Această clasă stochează informațiile necesare pentru setarea aliasurilor,
- * iar logica comenzii este realizată de CommandVisitor
+ * iar logica, comenzii este realizată de CommandVisitor
  */
 public final class SetAliasCommand implements Command {
     private final String email;

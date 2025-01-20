@@ -2,6 +2,11 @@ package org.poo.command;
 
 import org.poo.visitor.command.CommandVisitor;
 
+/**
+ * Comanda utilizată pentru acceptarea unui split payment.
+ * Această clasă stochează informațiile necesare pentru acceptarea unui,
+ * split payment, iar logica, comenzii este realizată de CommandVisitor
+ */
 public final class AcceptSplitPayment implements Command {
     private String command;
     private String email;

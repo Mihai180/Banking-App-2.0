@@ -2,6 +2,11 @@ package org.poo.command;
 
 import org.poo.visitor.command.CommandVisitor;
 
+/**
+ * Comanda utilizată pentru schimbarea limitei de cheltuit a unui cont business.
+ * Această clasă stochează informațiile necesare pentru schimbarea limitei de
+ * cheltuit a unui cont business, iar logica, comenzii este realizată de CommandVisitor
+ */
 public final class ChangeSpendingLimitCommand implements Command {
     private final String command;
     private final String email;

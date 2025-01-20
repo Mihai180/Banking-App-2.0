@@ -2,6 +2,10 @@ package org.poo.model.transaction;
 
 import org.poo.visitor.transaction.TransactionVisitor;
 
+/**
+ * Clasa finală InterestRateIncomeTransaction reprezintă
+ * o tranzacție specifică pentru încasarea dobânzii
+ */
 public final class InterestRateIncomeTransaction extends Transaction {
     private final double amount;
     private final String currency;

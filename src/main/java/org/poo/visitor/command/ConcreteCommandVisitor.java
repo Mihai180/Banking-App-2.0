@@ -15,7 +15,7 @@ import org.poo.model.plan.PlanStrategy;
 import org.poo.model.transaction.*;
 import org.poo.model.user.User;
 import org.poo.service.*;
-import org.poo.service.commerciant.CommerciantService;
+import org.poo.service.CommerciantService;
 import org.poo.visitor.transaction.ConcreteTransactionVisitor;
 import java.util.*;
 

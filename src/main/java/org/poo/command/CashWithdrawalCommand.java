@@ -2,6 +2,11 @@ package org.poo.command;
 
 import org.poo.visitor.command.CommandVisitor;
 
+/**
+ * Comanda utilizată pentru retragerea de numerar dintr-un cont.
+ * Această clasă stochează informațiile necesare pentru retragerea de numerar
+ * dintr-un cont, iar logica, comenzii este realizată de CommandVisitor
+ */
 public final class CashWithdrawalCommand implements Command {
     private final String command;
     private final String cardNumber;
