@@ -2,10 +2,12 @@ package org.poo.model.transaction;
 
 import org.poo.visitor.transaction.TransactionVisitor;
 
-public class UpgradePlanTransaction extends Transaction {
+public final class UpgradePlanTransaction extends Transaction {
     private final String account;
     private final String newPlanType;
-    public UpgradePlanTransaction(String account, String newPlanType, int timestamp) {
+    public UpgradePlanTransaction(final String account,
+                                  final String newPlanType,
+                                  final int timestamp) {
         super(timestamp);
         this.account = account;
         this.newPlanType = newPlanType;

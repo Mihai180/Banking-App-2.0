@@ -2,10 +2,12 @@ package org.poo.model.transaction;
 
 import org.poo.visitor.transaction.TransactionVisitor;
 
-public class InterestRateIncomeTransaction extends Transaction {
+public final class InterestRateIncomeTransaction extends Transaction {
     private final double amount;
     private final String currency;
-    public InterestRateIncomeTransaction(final double amount, final String currency, final int timestamp) {
+    public InterestRateIncomeTransaction(final double amount,
+                                         final String currency,
+                                         final int timestamp) {
         super(timestamp);
         this.amount = amount;
         this.currency = currency;

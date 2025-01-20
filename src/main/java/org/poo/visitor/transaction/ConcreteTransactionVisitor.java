@@ -173,7 +173,8 @@ public final class ConcreteTransactionVisitor implements TransactionVisitor {
     @Override
     public void visit(final CustomSplitPaymentTransaction transaction) {
         transactionNode.put("timestamp", transaction.getTimestamp());
-        transactionNode.put("description", transaction.getDescription() + transaction.getAmount() + " " + transaction.getCurrency());
+        transactionNode.put("description", transaction.getDescription()
+                + transaction.getAmount() + " " + transaction.getCurrency());
         transactionNode.put("splitPaymentType", "custom");
         transactionNode.put("currency", transaction.getCurrency());
         ArrayNode amountForUsers = mapper.createArrayNode();
@@ -224,5 +225,11 @@ public final class ConcreteTransactionVisitor implements TransactionVisitor {
         }
         transactionNode.set("involvedAccounts", involvedAccountsArray);
         transactionNode.put("error", transaction.getError());
+    }
+
+    @Override
+    public void visit(final UpgradeToSamePlanTransaction transaction) {
+        transactionNode.put("timestamp", transaction.getTimestamp());
+        transactionNode.put("description", transaction.getDescription());
     }
 }

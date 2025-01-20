@@ -1,9 +1,7 @@
 package org.poo.model.account;
 
 import org.poo.model.user.User;
-
 import java.util.ArrayList;
-import java.util.Map;
 
 /**
  * Clasa finală SavingsAccount reprezintă un tip de cont de economii,
@@ -71,12 +69,12 @@ public final class SavingsAccount extends Account {
     }
 
     @Override
-    public void changeSpendingLimit(double amount) {
+    public void changeSpendingLimit(final double amount) {
 
     }
 
     @Override
-    public void changeDepositLimit(double amount) {
+    public void changeDepositLimit(final double amount) {
 
     }
 

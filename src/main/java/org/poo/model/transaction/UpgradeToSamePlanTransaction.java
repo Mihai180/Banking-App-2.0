@@ -2,10 +2,15 @@ package org.poo.model.transaction;
 
 import org.poo.visitor.transaction.TransactionVisitor;
 
-public final class NotMinimumAgeRequiredTransaction extends Transaction {
-    public NotMinimumAgeRequiredTransaction(final int timestamp) {
+public final class UpgradeToSamePlanTransaction extends Transaction {
+    public UpgradeToSamePlanTransaction(final int timestamp, final String description) {
         super(timestamp);
-        this.description = "You don't have the minimum age required.";
+        this.description = description;
+    }
+
+    @Override
+    public String getType() {
+        return "UpgradeToSamePlan";
     }
 
     /**
@@ -24,11 +29,6 @@ public final class NotMinimumAgeRequiredTransaction extends Transaction {
     @Override
     public double getPaymentAmount() {
         return 0;
-    }
-
-    @Override
-    public String getType() {
-        return "SavingsWithdrawal";
     }
 
     @Override

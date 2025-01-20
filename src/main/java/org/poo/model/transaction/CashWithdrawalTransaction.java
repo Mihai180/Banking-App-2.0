@@ -2,7 +2,7 @@ package org.poo.model.transaction;
 
 import org.poo.visitor.transaction.TransactionVisitor;
 
-public class CashWithdrawalTransaction extends Transaction {
+public final class CashWithdrawalTransaction extends Transaction {
     private final double amount;
     public CashWithdrawalTransaction(final double amount, final int timestamp) {
         super(timestamp);

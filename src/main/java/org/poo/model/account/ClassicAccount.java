@@ -1,9 +1,7 @@
 package org.poo.model.account;
 
 import org.poo.model.user.User;
-
 import java.util.ArrayList;
-import java.util.Map;
 
 /**
  * Clasa finală ClassicAccount reprezintă un tip specific de cont,
@@ -66,12 +64,12 @@ public final class ClassicAccount extends Account {
     }
 
     @Override
-    public void changeSpendingLimit(double amount) {
+    public void changeSpendingLimit(final double amount) {
 
     }
 
     @Override
-    public void changeDepositLimit(double amount) {
+    public void changeDepositLimit(final double amount) {
 
     }
 

@@ -1,30 +1,47 @@
 package org.poo.model.plan;
 
-import org.poo.service.ExchangeService;
+public final class SilverPlan implements PlanStrategy {
+    private static final double MINIMUM_AMOUNT_FOR_COMMISSION = 500.0;
+    private static final double COMMISSION_RATE = 0.001;
+    private static final double GOLD_UPGRADE_FEE = 250.0;
+    private static final double INVALID_UPGRADE_FEE = -1.0;
 
-public class SilverPlan implements PlanStrategy {
     @Override
-    public double calculateCommission(double amount) {
-        if (amount < 500) {
+    public double calculateCommission(final double amount) {
+        if (amount < MINIMUM_AMOUNT_FOR_COMMISSION) {
             return 0.0;
         }
-        return amount * 0.001;
+        return amount * COMMISSION_RATE;
     }
 
-    public boolean isDowngrade (String requested) {
+    /**
+     * Verifică dacă cererea este pentru un plan inferior
+     * @param requested este tipul de plan solicitat
+     * @return `true` dacă planul cerut este "standard" sau "student", altfel `false`
+     */
+    public boolean isDowngrade(final String requested) {
         if (requested.equals("standard") || requested.equals("student")) {
             return true;
         }
         return false;
     }
 
-    public double calculateUpgradeFee(String requested) {
+    /**
+     * Calculează taxa de upgrade pentru un plan specificat
+     * @param requested este tipul de plan solicitat pentru upgrade
+     * @return taxa pentru upgrade dacă planul este "gold", altfel -1
+     */
+    public double calculateUpgradeFee(final String requested) {
         if (requested.equals("gold")) {
-            return 250;
+            return GOLD_UPGRADE_FEE;
         }
-        return -1;
+        return INVALID_UPGRADE_FEE;
     }
 
+    /**
+     * Returnează numele planului curent.
+     * @return numele planului sub formă de șir de caractere.
+     */
     public String getPlan() {
         return "Silver";
     }

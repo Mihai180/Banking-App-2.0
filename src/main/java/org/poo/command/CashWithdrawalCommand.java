@@ -2,7 +2,7 @@ package org.poo.command;
 
 import org.poo.visitor.command.CommandVisitor;
 
-public class CashWithdrawalCommand implements Command {
+public final class CashWithdrawalCommand implements Command {
     private final String command;
     private final String cardNumber;
     private final double amount;
@@ -10,7 +10,9 @@ public class CashWithdrawalCommand implements Command {
     private final String location;
     private final int timestamp;
 
-    public CashWithdrawalCommand(String command, String cardNumber, double amount, String email, String location, int timestamp) {
+    public CashWithdrawalCommand(final String command, final String cardNumber,
+                                 final double amount, final String email,
+                                 final String location, final int timestamp) {
         this.command = command;
         this.cardNumber = cardNumber;
         this.amount = amount;

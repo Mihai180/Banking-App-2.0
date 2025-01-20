@@ -1,7 +1,7 @@
 package org.poo.exception;
 
 public class PlanDowngradeException extends RuntimeException {
-    public PlanDowngradeException(String message) {
+    public PlanDowngradeException(final String message) {
         super(message);
     }
 }

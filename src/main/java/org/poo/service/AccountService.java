@@ -5,7 +5,6 @@ import org.poo.model.account.Account;
 import org.poo.model.account.BusinessAccount;
 import org.poo.model.account.ClassicAccount;
 import org.poo.model.account.SavingsAccount;
-import org.poo.model.commerciant.Commerciant;
 import org.poo.model.plan.PlanFactory;
 import org.poo.model.plan.PlanStrategy;
 import org.poo.model.transaction.Transaction;
@@ -100,8 +99,8 @@ public final class AccountService {
         }
 
         double amountInRon = exchangeService.convertCurrency(account.getCurrency(), "RON", amount);
-        if (account.getAccountType().equals("business") && account.isEmployee(email) &&
-                amountInRon > account.getDepositLimit()) {
+        if (account.getAccountType().equals("business") && account.isEmployee(email)
+                && amountInRon > account.getDepositLimit()) {
             throw new DepositLimitExcedeedException("Deposit limit exceeded");
         }
 
@@ -181,7 +180,11 @@ public final class AccountService {
      * @throws InsufficientFundsException dacă contul expeditor nu are fonduri suficiente
      */
     public String sendMoney(final String senderIban, final double amount,
-                            final String receiverAliasOrIBAN) {
+                            final String receiverAliasOrIBAN, final String email) {
+        User user = userService.getUserByEmail(email);
+        if (user == null) {
+            throw new UserNotFoundException("User not found");
+        }
         String receiverIban = resolveAliasOrIBAN(receiverAliasOrIBAN);
         if (receiverIban == null) {
             throw new AccountNotFoundException("Receiver account not found or invalid alias.");
@@ -189,10 +192,12 @@ public final class AccountService {
 
         Account senderAccount = getAccountByIBAN(senderIban);
         Account receiverAccount = getAccountByIBAN(receiverIban);
-
+        /*
         if (senderAccount == null) {
             throw new AccountNotFoundException("Sender account not found.");
         }
+
+         */
 
         if (receiverAccount == null) {
             throw new AccountNotFoundException("Receiver account not found.");
@@ -204,7 +209,8 @@ public final class AccountService {
                 amount
         );
 
-        if (senderAccount.getBalance() < amount || senderAccount.getBalance() - senderAccount.getAmountForSplit() < amount) {
+        if (senderAccount.getBalance() < amount
+                || senderAccount.getBalance() - senderAccount.getAmountForSplit() < amount) {
             throw new InsufficientFundsException("Insufficient funds in sender's account");
         }
 
@@ -259,7 +265,8 @@ public final class AccountService {
      * @throws AccountNotFoundException dacă unul dintre conturile specificate nu este găsit
      */
     public String splitPayment(final List<String> accounts, final String currency,
-                               final double amount, final String type, final List<Double> amountForUsers) {
+                               final double amount, final String type,
+                               final List<Double> amountForUsers) {
         if (type.equals("equal")) {
             int nrOfAccounts = accounts.size();
             double splitAmount = amount / nrOfAccounts;
@@ -296,31 +303,11 @@ public final class AccountService {
             return "Success";
         }
         else if (type.equals("custom")) {
-        String lastIban = null;
-        /*for (int i = 0; i < accounts.size(); i++) {
-            Account account = getAccountByIBAN(accounts.get(i));
-            if (account == null) {
-                throw new AccountNotFoundException("Account not found with IBAN: " + accounts.get(i));
-            }
-            double amountForUser = amountForUsers.get(i);
-            if (!account.getCurrency().equals(currency)) {
-                amountForUser = exchangeService.convertCurrency(currency,
-                        account.getCurrency(), amountForUser);
-            }
-            if (account.getBalance() < amountForUser) {
-                lastIban = accounts.get(i);
-            }
-        }
-        if (lastIban != null) {
-            return "Account " + lastIban + " has insufficient funds for a split payment.";
-        }
-
-         */
-
             for (int i = 0; i < accounts.size(); i++) {
                 Account account = getAccountByIBAN(accounts.get(i));
                 if (account == null) {
-                    throw new AccountNotFoundException("Account not found with IBAN: " + accounts.get(i));
+                    throw new AccountNotFoundException("Account not found with IBAN: "
+                            + accounts.get(i));
                 }
 
                 double amountForUser = amountForUsers.get(i);
@@ -330,7 +317,8 @@ public final class AccountService {
                 }
 
                 if (account.getBalance() < amountForUser) {
-                    return "Account " + accounts.get(i) + " has insufficient funds for a split payment.";
+                    return "Account " + accounts.get(i)
+                            + " has insufficient funds for a split payment.";
                 }
             }
         for (int i = 0; i < accounts.size(); i++) {
@@ -386,15 +374,37 @@ public final class AccountService {
         return "Success: " + amount;
     }
 
-    private Account findClassicAccountByCurrency(User user, String currency) {
+    /**
+     * Caută un cont de tip "classic" al unui utilizator, care să corespundă unei anumite valute.
+     *
+     * @param user utilizatorul căruia îi aparține contul
+     * @param currency valuta contului căutat
+     * @return contul clasic care corespunde valutei specificate, sau `null` dacă nu există
+     */
+    private Account findClassicAccountByCurrency(final User user, final String currency) {
         for (Account account : user.getAccounts()) {
-            if ("classic".equals(account.getAccountType()) && account.getCurrency().equals(currency)) {
+            if ("classic".equals(account.getAccountType())
+                    && account.getCurrency().equals(currency)) {
                 return account;
             }
         }
         return null;
     }
 
+    /**
+     * Efectuează o retragere dintr-un cont de economii
+     * către un cont clasic al aceluiași utilizator.
+     *
+     * @param iban     IBAN-ul contului de economii
+     * @param amount   suma care urmează să fie retrasă
+     * @param currency valuta în care se dorește retragerea
+     * @return un mesaj de confirmare care indică succesul retragerii
+     * @throws AccountNotFoundException      dacă contul cu IBAN-ul specificat nu este găsit
+     * @throws NotClassicAccountException    dacă utilizatorul nu deține un cont clasic
+     * @throws NotMinimumAgeRequired         dacă utilizatorul nu are vârsta minimă necesară
+     * @throws AccountTypeIsNotSavings       dacă contul specificat nu este de tip "savings"
+     * @throws InsufficientFundsException    dacă contul nu are suficiente fonduri
+     */
     public String withdrawSavings(final String iban, final double amount, final String currency) {
         Account account = getAccountByIBAN(iban);
         if (account == null) {
@@ -409,7 +419,8 @@ public final class AccountService {
         }
 
         if (!owner.isUserOldEnough()) {
-            throw new NotMinimumAgeRequired("You don't have the minimum age required. " + classicAccount.getIban());
+            throw new NotMinimumAgeRequired("You don't have the minimum age required. "
+                    + classicAccount.getIban());
         }
 
         if (!account.getAccountType().equals("savings")) {
@@ -428,6 +439,19 @@ public final class AccountService {
         return "Savings withdrawal to " + classicAccount.getIban();
     }
 
+    /**
+     * Actualizează planul curent al unui utilizator la un nou tip de plan.
+     *
+     * @param iban         IBAN-ul contului utilizatorului
+     * @param NewPlanType  noul tip de plan solicitat
+     * @throws AccountNotFoundException  dacă contul cu IBAN-ul specificat nu este găsit
+     * @throws UserNotFoundException     dacă utilizatorul asociat contului nu este găsit
+     * @throws SamePlanException         dacă utilizatorul deja deține tipul de plan solicitat
+     * @throws PlanDowngradeException    dacă noul plan reprezintă o retrogradare
+     * @throws UnknownPlanException      dacă tipul de plan solicitat este necunoscut
+     * @throws InsufficientFundsException dacă contul nu are suficiente
+     * fonduri pentru taxa de upgrade
+     */
     public void upgradePlan(final String iban, final String NewPlanType) {
         Account account = getAccountByIBAN(iban);
         if (account == null) {
@@ -441,7 +465,7 @@ public final class AccountService {
 
         PlanStrategy currentPlan = owner.getCurrentPlan();
 
-        if (currentPlan.equals(NewPlanType)) {
+        if (currentPlan.getPlan().equalsIgnoreCase(NewPlanType)) {
             throw new SamePlanException("The user already has the " + NewPlanType + " plan.");
         }
         PlanStrategy requestedPlan = PlanFactory.getPlan(NewPlanType);
@@ -467,6 +491,15 @@ public final class AccountService {
         owner.setCurrentPlan(requestedPlan);
     }
 
+    /**
+     * Adaugă un nou asociat (angajat sau manager) la un cont de tip business.
+     *
+     * @param iban  IBAN-ul contului de tip business
+     * @param role  rolul asociatului (angajat sau manager)
+     * @param email email-ul utilizatorului care va fi asociat contului
+     * @throws AccountNotFoundException dacă contul cu IBAN-ul specificat nu este găsit
+     * @throws UserNotFoundException    dacă utilizatorul cu email-ul specificat nu este găsit
+     */
     public void addNewBusinessAssociate(final String iban, final String role, final String email) {
         Account account = getAccountByIBAN(iban);
         if (account == null) {
@@ -485,6 +518,16 @@ public final class AccountService {
         }
     }
 
+    /**
+     * Modifică limita de cheltuieli a unui cont de tip business.
+     *
+     * @param iban   IBAN-ul contului de tip business
+     * @param limit  noua limită de cheltuieli
+     * @param email  email-ul proprietarului contului
+     * @throws AccountNotFoundException     dacă contul cu IBAN-ul specificat nu este găsit
+     * @throws UnauthorizedAccessException  dacă utilizatorul cu
+     * email-ul specificat nu este proprietarul contului
+     */
     public void changeSpendingLimit(final String iban, double limit, final String email) {
         Account account = getAccountByIBAN(iban);
         if (account == null) {
@@ -492,7 +535,8 @@ public final class AccountService {
         }
 
         if (!account.getOwner().getEmail().equals(email)) {
-            throw new UnauthorizedAccessException("You are not authorized to make this transaction.");
+            throw new UnauthorizedAccessException("You are not "
+                    + "authorized to make this transaction.");
         }
 
         if (!account.getCurrency().equals("RON")) {
@@ -504,6 +548,16 @@ public final class AccountService {
         }
     }
 
+    /**
+     * Modifică limita de depozit a unui cont de tip business.
+     *
+     * @param iban   IBAN-ul contului de tip business
+     * @param limit  noua limită de depozit
+     * @param email  email-ul proprietarului contului
+     * @throws AccountNotFoundException     dacă contul cu IBAN-ul specificat nu este găsit
+     * @throws UnauthorizedAccessException  dacă utilizatorul cu
+     * email-ul specificat nu este proprietarul contului
+     */
     public void changeDepositLimit(final String iban, double limit, final String email) {
         Account account = getAccountByIBAN(iban);
         if (account == null) {
@@ -511,7 +565,8 @@ public final class AccountService {
         }
 
         if (!account.getOwner().getEmail().equals(email)) {
-            throw new UnauthorizedAccessException("You are not authorized to make this transaction.");
+            throw new UnauthorizedAccessException("You are not authorized "
+                    + "to make this transaction.");
         }
 
         if (!account.getCurrency().equals("RON")) {

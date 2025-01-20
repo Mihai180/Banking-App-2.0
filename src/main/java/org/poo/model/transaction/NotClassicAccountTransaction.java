@@ -2,7 +2,7 @@ package org.poo.model.transaction;
 
 import org.poo.visitor.transaction.TransactionVisitor;
 
-public class NotClassicAccountTransaction extends Transaction {
+public final class NotClassicAccountTransaction extends Transaction {
     public NotClassicAccountTransaction(final int timestamp) {
         super(timestamp);
         this.description = "You do not have a classic account.";

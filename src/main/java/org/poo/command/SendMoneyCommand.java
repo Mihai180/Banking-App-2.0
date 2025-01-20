@@ -13,14 +13,16 @@ public final class SendMoneyCommand implements Command {
     private final String reciever;
     private final int timestamp;
     private final String description;
+    private final String email;
 
     public SendMoneyCommand(final String account, final double amount, final String reciever,
-                            final int timestamp, final String description) {
+                            final int timestamp, final String description, final String email) {
         this.account = account;
         this.amount = amount;
         this.reciever = reciever;
         this.timestamp = timestamp;
         this.description = description;
+        this.email = email;
     }
 
     public String getAccount() {
@@ -41,6 +43,10 @@ public final class SendMoneyCommand implements Command {
 
     public String getDescription() {
         return description;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     @Override

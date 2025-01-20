@@ -1,13 +1,10 @@
 package org.poo.model.account;
 
 import org.poo.model.card.Card;
-import org.poo.model.commerciant.Commerciant;
 import org.poo.model.transaction.Transaction;
 import org.poo.model.user.User;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Clasa abstractă Account reprezintă o bază comună pentru tipurile de conturi bancare
@@ -24,7 +21,6 @@ public abstract class Account {
     protected int numOfTransactions;
     protected int numOfTransactionsOver300RON;
     protected boolean cahsbackEarned;
-    //protected ArrayList<Commerciant> commerciants;
     protected double amountForSplit;
 
     /**
@@ -96,63 +92,95 @@ public abstract class Account {
         return cards;
     }
 
+    /**
+     * @return Suma totală cheltuită din cont
+     */
     public double getTotalSpent() {
         return totalSpent;
     }
 
+    /**
+     * @return Numărul total de tranzacții efectuate
+     */
     public int getNumOfTransactions() {
         return numOfTransactions;
     }
 
+    /**
+     * @return Numărul tranzacțiilor peste 300 RON
+     */
     public int getNumOfTransactionsOver300RON() {
         return numOfTransactionsOver300RON;
     }
 
+    /**
+     * @return `true` dacă cashback-ul a fost câștigat, altfel `false`
+     */
     public boolean isCahsbackEarned() {
         return cahsbackEarned;
     }
 
+    /**
+     * @return Suma acumulată pentru split
+     */
     public double getAmountForSplit() {
         return amountForSplit;
     }
 
+    /**
+     * Marchează cashback-ul ca fiind câștigat.
+     */
     public void cashbackEarned() {
         cahsbackEarned = true;
     }
 
-    /*public ArrayList<Commerciant> getCommerciants() {
-        return commerciants;
-    }
-
-    public void addCommerciant(Commerciant commerciant) {
-        commerciants.add(commerciant);
-    }
-
+    /**
+     * Marchează cashback-ul ca nefiind câștigat.
      */
+    public void cashbackNotEarned() {
+        cahsbackEarned = false;
+    }
 
-    public void addAmountForSplit(double amount) {
+    /**
+     * Adaugă o sumă la valoarea acumulată pentru split.
+     *
+     * @param amount suma de adăugat
+     */
+    public void addAmountForSplit(final double amount) {
         if (amount <= this.balance) {
             amountForSplit += amount;
         }
     }
 
-    public void decreaseAmountForSplit(double amount) {
+    /**
+     * Scade o sumă din valoarea acumulată pentru split.
+     *
+     * @param amount suma de scăzut
+     */
+    public void decreaseAmountForSplit(final double amount) {
         amountForSplit -= amount;
     }
 
-    public void increaseTotalSpent(double amount) {
-        totalSpent += amount;
-    }
-
+    /**
+     * Crește numărul tranzacțiilor peste 300 RON.
+     */
     public void increaseNumOfTransactionsOver300RON() {
         numOfTransactionsOver300RON++;
     }
 
+    /**
+     * Crește numărul total de tranzacții.
+     */
     public void increaseNumberOfTransactions() {
         this.numOfTransactions++;
     }
 
-    public void decreaseTotalSpent(double amount) {
+    /**
+     * Scade suma totală cheltuită din cont.
+     *
+     * @param amount suma scăzută
+     */
+    public void decreaseTotalSpent(final double amount) {
         this.totalSpent -= amount;
     }
 
@@ -170,7 +198,6 @@ public abstract class Account {
      */
     public void deposit(final Double amount) {
         this.balance += amount;
-        //this.balance = Math.round(this.balance * 100.0) / 100.0;
     }
 
     /**
@@ -184,7 +211,6 @@ public abstract class Account {
         }
         this.balance -= amount;
         this.totalSpent += amount;
-        //this.balance = Math.round(this.balance * 10.0) / 10.0;
         return "Success";
     }
 
@@ -222,21 +248,67 @@ public abstract class Account {
      */
     public abstract double addInterest();
 
-    public abstract void addEmployee(final User user);
+    /**
+     * Adaugă un angajat la cont.
+     *
+     * @param user utilizatorul care va fi adăugat ca angajat
+     */
+    public abstract void addEmployee(User user);
 
-    public abstract void addManager(final User user);
+    /**
+     * Adaugă un manager la cont.
+     *
+     * @param user utilizatorul care va fi adăugat ca manager
+     */
+    public abstract void addManager(User user);
 
+    /**
+     * Returnează limita de cheltuieli a contului.
+     *
+     * @return limita de cheltuieli
+     */
     public abstract double getSpendingLimit();
 
+    /**
+     * Returnează limita de depozit a contului.
+     *
+     * @return limita de depozit
+     */
     public abstract double getDepositLimit();
 
-    public abstract boolean isEmployee(final String email);
+    /**
+     * Verifică dacă un utilizator este angajat, pe baza adresei de email.
+     *
+     * @param email adresa de email a utilizatorului
+     * @return `true` dacă utilizatorul este angajat, altfel `false`
+     */
+    public abstract boolean isEmployee(String email);
 
+    /**
+     * Modifică limita de depozit a contului.
+     *
+     * @param amount noua limită de depozit
+     */
     public abstract void changeDepositLimit(double amount);
 
+    /**
+     * Modifică limita de cheltuieli a contului.
+     *
+     * @param amount noua limită de cheltuieli
+     */
     public abstract void changeSpendingLimit(double amount);
 
+    /**
+     * Returnează lista managerilor asociați contului.
+     *
+     * @return lista managerilor
+     */
     public abstract List<User> getManagers();
 
+    /**
+     * Returnează lista angajaților asociați contului.
+     *
+     * @return lista angajaților
+     */
     public abstract List<User> getEmployees();
 }

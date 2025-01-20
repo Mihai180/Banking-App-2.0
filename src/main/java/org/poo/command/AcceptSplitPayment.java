@@ -2,13 +2,14 @@ package org.poo.command;
 
 import org.poo.visitor.command.CommandVisitor;
 
-public class AcceptSplitPayment implements Command {
+public final class AcceptSplitPayment implements Command {
     private String command;
     private String email;
     private String splitPaymentType;
     private int timestamp;
 
-    public AcceptSplitPayment(String command, String email, String splitPaymentType, int timestamp) {
+    public AcceptSplitPayment(final String command, final String email,
+                              final String splitPaymentType, final int timestamp) {
         this.command = command;
         this.email = email;
         this.splitPaymentType = splitPaymentType;

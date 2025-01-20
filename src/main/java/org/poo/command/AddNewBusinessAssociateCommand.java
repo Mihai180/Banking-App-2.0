@@ -2,14 +2,16 @@ package org.poo.command;
 
 import org.poo.visitor.command.CommandVisitor;
 
-public class AddNewBusinessAssociateCommand implements Command {
+public final class AddNewBusinessAssociateCommand implements Command {
     private final String command;
     private final String account;
     private final String role;
     private final String email;
     private final int timestamp;
 
-    public AddNewBusinessAssociateCommand(String command, String account, String role, String email, int timestamp) {
+    public AddNewBusinessAssociateCommand(final String command, final String account,
+                                          final String role, final String email,
+                                          final int timestamp) {
         this.command = command;
         this.account = account;
         this.role = role;

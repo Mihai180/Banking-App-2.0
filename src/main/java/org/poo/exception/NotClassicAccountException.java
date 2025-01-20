@@ -1,7 +1,7 @@
 package org.poo.exception;
 
 public class NotClassicAccountException extends RuntimeException {
-    public NotClassicAccountException(String message) {
+    public NotClassicAccountException(final String message) {
         super(message);
     }
 }

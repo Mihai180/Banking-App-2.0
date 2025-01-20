@@ -4,7 +4,7 @@ import org.poo.visitor.transaction.TransactionVisitor;
 
 import java.util.List;
 
-public class UserRejectedSplitTransaction extends Transaction {
+public final class UserRejectedSplitTransaction extends Transaction {
     private final double amount;
     private final List<Double> amountForUsers;
     private final String currency;

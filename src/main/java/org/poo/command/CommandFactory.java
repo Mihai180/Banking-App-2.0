@@ -43,7 +43,8 @@ public final class CommandFactory {
                         input.getCommerciant(), input.getEmail());
             case "sendMoney":
                 return new SendMoneyCommand(input.getAccount(), input.getAmount(),
-                        input.getReceiver(), input.getTimestamp(), input.getDescription());
+                        input.getReceiver(), input.getTimestamp(),
+                        input.getDescription(), input.getEmail());
             case "setAlias":
                 return new SetAliasCommand(input.getEmail(), input.getAlias(), input.getAccount());
             case "printTransactions":
@@ -57,7 +58,8 @@ public final class CommandFactory {
                         input.getInterestRate(), input.getCommand());
             case "splitPayment":
                 return new SplitPaymentCommand(input.getAccounts(), input.getTimestamp(),
-                        input.getCurrency(), input.getAmount(), input.getSplitPaymentType(), input.getAmountForUsers());
+                        input.getCurrency(), input.getAmount(),
+                        input.getSplitPaymentType(), input.getAmountForUsers());
             case "report":
                 return new ReportCommand(input.getCommand(), input.getTimestamp(),
                         input.getStartTimestamp(), input.getEndTimestamp(), input.getAccount());
@@ -76,7 +78,8 @@ public final class CommandFactory {
                         input.getAccount(), input.getTimestamp());
             case "cashWithdrawal":
                 return new CashWithdrawalCommand(input.getCommand(), input.getCardNumber(),
-                        input.getAmount(), input.getEmail(), input.getLocation(), input.getTimestamp());
+                        input.getAmount(), input.getEmail(),
+                        input.getLocation(), input.getTimestamp());
             case "acceptSplitPayment":
                 return new AcceptSplitPayment(input.getCommand(), input.getEmail(),
                         input.getSplitPaymentType(), input.getTimestamp());

@@ -122,46 +122,4 @@
     "total deposited" : 0.0
   },
   "timestamp" : 162
-}, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 210,
-    "description" : "User not found"
-  },
-  "timestamp" : 210
-}, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 395,
-    "description" : "User not found"
-  },
-  "timestamp" : 395
-}, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 396,
-    "description" : "User not found"
-  },
-  "timestamp" : 396
-}, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 398,
-    "description" : "User not found"
-  },
-  "timestamp" : 398
-}, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 399,
-    "description" : "User not found"
-  },
-  "timestamp" : 399
-}, {
-  "command" : "sendMoney",
-  "output" : {
-    "timestamp" : 400,
-    "description" : "User not found"
-  },
-  "timestamp" : 400
 } ]

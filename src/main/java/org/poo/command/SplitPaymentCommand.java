@@ -18,7 +18,8 @@ public final class SplitPaymentCommand implements Command {
     private final List<Double> amountForUsers;
 
     public SplitPaymentCommand(final List<String> accounts, final int timestamp,
-                               final String currency, final double amount, final String type, final List<Double> amountForUsers) {
+                               final String currency, final double amount,
+                               final String type, final List<Double> amountForUsers) {
         this.accounts = accounts;
         this.timestamp = timestamp;
         this.currency = currency;

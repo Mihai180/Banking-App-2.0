@@ -1667,7 +1667,7 @@
     "email" : "Todor_Stanescu@gmail.ro",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2203.111,
+      "balance" : 2204.3305,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -1681,7 +1681,7 @@
     "email" : "Jeannine_de_Evrard@yahoo.fr",
     "accounts" : [ {
       "IBAN" : "RO65POOB8944016386845896",
-      "balance" : 1349.195,
+      "balance" : 1355.34,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -1881,7 +1881,7 @@
     "email" : "Todor_Stanescu@gmail.ro",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2203.111,
+      "balance" : 2204.3305,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -1895,7 +1895,7 @@
     "email" : "Jeannine_de_Evrard@yahoo.fr",
     "accounts" : [ {
       "IBAN" : "RO65POOB8944016386845896",
-      "balance" : 1349.195,
+      "balance" : 1355.34,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2095,7 +2095,7 @@
     "email" : "Todor_Stanescu@gmail.ro",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2031.6109999999999,
+      "balance" : 2037.5240000000001,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -2109,7 +2109,7 @@
     "email" : "Jeannine_de_Evrard@yahoo.fr",
     "accounts" : [ {
       "IBAN" : "RO65POOB8944016386845896",
-      "balance" : 1349.995,
+      "balance" : 1356.1399999999999,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {
@@ -2477,7 +2477,7 @@
     "email" : "Todor_Stanescu@gmail.ro",
     "accounts" : [ {
       "IBAN" : "RO90POOB5450777208072365",
-      "balance" : 2131.611,
+      "balance" : 2137.5240000000003,
       "currency" : "RON",
       "type" : "classic",
       "cards" : [ {
@@ -2491,7 +2491,7 @@
     "email" : "Jeannine_de_Evrard@yahoo.fr",
     "accounts" : [ {
       "IBAN" : "RO65POOB8944016386845896",
-      "balance" : 1349.995,
+      "balance" : 1356.1399999999999,
       "currency" : "EUR",
       "type" : "classic",
       "cards" : [ {

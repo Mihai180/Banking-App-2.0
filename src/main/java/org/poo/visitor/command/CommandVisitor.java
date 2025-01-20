@@ -117,21 +117,57 @@ public interface CommandVisitor {
      */
     void visit(AddInterestCommand command);
 
+    /**
+     * Vizitează comanda WithdrawSavingsCommand și execută operațiunea specifică acesteia
+     * @param command este instanța WithdrawSavingsCommand care trebuie procesată
+     */
     void visit(WithdrawSavingsCommand command);
 
+    /**
+     * Vizitează comanda UpgradePlanCommand și execută operațiunea specifică acesteia
+     * @param command este instanța UpgradePlanCommand care trebuie procesată
+     */
     void visit(UpgradePlanCommand command);
 
+    /**
+     * Vizitează comanda UpgradePlanCommand și execută operațiunea specifică acesteia
+     * @param command este instanța UpgradePlanCommand care trebuie procesată
+     */
     void visit(CashWithdrawalCommand command);
 
+    /**
+     * Vizitează comanda AcceptSplitPayment și execută operațiunea specifică acesteia
+     * @param command este instanța AcceptSplitPayment care trebuie procesată
+     */
     void visit(AcceptSplitPayment command);
 
+    /**
+     * Vizitează comanda AddNewBusinessAssociateCommand și execută operațiunea specifică acesteia
+     * @param command este instanța AddNewBusinessAssociateCommand care trebuie procesată
+     */
     void visit(AddNewBusinessAssociateCommand command);
 
+    /**
+     * Vizitează comanda ChangeSpendingLimitCommand și execută operațiunea specifică acesteia
+     * @param command este instanța ChangeSpendingLimitCommand care trebuie procesată
+     */
     void visit(ChangeSpendingLimitCommand command);
 
+    /**
+     * Vizitează comanda ChangeDepositLimitCommand și execută operațiunea specifică acesteia
+     * @param command este instanța ChangeDepositLimitCommand care trebuie procesată
+     */
     void visit(ChangeDepositLimitCommand command);
 
+    /**
+     * Vizitează comanda BusinessReportCommand și execută operațiunea specifică acesteia
+     * @param command este instanța BusinessReportCommand care trebuie procesată
+     */
     void visit(BusinessReportCommand command);
 
+    /**
+     * Vizitează comanda RejectSplitPaymentCommand și execută operațiunea specifică acesteia
+     * @param command este instanța RejectSplitPaymentCommand care trebuie procesată
+     */
     void visit(RejectSplitPaymentCommand command);
 }

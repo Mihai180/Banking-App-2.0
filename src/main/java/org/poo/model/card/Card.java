@@ -98,5 +98,9 @@ public abstract class Card {
      */
     public abstract String getCardType();
 
+    /**
+     * Returnează true dacă, cardul este folosit și este de tip OneTimeCard
+     * și false altfel
+     */
     public abstract boolean isUsed();
 }

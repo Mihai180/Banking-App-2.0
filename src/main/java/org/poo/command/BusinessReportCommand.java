@@ -2,16 +2,18 @@ package org.poo.command;
 
 import org.poo.visitor.command.CommandVisitor;
 
-public class BusinessReportCommand implements Command {
-    private final String Command;
+public final class BusinessReportCommand implements Command {
+    private final String command;
     private final String type;
     private final int startTimestamp;
     private final int endTimestamp;
     private final String account;
     private final int timestamp;
 
-    public BusinessReportCommand(String command, String type, int startTimestamp, int endTimestamp, String account, int timestamp) {
-        this.Command = command;
+    public BusinessReportCommand(final String command, final String type,
+                                 final int startTimestamp, final int endTimestamp,
+                                 final String account, final int timestamp) {
+        this.command = command;
         this.type = type;
         this.startTimestamp = startTimestamp;
         this.endTimestamp = endTimestamp;
@@ -20,7 +22,7 @@ public class BusinessReportCommand implements Command {
     }
 
     public String getCommand() {
-        return Command;
+        return command;
     }
 
     public String getType() {

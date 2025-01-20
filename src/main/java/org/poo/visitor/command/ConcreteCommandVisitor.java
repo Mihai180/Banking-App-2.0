@@ -17,10 +17,6 @@ import org.poo.model.user.User;
 import org.poo.service.*;
 import org.poo.service.commerciant.CommerciantService;
 import org.poo.visitor.transaction.ConcreteTransactionVisitor;
-
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
 import java.util.*;
 
 
@@ -151,7 +147,8 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
     }
 
     /**
-     * Metodă auxiliară pentru a efectua conversia valutară în contextul unei plăți online.
+     * Metodă auxiliară pentru a efectua conversia valutară în contextul unei plăți online,
+     * aplicarea cashback-ului dacă este cazul și a comisionului.
      *
      * @param command este comanda de plată online.
      * @param associatedAccount este contul asociat cardului utilizat pentru plată.
@@ -160,40 +157,23 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
         // Conversia folosind serviciul de schimb valutar
         double convertedAmount = exchangeService.convertCurrency(command.getCurrency(),
                 associatedAccount.getCurrency(), command.getAmount());
-        // Formatarea sumei convertite pentru a evita erorile de precizie
-        //DecimalFormat df = new DecimalFormat("#.#########");
-        //double formattedAmount = Double.valueOf(df.format(convertedAmount));
-        //convertedAmount = Math.round(convertedAmount * 100.0) / 100.0;
-        // Crearea unei tranzacții de tip "CardPayment"
         if (command.getAmount() != 0) {
             CardPaymentTransaction transaction = new CardPaymentTransaction(command.getTimestamp(),
                     command.getCommerciant(), convertedAmount);
 
-            Commerciant commerciant = CommerciantService.getCommerciantByName(command.getCommerciant());
-            double spentInRON = exchangeService.convertCurrency(associatedAccount.getCurrency(), "RON", convertedAmount);
-            /*if (commerciant.getCashbackStrategy().equals("spendingThreshold")) {
-                associatedAccount.increaseTotalSpent(convertedAmount);
-            }
-
-             */
-            //associatedAccount.spend(spentInRON);
+            Commerciant commerciant =
+                    CommerciantService.getCommerciantByName(command.getCommerciant());
+            double spentInRON =
+                    exchangeService.convertCurrency(associatedAccount.getCurrency(),
+                            "RON", convertedAmount);
             User user = associatedAccount.getOwner();
-            /*if (associatedAccount.getAccountType().equals("business")) {
-                user.addExpense(associatedAccount, convertedAmount);
-                //System.out.println("Adding expense: " + convertedAmount + " for account: " + associatedAccount.getIban());
-                //System.out.println("User: " + user.getFirstName() + " " + user.getLastName());
-                //System.out.println("Account: " + associatedAccount.getIban() + " - Adding expense: " + convertedAmount);
-
-            }
-
-             */
             PlanStrategy plan = user.getCurrentPlan();
-            //associatedAccount.increaseNumberOfTransactions();
             if (spentInRON >= 300 && plan.getPlan().equals("Silver")) {
                 associatedAccount.increaseNumOfTransactionsOver300RON();
             }
 
-            if (plan.getPlan().equals("Silver") && associatedAccount.getNumOfTransactionsOver300RON() >= 5) {
+            if (plan.getPlan().equals("Silver")
+                    && associatedAccount.getNumOfTransactionsOver300RON() >= 5) {
                 PlanStrategy newPlan = new GoldPlan();
                 user.setCurrentPlan(newPlan);
             }
@@ -209,56 +189,24 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                 associatedAccount.cashbackEarned();
 
                 double commission = plan.calculateCommission(spentInRON);
-                double convertedCommission = exchangeService.convertCurrency("RON", associatedAccount.getCurrency(), commission);
+                double convertedCommission = exchangeService.convertCurrency("RON",
+                        associatedAccount.getCurrency(), commission);
                 associatedAccount.withdraw(convertedCommission);
                 associatedAccount.decreaseTotalSpent(convertedCommission);
+
+                if (cashbackStrategy.getCashbackType().equalsIgnoreCase("SpendingTreshold")) {
+                    associatedAccount.cashbackNotEarned();
+                }
 
                 associatedAccount.addTransaction(transaction);
             } else {
                 double commission = plan.calculateCommission(spentInRON);
-                double convertedCommission = exchangeService.convertCurrency("RON", associatedAccount.getCurrency(), commission);
+                double convertedCommission = exchangeService.convertCurrency("RON",
+                        associatedAccount.getCurrency(), commission);
                 associatedAccount.withdraw(convertedCommission);
                 associatedAccount.decreaseTotalSpent(convertedCommission);
                 associatedAccount.addTransaction(transaction);
             }
-
-            /*if (!associatedAccount.isCahsbackEarned() && cashbackStrategy.getCashbackType().equals("NrOfTransactions")) {
-                double amount = cashbackStrategy.calculateCashback(associatedAccount, transaction);
-                associatedAccount.deposit(amount);
-                associatedAccount.cashbackEarned();
-                associatedAccount.decreaseTotalSpent(amount);
-                associatedAccount.increaseNumberOfTransactions();
-
-                double commission = plan.calculateCommission(spentInRON);
-                double convertedCommission = exchangeService.convertCurrency("RON", associatedAccount.getCurrency(), commission);
-                associatedAccount.withdraw(convertedCommission);
-                associatedAccount.decreaseTotalSpent(convertedCommission);
-
-                associatedAccount.addTransaction(transaction);
-            } else if (cashbackStrategy.getCashbackType().equals("SpendingTreshold")) {
-                double amount = cashbackStrategy.calculateCashback(associatedAccount, transaction);
-                associatedAccount.deposit(amount);
-
-                double commission = plan.calculateCommission(spentInRON);
-                double convertedCommission = exchangeService.convertCurrency("RON", associatedAccount.getCurrency(), commission);
-                associatedAccount.withdraw(convertedCommission);
-                associatedAccount.decreaseTotalSpent(convertedCommission);
-
-                associatedAccount.addTransaction(transaction);
-            } else {
-                double commission = plan.calculateCommission(spentInRON);
-                double convertedCommission = exchangeService.convertCurrency("RON", associatedAccount.getCurrency(), commission);
-                associatedAccount.withdraw(convertedCommission);
-                associatedAccount.decreaseTotalSpent(convertedCommission);
-                double amountToDecrease = exchangeService.convertCurrency(command.getCurrency(),
-                        associatedAccount.getCurrency(), command.getAmount());
-                associatedAccount.decreaseTotalSpent(amountToDecrease);
-
-
-                associatedAccount.addTransaction(transaction);
-            }
-
-             */
         }
     }
 
@@ -334,7 +282,8 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
     public void visit(final AddFundsCommand command) {
         // Adaugă fonduri într-un cont specificat
         try {
-            accountService.addFunds(command.getAccountIBAN(), command.getAmount(), command.getEmail());
+            accountService.addFunds(command.getAccountIBAN(),
+                    command.getAmount(), command.getEmail());
         } catch (DepositLimitExcedeedException exception) {
 
         }
@@ -534,7 +483,7 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
         try {
             // Încearcă să trimită bani utilizând serviciul de conturi
             String result = accountService.sendMoney(command.getAccount(), command.getAmount(),
-                    command.getReciever());
+                    command.getReciever(), command.getEmail());
 
             // Dacă transferul este reușit și contul expeditor există,
             // înregistrează tranzacția de trimitere
@@ -549,25 +498,18 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                 Account account = accountService.getAccountByIBAN(command.getAccount());
                 User user = account.getOwner();
                 PlanStrategy plan = user.getCurrentPlan();
-                //double spentInRON = exchangeService.convertCurrency(associatedAccount.getCurrency(), "RON", command.getAmount());
-                double convertedAmount = exchangeService.convertCurrency(account.getCurrency(), "RON", command.getAmount());
+                double convertedAmount = exchangeService.convertCurrency(account.getCurrency(),
+                        "RON", command.getAmount());
                 double commission = plan.calculateCommission(convertedAmount);
-                double convertedCommission = exchangeService.convertCurrency("RON", account.getCurrency(), commission);
+                double convertedCommission = exchangeService.convertCurrency("RON",
+                        account.getCurrency(), commission);
                 account.withdraw(convertedCommission);
                 account.decreaseTotalSpent(convertedCommission);
-
-                /*List<Commerciant> commerciants = commerciantService.getAllCommerciants();
-                for (Commerciant commerciant: commerciants) {
-                    if (commerciant.getAccount().equals(command.getReciever())) {
-
-                 */
-                        double spentInRON = exchangeService.convertCurrency(account.getCurrency(), "RON", command.getAmount());
-                        //account.spend(spentInRON);
-                        account.increaseNumberOfTransactions();
-                        if (spentInRON >= 300) {
-                            account.increaseNumOfTransactionsOver300RON();
-                       // }
-                    //}
+                double spentInRON = exchangeService.convertCurrency(account.getCurrency(),
+                        "RON", command.getAmount());
+                account.increaseNumberOfTransactions();
+                if (spentInRON >= 300) {
+                    account.increaseNumOfTransactionsOver300RON();
                 }
             }
 
@@ -580,13 +522,6 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                         exchangeService.convertCurrency(accountService.getAccountByIBAN(
                                         command.getAccount()).getCurrency(), currency,
                                 command.getAmount());
-                // Asigură precizia sumei convertite
-                /*BigDecimal preciseAmount =
-                        new BigDecimal(convertedAmount).setScale(DECIMAL_PRECISION,
-                                RoundingMode.DOWN);
-                double finalAmount = preciseAmount.doubleValue();
-
-                 */
                 Transaction transaction =
                         new SendMoneyTransaction(command.getTimestamp(),
                                 command.getDescription(), command.getAccount(),
@@ -606,7 +541,8 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                             new InsufficientFundsTransaction(command.getTimestamp());
                     senderAccount.addTransaction(transaction);
                 }
-            } else if (errorMessage.equals("Sender account not found.") || errorMessage.equals("Receiver account not found.")) {
+            } else if (errorMessage.equals("Sender account not found.")
+                    || errorMessage.equals("Receiver account not found.")) {
                 ObjectNode cmdResult = mapper.createObjectNode();
                 cmdResult.put("command", "sendMoney");
                 ObjectNode outputNode = mapper.createObjectNode();
@@ -719,73 +655,14 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
      */
     @Override
     public void visit(final SplitPaymentCommand command) {
-        // Împarte o plată între mai multe conturi utilizând serviciul de conturi
-        /*String result = accountService.splitPayment(command.getAccounts(),
-                command.getCurrency(), command.getAmount(), command.getType(), command.getAmountForUsers());
-        if (result.equals("Success")) {
-            // Dacă plata împărțită a fost reușită, înregistrează tranzacțiile corespunzătoare
-            double amount = command.getAmount() / command.getAccounts().size();
-            String formattedAmount = String.format("%.2f", command.getAmount());
-            Transaction transaction = new SplitPaymentTransaction(command.getTimestamp(),
-                    command.getCurrency(), formattedAmount, command.getAccounts(), amount);
-            List<String> accounts = command.getAccounts();
-            for (String iban : accounts) {
-                Account account = accountService.getAccountByIBAN(iban);
-                account.addTransaction(transaction);
-            }
-        }
-        // Verifică dacă rezultatul indică fonduri insuficiente pentru plata împărțită
-        String regex = "Account \\S+ has insufficient funds for a split payment\\.";
-        if (result.trim().matches(regex)) {
-            double amount = command.getAmount() / command.getAccounts().size();
-            Transaction transaction = new InssuficientFundsForSplitTransaction(command.getAmount(),
-                    command.getCurrency(), command.getAccounts(), command.getTimestamp(),
-                    result, amount);
-            List<String> accounts = command.getAccounts();
-            for (String iban : accounts) {
-                Account account = accountService.getAccountByIBAN(iban);
-                account.addTransaction(transaction);
-            }
-        }
-
-         */
-        /*if (command.getType().equals("equal")) {
-            int nrOfAccounts = command.getAccounts().size();
-            double splitAmount = command.getAmount() / nrOfAccounts;
-            for (String iban : command.getAccounts()) {
-                Account account = accountService.getAccountByIBAN(iban);
-                double convertedAmount = splitAmount;
-                if (!account.getCurrency().equals(command.getCurrency())) {
-                    convertedAmount = exchangeService.convertCurrency(command.getCurrency(),
-                            account.getCurrency(), splitAmount);
-                }
-                account.addAmountForSplit(convertedAmount);
-            }
-        } else if (command.getType().equals("custom")) {
-            for (int i = 0; i < command.getAccounts().size(); i++) {
-                Account account = accountService.getAccountByIBAN(command.getAccounts().get(i));
-                double amountForUser = command.getAmountForUsers().get(i);
-                if (!account.getCurrency().equals(command.getCurrency())) {
-                    amountForUser = exchangeService.convertCurrency(command.getCurrency(),
-                            account.getCurrency(), amountForUser);
-                }
-                account.addAmountForSplit(amountForUser);
-            }
-        }
-
-         */
         Integer splitTimestamp = command.getTimestamp();
         pendingSplits.put(splitTimestamp, command);
         Map<String, Boolean> acceptMap = new HashMap<>();
         for (String accountIban : command.getAccounts()) {
-            // 1) Lookup the user’s email for this IBAN (some userService or stored mapping)
             Account account = accountService.getAccountByIBAN(accountIban);
             User user = account.getOwner();
             String email = user.getEmail();
-
             acceptMap.put(email, false);
-
-            // Add this splitTimestamp to the user's queue
             userPendingSplits.putIfAbsent(email, new ArrayDeque<>());
             userPendingSplits.get(email).offer(splitTimestamp);
         }
@@ -897,12 +774,18 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                 String amountString = resultParts[1];
                 double amount = Double.parseDouble(amountString);
                 Account account = accountService.getAccountByIBAN(command.getAccount());
-                Transaction transaction = new InterestRateIncomeTransaction(amount, account.getCurrency(), command.getTimestamp());
+                Transaction transaction = new InterestRateIncomeTransaction(amount,
+                        account.getCurrency(), command.getTimestamp());
                 account.addTransaction(transaction);
             }
         }
     }
 
+    /**
+     * Procesează comanda de retragere din contul de economii și adaugă tranzacțiile aferente.
+     *
+     * @param command comanda de retragere din economii
+     */
     @Override
     public void visit(final WithdrawSavingsCommand command) {
         try {
@@ -912,9 +795,11 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                 String prefix = "Savings withdrawal to ";
                 if (result.length() > prefix.length()) {
                     String classicAccount = result.substring(prefix.length()).trim();
-                    Transaction transaction = new SavingsWithdrawlTransaction(command.getTimestamp(),
+                    Transaction transaction =
+                            new SavingsWithdrawlTransaction(command.getTimestamp(),
                             command.getAccount(), classicAccount, command.getAmount());
-                    accountService.getAccountByIBAN(command.getAccount()).addTransaction(transaction);
+                    accountService.getAccountByIBAN(
+                            command.getAccount()).addTransaction(transaction);
                     accountService.getAccountByIBAN(classicAccount).addTransaction(transaction);
                 }
             }
@@ -924,12 +809,10 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                 String prefix = "You don't have the minimum age required. ";
                 if (exceptionMessage.length() > prefix.length()) {
                     String classicAccount = exceptionMessage.substring(prefix.length()).trim();
-                    //Transaction transaction = new SavingsWithdrawlTransaction(command.getTimestamp(),
-                            //command.getAccount(), classicAccount, command.getAmount());
-                    Transaction errorTransaction = new NotMinimumAgeRequiredTransaction(command.getTimestamp());
-                    //accountService.getAccountByIBAN(command.getAccount()).addTransaction(transaction);
-                    //accountService.getAccountByIBAN(classicAccount).addTransaction(transaction);
-                    accountService.getAccountByIBAN(classicAccount).addTransaction(errorTransaction);
+                    Transaction errorTransaction = new
+                            NotMinimumAgeRequiredTransaction(command.getTimestamp());
+                    accountService.getAccountByIBAN(
+                            command.getAccount()).addTransaction(errorTransaction);
                 }
             }
         } catch (NotClassicAccountException exception) {
@@ -947,6 +830,13 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
         }
     }
 
+    /**
+     * Procesează comanda de actualizare a planului utilizatorului și
+     * adaugă tranzacția aferentă.
+     *
+     * @param command comanda de actualizare a planului
+     */
+    @Override
     public void visit(final UpgradePlanCommand command) {
         try {
             accountService.upgradePlan(command.getAccount(), command.getNewPlanType());
@@ -970,14 +860,26 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
             objectNode.put("timestamp", command.getTimestamp());
         } catch (PlanDowngradeException exception) {
 
+        } catch (SamePlanException exception) {
+            Transaction transaction = new UpgradeToSamePlanTransaction(command.getTimestamp(),
+                    "The user already has the " + command.getNewPlanType() + " plan.");
+            accountService.getAccountByIBAN(command.getAccount()).addTransaction(transaction);
         }
     }
 
+    /**
+     * Procesează comanda de retragere de numerar folosind un card și adaugă tranzacțiile aferente.
+     *
+     * @param command comanda de retragere de numerar
+     */
+    @Override
     public void visit(final CashWithdrawalCommand command) {
         try {
-            String result = cardService.cashWithdrawal(command.getCardNumber(), command.getAmount(), command.getEmail());
+            String result = cardService.cashWithdrawal(command.getCardNumber(),
+                    command.getAmount(), command.getEmail());
             if (result.startsWith("Cash withdrawal of")) {
-                Transaction transaction = new CashWithdrawalTransaction(command.getAmount(), command.getTimestamp());
+                Transaction transaction = new CashWithdrawalTransaction(command.getAmount(),
+                        command.getTimestamp());
                 Card card = cardService.getCardByNumber(command.getCardNumber());
                 Account account = card.getAccount();
                 account.addTransaction(transaction);
@@ -1011,8 +913,13 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
         }
     }
 
+    /**
+     * Procesează comanda de acceptare a unei plăți împărțite și actualizează conturile implicate.
+     *
+     * @param command comanda de acceptare a plății împărțite
+     */
     @Override
-    public void visit(AcceptSplitPayment command) {
+    public void visit(final AcceptSplitPayment command) {
         String email = command.getEmail();
 
         User user = userService.getUserByEmail(email);
@@ -1048,17 +955,22 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                     Account account = accountService.getAccountByIBAN(iban);
                     double convertedAmount = splitAmount;
                     if (!account.getCurrency().equals(splitPaymentCommand.getCurrency())) {
-                        convertedAmount = exchangeService.convertCurrency(splitPaymentCommand.getCurrency(),
+                        convertedAmount = exchangeService.convertCurrency(
+                                splitPaymentCommand.getCurrency(),
                                 account.getCurrency(), splitAmount);
                     }
                     account.addAmountForSplit(convertedAmount);
                 }
             } else if (splitPaymentCommand.getType().equals("custom")) {
                 for (int i = 0; i < splitPaymentCommand.getAccounts().size(); i++) {
-                    Account account = accountService.getAccountByIBAN(splitPaymentCommand.getAccounts().get(i));
-                    double amountForUser = splitPaymentCommand.getAmountForUsers().get(i);
+                    Account account =
+                            accountService.getAccountByIBAN(
+                                    splitPaymentCommand.getAccounts().get(i));
+                    double amountForUser =
+                            splitPaymentCommand.getAmountForUsers().get(i);
                     if (!account.getCurrency().equals(splitPaymentCommand.getCurrency())) {
-                        amountForUser = exchangeService.convertCurrency(splitPaymentCommand.getCurrency(),
+                        amountForUser = exchangeService.convertCurrency(
+                                splitPaymentCommand.getCurrency(),
                                 account.getCurrency(), amountForUser);
                     }
                     account.addAmountForSplit(amountForUser);
@@ -1096,7 +1008,8 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                                 Account account = accountService.getAccountByIBAN(iban);
                                 double convertedAmount = splitAmount;
                                 if (!account.getCurrency().equals(spCmd.getCurrency())) {
-                                    convertedAmount = exchangeService.convertCurrency(spCmd.getCurrency(),
+                                    convertedAmount =
+                                            exchangeService.convertCurrency(spCmd.getCurrency(),
                                             account.getCurrency(), splitAmount);
                                 }
                                 account.decreaseAmountForSplit(convertedAmount);
@@ -1106,7 +1019,8 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                             String formattedAmount = String.format("%.2f", spCmd.getAmount());
                             Transaction transaction = new CustomSplitPaymentTransaction(
                                     spCmd.getTimestamp(),
-                                    spCmd.getCurrency(), spCmd.getAmountForUsers(), spCmd.getAccounts(),
+                                    spCmd.getCurrency(),
+                                    spCmd.getAmountForUsers(), spCmd.getAccounts(),
                                     formattedAmount);
                             for (String iban : spCmd.getAccounts()) {
                                 Account account = accountService.getAccountByIBAN(iban);
@@ -1114,10 +1028,12 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                             }
 
                             for (int i = 0; i < spCmd.getAccounts().size(); i++) {
-                                Account account = accountService.getAccountByIBAN(spCmd.getAccounts().get(i));
+                                Account account =
+                                        accountService.getAccountByIBAN(spCmd.getAccounts().get(i));
                                 double amountForUser = spCmd.getAmountForUsers().get(i);
                                 if (!account.getCurrency().equals(spCmd.getCurrency())) {
-                                    amountForUser = exchangeService.convertCurrency(spCmd.getCurrency(),
+                                    amountForUser =
+                                            exchangeService.convertCurrency(spCmd.getCurrency(),
                                             account.getCurrency(), amountForUser);
                                 }
                                 account.decreaseAmountForSplit(amountForUser);
@@ -1166,42 +1082,68 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
         queue.poll();
     }
 
+    /**
+     * Procesează comanda de adăugare a unui asociat nou
+     * (angajat sau manager) într-un cont business.
+     *
+     * @param command comanda de adăugare a unui asociat nou
+     */
     @Override
-    public void visit(AddNewBusinessAssociateCommand command) {
+    public void visit(final AddNewBusinessAssociateCommand command) {
         try {
-            accountService.addNewBusinessAssociate(command.getAccount(), command.getRole(), command.getEmail());
+            accountService.addNewBusinessAssociate(command.getAccount(), command.getRole(),
+                    command.getEmail());
         } catch (Exception exception) {
 
         }
     }
 
+    /**
+     * Procesează comanda de modificare a limitei de cheltuieli pentru un cont business.
+     *
+     * @param command comanda de modificare a limitei de cheltuieli
+     */
     @Override
-    public void visit(ChangeSpendingLimitCommand command) {
+    public void visit(final ChangeSpendingLimitCommand command) {
         try {
-            accountService.changeSpendingLimit(command.getAccount(), command.getAmount(), command.getEmail());
+            accountService.changeSpendingLimit(command.getAccount(),
+                    command.getAmount(), command.getEmail());
         } catch (UnauthorizedAccessException exception) {
             ObjectNode objectNode = mapper.createObjectNode();
             objectNode.put("command", command.getCommand());
             ObjectNode outputNode = mapper.createObjectNode();
             outputNode.put("timestamp", command.getTimestamp());
-            outputNode.put("description", "You must be owner in order to change spending limit.");
+            outputNode.put("description", "You must be owner "
+                    + "in order to change spending limit.");
             objectNode.put("output", outputNode);
             objectNode.put("timestamp", command.getTimestamp());
             this.output.add(objectNode);
         }
     }
 
+    /**
+     * Procesează comanda de modificare a limitei de depozit pentru un cont business.
+     *
+     * @param command comanda de modificare a limitei de depozit
+     */
     @Override
-    public void visit(ChangeDepositLimitCommand command) {
+    public void visit(final ChangeDepositLimitCommand command) {
         try {
-            accountService.changeDepositLimit(command.getAccount(), command.getAmount(), command.getEmail());
+            accountService.changeDepositLimit(command.getAccount(),
+                    command.getAmount(), command.getEmail());
         } catch (Exception exception) {
 
         }
     }
 
+    /**
+     * Procesează comanda de generare a unui raport pentru un cont business, incluzând date
+     * despre manageri, angajați și limitele financiare.
+     *
+     * @param command comanda de generare a raportului business
+     */
     @Override
-    public void visit(BusinessReportCommand command) {
+    public void visit(final BusinessReportCommand command) {
         Account account = accountService.getAccountByIBAN(command.getAccount());
         ObjectNode reportResult = mapper.createObjectNode();
         reportResult.put("command", command.getCommand());
@@ -1216,10 +1158,12 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
         }
 
         double depositLimit = account.getDepositLimit();
-        depositLimit = exchangeService.convertCurrency("RON", account.getCurrency(), depositLimit);
+        depositLimit = exchangeService.convertCurrency("RON",
+                account.getCurrency(), depositLimit);
 
         double spendingLimit = account.getSpendingLimit();
-        spendingLimit = exchangeService.convertCurrency("RON", account.getCurrency(), spendingLimit);
+        spendingLimit = exchangeService.convertCurrency("RON",
+                account.getCurrency(), spendingLimit);
 
         ObjectNode outputNode = mapper.createObjectNode();
         outputNode.put("IBAN", account.getIban());
@@ -1233,7 +1177,8 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
         account.getManagers().stream()
                 .map(manager -> {
                     ObjectNode managerNode = mapper.createObjectNode();
-                    managerNode.put("username",  manager.getLastName() + " " + manager.getFirstName());
+                    managerNode.put("username",
+                            manager.getLastName() + " " + manager.getFirstName());
                     managerNode.put("spent", manager.getSpentForBusiness(account.getIban()));
                     managerNode.put("deposited", manager.getDepositedForBusiness(account));
                     return managerNode;
@@ -1245,7 +1190,8 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
         account.getEmployees().stream()
                 .map(employee -> {
                     ObjectNode employeeNode = mapper.createObjectNode();
-                    employeeNode.put("username", employee.getLastName() + " " + employee.getFirstName());
+                    employeeNode.put("username",
+                            employee.getLastName() + " " + employee.getFirstName());
                     employeeNode.put("spent", employee.getSpentForBusiness(account.getIban()));
                     employeeNode.put("deposited", employee.getDepositedForBusiness(account));
                     return employeeNode;
@@ -1267,8 +1213,13 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
         this.output.add(reportResult);
     }
 
+    /**
+     * Procesează comanda de respingere a unei plăți împărțite de către un utilizator.
+     *
+     * @param command comanda de respingere a plății împărțite
+     */
     @Override
-    public void visit(RejectSplitPaymentCommand command) {
+    public void visit(final RejectSplitPaymentCommand command) {
         String email = command.getEmail();
 
         User user = userService.getUserByEmail(email);
@@ -1314,7 +1265,6 @@ public final class ConcreteCommandVisitor implements CommandVisitor {
                 }
             }
         }
-
         queue.poll();
     }
 }

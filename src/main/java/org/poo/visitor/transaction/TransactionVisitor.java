@@ -92,21 +92,74 @@ public interface TransactionVisitor {
      */
     void visit(InterestRateChangeTransaction transaction);
 
+    /**
+     * Vizitează o tranzacție de retragere din contul de savings.
+     *
+     * @param transaction este tranzacția de retragere din contul de savings.
+     */
     void visit(SavingsWithdrawlTransaction transaction);
 
+    /**
+     * Vizitează o tranzacție pentru neîndeplinirea condiției de vârstă minimă.
+     *
+     * @param transaction este tranzacția pentru neîndeplinirea condiției de vârstă minimă.
+     */
     void visit(NotMinimumAgeRequiredTransaction transaction);
 
+    /**
+     * Vizitează o tranzacție pentru neîndeplinirea condiției de cont clasic.
+     *
+     * @param transaction este tranzacția pentru neîndeplinirea condiției de cont clasic.
+     */
     void visit(NotClassicAccountTransaction transaction);
 
+    /**
+     * Vizitează o tranzacție de upgrade al planului.
+     *
+     * @param transaction este tranzacția de upgrade al planului.
+     */
     void visit(UpgradePlanTransaction transaction);
 
+    /**
+     * Vizitează o tranzacție de retragere de numerar.
+     *
+     * @param transaction este tranzacția de retragere de numerar.
+     */
     void visit(CashWithdrawalTransaction transaction);
 
+    /**
+     * Vizitează o tranzacție de schimbare a interest rate-ului.
+     *
+     * @param transaction este tranzacția de schimbare a interest rate-ului.
+     */
     void visit(InterestRateIncomeTransaction transaction);
 
+    /**
+     * Vizitează o tranzacție de custom split payment.
+     *
+     * @param transaction este tranzacția de custom split payment.
+     */
     void visit(CustomSplitPaymentTransaction transaction);
 
+    /**
+     * Vizitează o tranzacție pentru fonduri insuficiente pentru un custom split payment.
+     *
+     * @param transaction este tranzacția pentru fonduri insuficiente
+     * pentru un custom split payment.
+     */
     void visit(InsufficientFundsForCustomSplitTransaction transaction);
 
+    /**
+     * Vizitează o tranzacție de rejectare a unei custom split payment.
+     *
+     * @param transaction este tranzacția de rejectare a unei custom split payment.
+     */
     void visit(UserRejectedSplitTransaction transaction);
+
+    /**
+     * Vizitează o tranzacție de upgrade la același plan.
+     *
+     * @param transaction este tranzacția de upgrade la același plan.
+     */
+    void visit(UpgradeToSamePlanTransaction transaction);
 }

@@ -5,7 +5,6 @@ import org.poo.model.account.Account;
 import org.poo.model.card.Card;
 import org.poo.model.card.OneTimePayCard;
 import org.poo.model.card.RegularCard;
-import org.poo.model.commerciant.Commerciant;
 import org.poo.model.plan.PlanStrategy;
 import org.poo.model.user.User;
 import org.poo.utils.Utils;
@@ -72,16 +71,18 @@ public final class CardService {
             throw new AccountNotFoundException("Account not found with IBAN: " + accountIBAN);
         }
 
-        if (!account.getOwner().getEmail().equals(email)) {
+        /*if (!account.getOwner().getEmail().equals(email)) {
             return null;
         }
+
+         */
 
         User user = userService.getUserByEmail(email);
         String cardNumber = Utils.generateCardNumber();
         Card card = null;
-        if (cardType == "regularCard") {
+        if (cardType.equals("regularCard")) {
             card = new RegularCard(cardNumber, account, user);
-        } else if (cardType == "oneTimeCard") {
+        } else if (cardType.equals("oneTimeCard")) {
             card = new OneTimePayCard(cardNumber, account, user);
         }
         cardsByNumber.put(cardNumber, card);
@@ -101,9 +102,11 @@ public final class CardService {
             return;
         }
 
-        if (!card.getOwner().getEmail().equals(email)) {
+        /*if (!card.getOwner().getEmail().equals(email)) {
             return;
         }
+
+         */
 
         cardsByNumber.remove(cardNumber);
         card.getAccount().getCards().remove(card);
@@ -150,9 +153,11 @@ public final class CardService {
             throw new InsufficientFundsException("Insufficient funds");
         }
 
-        double amountInRon = exchangeService.convertCurrency(card.getAccount().getCurrency(), "RON", finalAmount);
-        if (card.getAccount().getAccountType().equals("business") &&
-                amountInRon > card.getAccount().getSpendingLimit() && card.getAccount().isEmployee(email)) {
+        double amountInRon = exchangeService.convertCurrency(card.getAccount().getCurrency(),
+                "RON", finalAmount);
+        if (card.getAccount().getAccountType().equals("business")
+                && amountInRon > card.getAccount().getSpendingLimit()
+                && card.getAccount().isEmployee(email)) {
             throw new PaymentLimitExcedeedException("Payment limit exceeded");
         }
 
@@ -221,6 +226,20 @@ public final class CardService {
         return "Card not found";
     }
 
+    /**
+     * Efectuează o operațiune de retragere de numerar folosind un card specific.
+     *
+     * @param cardNumber numărul cardului utilizat pentru retragere
+     * @param amount     suma care urmează să fie retrasă (în RON, implicit)
+     * @param email      email-ul utilizatorului asociat cardului
+     * @return un mesaj de confirmare care indică succesul retragerii
+     * @throws UserNotFoundException         dacă nu se găsește un utilizator cu email-ul furnizat
+     * @throws CardNotFoundException         dacă numărul cardului este invalid sau
+     * cardul este blocat/utilizat
+     * @throws MinimumBalancePassedException dacă retragerea ar face ca soldul contului
+     *                                       să scadă sub limita minimă
+     * @throws InsufficientFundsException    dacă, contul nu are fonduri suficiente pentru retragere
+     */
     public String cashWithdrawal(final String cardNumber, double amount, final String email) {
         User user = userService.getUserByEmail(email);
         if (user == null) {
@@ -248,10 +267,10 @@ public final class CardService {
             commission = exchangeService.convertCurrency("RON", account.getCurrency(), commission);
         }
 
-        if (account.getMinimumBalance() != null &&
-                account.getBalance() - amount < account.getMinimumBalance()) {
-            throw new MinimumBalancePassedException("Cannot perform " +
-                    "payment due to a minimum balance being set");
+        if (account.getMinimumBalance() != null
+                && account.getBalance() - amount < account.getMinimumBalance()) {
+            throw new MinimumBalancePassedException("Cannot perform "
+                    + "payment due to a minimum balance being set");
         }
 
         if (amount > account.getBalance()) {
@@ -259,11 +278,6 @@ public final class CardService {
         }
 
         account.withdraw(amount);
-        /*if (!account.getCurrency().equals("RON")) {
-            commission = exchangeService.convertCurrency("RON", account.getCurrency(), commission);
-        }
-
-         */
         account.withdraw(commission);
         account.decreaseTotalSpent(commission);
 

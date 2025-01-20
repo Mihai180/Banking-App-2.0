@@ -2031,10 +2031,7 @@
       "balance" : 1918.1072000000001,
       "currency" : "RON",
       "type" : "savings",
-      "cards" : [ {
-        "cardNumber" : "1733018068262537",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Karen",
@@ -2128,10 +2125,7 @@
       "balance" : 1921.152024,
       "currency" : "AUD",
       "type" : "savings",
-      "cards" : [ {
-        "cardNumber" : "6988686155235949",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Chanakya",
@@ -2148,10 +2142,7 @@
       "balance" : 2456.9579999999996,
       "currency" : "INR",
       "type" : "savings",
-      "cards" : [ {
-        "cardNumber" : "5254952026068544",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Rene",
@@ -2264,10 +2255,7 @@
       "balance" : 0.7777777777777786,
       "currency" : "GBP",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "4097439592846732",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     }, {
       "IBAN" : "RO47POOB5866490978033060",
       "balance" : 1535.3,
@@ -2287,10 +2275,7 @@
       "balance" : 84.0,
       "currency" : "CHF",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "2289183361654620",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Connie",
@@ -2301,10 +2286,7 @@
       "balance" : 0.002222222222229675,
       "currency" : "USD",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "5069598921863529",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     }, {
       "IBAN" : "RO45POOB6505529013808948",
       "balance" : 7159.239999999998,
@@ -2327,10 +2309,7 @@
       "balance" : 0.002222222222229675,
       "currency" : "USD",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "1851641428290185",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Roland",
@@ -2341,10 +2320,7 @@
       "balance" : 84.0,
       "currency" : "CHF",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "9281102140265301",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Aurelio",
@@ -2355,10 +2331,7 @@
       "balance" : 1540.0,
       "currency" : "MXN",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "8221841196640096",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Isabella",
@@ -2369,10 +2342,7 @@
       "balance" : 1.5555555555555571,
       "currency" : "NZD",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "6052309891235892",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Jacqueline",
@@ -2383,10 +2353,7 @@
       "balance" : 98.0,
       "currency" : "CAD",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "3892114815135845",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Heracleea",
@@ -2397,10 +2364,7 @@
       "balance" : 0.0,
       "currency" : "RON",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "9224211293357459",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Juana",
@@ -2411,10 +2375,7 @@
       "balance" : 1417.7142857142858,
       "currency" : "MXN",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "6825942525318055",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Yolanda",
@@ -2425,10 +2386,7 @@
       "balance" : 0.002222222222229675,
       "currency" : "USD",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "1388131156990910",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Marcelle",
@@ -2439,10 +2397,7 @@
       "balance" : 0.0,
       "currency" : "EUR",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "0755790623339451",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Karine",
@@ -2453,10 +2408,7 @@
       "balance" : 98.0,
       "currency" : "CAD",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "2394479558596255",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Erdogan",
@@ -2467,10 +2419,7 @@
       "balance" : 0.0,
       "currency" : "EUR",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "7644059707106503",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Natalia",
@@ -2481,10 +2430,7 @@
       "balance" : 943.8488888888888,
       "currency" : "MXN",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "4766425843993312",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   } ],
   "timestamp" : 877
@@ -3072,10 +3018,7 @@
       "balance" : 1918.1072000000001,
       "currency" : "RON",
       "type" : "savings",
-      "cards" : [ {
-        "cardNumber" : "1733018068262537",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Karen",
@@ -3169,10 +3112,7 @@
       "balance" : 1921.152024,
       "currency" : "AUD",
       "type" : "savings",
-      "cards" : [ {
-        "cardNumber" : "6988686155235949",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Chanakya",
@@ -3189,10 +3129,7 @@
       "balance" : 2456.9579999999996,
       "currency" : "INR",
       "type" : "savings",
-      "cards" : [ {
-        "cardNumber" : "5254952026068544",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Rene",
@@ -3305,10 +3242,7 @@
       "balance" : 0.7777777777777786,
       "currency" : "GBP",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "4097439592846732",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     }, {
       "IBAN" : "RO47POOB5866490978033060",
       "balance" : 1535.3,
@@ -3328,10 +3262,7 @@
       "balance" : 84.0,
       "currency" : "CHF",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "2289183361654620",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Connie",
@@ -3342,10 +3273,7 @@
       "balance" : 0.002222222222229675,
       "currency" : "USD",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "5069598921863529",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     }, {
       "IBAN" : "RO45POOB6505529013808948",
       "balance" : 16774.239999999998,
@@ -3368,10 +3296,7 @@
       "balance" : 0.002222222222229675,
       "currency" : "USD",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "1851641428290185",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Roland",
@@ -3382,10 +3307,7 @@
       "balance" : 84.0,
       "currency" : "CHF",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "9281102140265301",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Aurelio",
@@ -3396,10 +3318,7 @@
       "balance" : 1540.0,
       "currency" : "MXN",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "8221841196640096",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Isabella",
@@ -3410,10 +3329,7 @@
       "balance" : 1.5555555555555571,
       "currency" : "NZD",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "6052309891235892",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Jacqueline",
@@ -3424,10 +3340,7 @@
       "balance" : 98.0,
       "currency" : "CAD",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "3892114815135845",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Heracleea",
@@ -3438,10 +3351,7 @@
       "balance" : 0.0,
       "currency" : "RON",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "9224211293357459",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Juana",
@@ -3452,10 +3362,7 @@
       "balance" : 1417.7142857142858,
       "currency" : "MXN",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "6825942525318055",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Yolanda",
@@ -3466,10 +3373,7 @@
       "balance" : 0.002222222222229675,
       "currency" : "USD",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "1388131156990910",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Marcelle",
@@ -3480,10 +3384,7 @@
       "balance" : 0.0,
       "currency" : "EUR",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "0755790623339451",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Karine",
@@ -3494,10 +3395,7 @@
       "balance" : 98.0,
       "currency" : "CAD",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "2394479558596255",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Erdogan",
@@ -3508,10 +3406,7 @@
       "balance" : 0.0,
       "currency" : "EUR",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "7644059707106503",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Natalia",
@@ -3522,10 +3417,7 @@
       "balance" : 943.8488888888888,
       "currency" : "MXN",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "4766425843993312",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   } ],
   "timestamp" : 970
@@ -3590,10 +3482,7 @@
       "balance" : 1918.1072000000001,
       "currency" : "RON",
       "type" : "savings",
-      "cards" : [ {
-        "cardNumber" : "1733018068262537",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Karen",
@@ -3687,10 +3576,7 @@
       "balance" : 1921.152024,
       "currency" : "AUD",
       "type" : "savings",
-      "cards" : [ {
-        "cardNumber" : "6988686155235949",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Chanakya",
@@ -3707,10 +3593,7 @@
       "balance" : 2456.9579999999996,
       "currency" : "INR",
       "type" : "savings",
-      "cards" : [ {
-        "cardNumber" : "5254952026068544",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Rene",
@@ -3823,10 +3706,7 @@
       "balance" : 0.7777777777777786,
       "currency" : "GBP",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "4097439592846732",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     }, {
       "IBAN" : "RO47POOB5866490978033060",
       "balance" : 1535.3,
@@ -3846,10 +3726,7 @@
       "balance" : 84.0,
       "currency" : "CHF",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "2289183361654620",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Connie",
@@ -3860,10 +3737,7 @@
       "balance" : 0.002222222222229675,
       "currency" : "USD",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "5069598921863529",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     }, {
       "IBAN" : "RO45POOB6505529013808948",
       "balance" : 16774.239999999998,
@@ -3886,10 +3760,7 @@
       "balance" : 0.002222222222229675,
       "currency" : "USD",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "1851641428290185",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Roland",
@@ -3900,10 +3771,7 @@
       "balance" : 84.0,
       "currency" : "CHF",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "9281102140265301",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Aurelio",
@@ -3914,10 +3782,7 @@
       "balance" : 1540.0,
       "currency" : "MXN",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "8221841196640096",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Isabella",
@@ -3928,10 +3793,7 @@
       "balance" : 1.5555555555555571,
       "currency" : "NZD",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "6052309891235892",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Jacqueline",
@@ -3942,10 +3804,7 @@
       "balance" : 98.0,
       "currency" : "CAD",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "3892114815135845",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Heracleea",
@@ -3956,10 +3815,7 @@
       "balance" : 0.0,
       "currency" : "RON",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "9224211293357459",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Juana",
@@ -3970,10 +3826,7 @@
       "balance" : 1417.7142857142858,
       "currency" : "MXN",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "6825942525318055",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Yolanda",
@@ -3984,10 +3837,7 @@
       "balance" : 0.002222222222229675,
       "currency" : "USD",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "1388131156990910",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Marcelle",
@@ -3998,10 +3848,7 @@
       "balance" : 0.0,
       "currency" : "EUR",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "0755790623339451",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Karine",
@@ -4012,10 +3859,7 @@
       "balance" : 98.0,
       "currency" : "CAD",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "2394479558596255",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Erdogan",
@@ -4026,10 +3870,7 @@
       "balance" : 0.0,
       "currency" : "EUR",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "7644059707106503",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   }, {
     "firstName" : "Natalia",
@@ -4040,10 +3881,7 @@
       "balance" : 943.8488888888888,
       "currency" : "MXN",
       "type" : "classic",
-      "cards" : [ {
-        "cardNumber" : "4766425843993312",
-        "status" : "active"
-      } ]
+      "cards" : [ ]
     } ]
   } ],
   "timestamp" : 1026

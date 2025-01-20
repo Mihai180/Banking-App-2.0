@@ -1,7 +1,7 @@
 package org.poo.exception;
 
 public class UnknownPlanException extends RuntimeException {
-    public UnknownPlanException(String message) {
+    public UnknownPlanException(final String message) {
         super(message);
     }
 }

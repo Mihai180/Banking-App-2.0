@@ -2,13 +2,15 @@ package org.poo.command;
 
 import org.poo.visitor.command.CommandVisitor;
 
-public class ChangeSpendingLimitCommand implements Command {
+public final class ChangeSpendingLimitCommand implements Command {
     private final String command;
     private final String email;
     private final String account;
     private final double amount;
     private final int timestamp;
-    public ChangeSpendingLimitCommand(String command, String email, String account, double amount, int timestamp) {
+    public ChangeSpendingLimitCommand(final String command, final String email,
+                                      final String account, final double amount,
+                                      final int timestamp) {
         this.command = command;
         this.email = email;
         this.account = account;

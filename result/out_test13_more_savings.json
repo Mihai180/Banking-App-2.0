@@ -416,6 +416,9 @@
       "accountIBAN" : "RO65POOB8944016386845896",
       "newPlanType" : "silver"
     }, {
+      "timestamp" : 214,
+      "description" : "The user already has the silver plan."
+    }, {
       "timestamp" : 223,
       "description" : "Interest rate of the account changed to 0.17"
     }, {
@@ -511,6 +514,9 @@
     "description" : "Upgrade plan",
     "accountIBAN" : "RO65POOB8944016386845896",
     "newPlanType" : "silver"
+  }, {
+    "timestamp" : 214,
+    "description" : "The user already has the silver plan."
   }, {
     "timestamp" : 223,
     "description" : "Interest rate of the account changed to 0.17"
@@ -648,6 +654,9 @@
     "description" : "Upgrade plan",
     "accountIBAN" : "RO65POOB8944016386845896",
     "newPlanType" : "silver"
+  }, {
+    "timestamp" : 214,
+    "description" : "The user already has the silver plan."
   }, {
     "timestamp" : 223,
     "description" : "Interest rate of the account changed to 0.17"
@@ -873,6 +882,9 @@
     "description" : "Upgrade plan",
     "accountIBAN" : "RO65POOB8944016386845896",
     "newPlanType" : "silver"
+  }, {
+    "timestamp" : 214,
+    "description" : "The user already has the silver plan."
   }, {
     "timestamp" : 223,
     "description" : "Interest rate of the account changed to 0.17"
@@ -1855,6 +1867,9 @@
     "description" : "Upgrade plan",
     "accountIBAN" : "RO65POOB8944016386845896",
     "newPlanType" : "silver"
+  }, {
+    "timestamp" : 214,
+    "description" : "The user already has the silver plan."
   }, {
     "timestamp" : 223,
     "description" : "Interest rate of the account changed to 0.17"

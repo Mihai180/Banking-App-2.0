@@ -4,14 +4,17 @@ import org.poo.visitor.transaction.TransactionVisitor;
 
 import java.util.List;
 
-public class CustomSplitPaymentTransaction extends Transaction {
+public final class CustomSplitPaymentTransaction extends Transaction {
     private final String currency;
     private final List<Double> amountForUsers;
     private final List<String> involvedAccounts;
     private final String amount;
 
-    public CustomSplitPaymentTransaction(final int timestamp, final String currency, final List<Double> amountForUsers,
-                                   final List<String> involvedAccounts, final String amount) {
+    public CustomSplitPaymentTransaction(final int timestamp,
+                                         final String currency,
+                                         final List<Double> amountForUsers,
+                                         final List<String> involvedAccounts,
+                                         final String amount) {
         super(timestamp);
         this.description = "Split payment of ";
         this.currency = currency;

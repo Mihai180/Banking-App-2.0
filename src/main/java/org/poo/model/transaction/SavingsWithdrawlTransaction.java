@@ -2,12 +2,12 @@ package org.poo.model.transaction;
 
 import org.poo.visitor.transaction.TransactionVisitor;
 
-public class SavingsWithdrawlTransaction extends Transaction {
+public final class SavingsWithdrawlTransaction extends Transaction {
     private String savingsAccountIBAN;
     private String classicAccountIBAN;
     private double amount;
-    public SavingsWithdrawlTransaction(int timestamp, String savingsAccountIBAN,
-                                       String classicAccountIBAN, double amount) {
+    public SavingsWithdrawlTransaction(final int timestamp, final String savingsAccountIBAN,
+                                       final String classicAccountIBAN, final double amount) {
         super(timestamp);
         this.description = "Savings withdrawal";
         this.amount = amount;

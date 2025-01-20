@@ -2,14 +2,16 @@ package org.poo.command;
 
 import org.poo.visitor.command.CommandVisitor;
 
-public class WithdrawSavingsCommand implements Command {
+public final class WithdrawSavingsCommand implements Command {
     private String command;
     private String account;
     private double amount;
     private String currency;
     private int timestamp;
 
-    public WithdrawSavingsCommand(String command, String account, double amount, String currency, int timestamp) {
+    public WithdrawSavingsCommand(final String command, final String account,
+                                  final double amount, final String currency,
+                                  final int timestamp) {
         this.command = command;
         this.account = account;
         this.amount = amount;
@@ -37,6 +39,7 @@ public class WithdrawSavingsCommand implements Command {
         return timestamp;
     }
 
+    @Override
     public void accept(final CommandVisitor visitor) {
         visitor.visit(this);
     }
